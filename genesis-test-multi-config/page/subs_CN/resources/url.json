@@ -1,0 +1,137 @@
+{
+  "cpq_pay_page": [
+    {
+      "base_url": {
+        "int": "https://pay-int.unity.cn/os2/quotes/80025000004h6rtAAA",
+        "staging": "https://pay-staging.unity.cn/os2/quotes/80025000004h6rtAAA",
+        "prod": "https://pay.unity.cn/os2/quotes/80025000004h6rtAAA"
+      }
+    }
+  ],
+  "subs_configPlan_page": [
+    {
+      "base_url": {
+        "int": "https://store-int.unity.cn/configure-plan/unity-plus",
+        "staging": "https://store-staging.unity.cn/configure-plan/unity-plus",
+        "prod": "https://store.unity.cn/configure-plan/unity-plus"
+      }
+    }
+  ],
+  "subs_configUpgrade_page": [
+    {
+      "base_url": {
+        "int": "https://store-int.unity.cn/configure-upgrade",
+        "staging": "https://store-staging.unity.cn/configure-upgrade",
+        "prod": "https://store.unity.cn/configure-upgrade"
+      }
+    }
+  ],
+  "subs_learn_free_page": [
+    {
+      "base_url": {
+        "int": "https://store-int.unity.cn/configure-plan/unity-learn-premium-30-day-trial",
+        "staging": "https://store-staging.unity.cn/configure-plan/unity-learn-premium-30-day-trial",
+        "prod": "https://store.unity.cn/configure-plan/unity-learn-premium-30-day-trial"
+      }
+    }
+  ],
+  "subs_learn_page": [
+    {
+      "base_url": {
+        "int": "https://store-int.unity.cn/configure-plan/unity-learn-premium",
+        "staging": "https://store-staging.unity.cn/configure-plan/unity-learn-premium",
+        "prod": "https://store.unity.cn/configure-plan/unity-learn-premium"
+      }
+    }
+  ],
+  "subs_org_select_page": [
+    {
+      "base_url": {
+        "int": "https://pay-int.unity.cn/os2/quotes/80025000004h6rtAAA",
+        "staging": "https://pay-staging.unity.cn/os2/quotes/80025000004h6rtAAA",
+        "prod": "https://pay.unity.cn/os2/quotes/80025000004h6rtAAA"
+      }
+    }
+  ],
+  "subs_pay_add_payment_page": [
+    {
+      "base_url": {
+        "int": "https://pay-int.unity.cn",
+        "staging": "https://pay-staging.unity.cn",
+        "prod": "https://pay.unity.cn"
+      }
+    }
+  ],
+  "subs_pay_page": [
+    {
+      "base_url": {
+        "int": "https://store-int.unity.cn/",
+        "staging": "https://store-staging.unity.cn/",
+        "prod": "https://store.unity.cn/"
+      }
+    }
+  ],
+  "subs_pay_remaining_page": [
+    {
+      "base_url": {
+        "int": "https://id-int.unity.cn/en/subscriptions/2474084934971/prepay/new",
+        "staging": "https://id-staging.unity.cn/en/subscriptions/2474084934971/prepay/new",
+        "prod": "https://id.unity.cn/en/subscriptions/2474084934971/prepay/new"
+      }
+    }
+  ],
+  "subs_pay_test_page": [
+    {
+      "base_url": {
+        "int": "https://pay-int.unity.cn/test",
+        "staging": "https://pay-staging.unity.cn/test",
+        "prod": "https://pay.unity.cn/test"
+      }
+    }
+  ],
+  "subs_receipt_page": [
+    {
+      "base_url": {
+        "int": "https://store-int.unity.cn/",
+        "staging": "https://store-staging.unity.cn/",
+        "prod": "https://store.unity.cn/"
+      }
+    }
+  ],
+  "subs_store_page": [
+    {
+      "base_url": {
+        "int": "https://store-int.unity.cn/",
+        "staging": "https://store-staging.unity.cn/",
+        "prod": "https://store.unity.cn/"
+      }
+    }
+  ],
+  "id_page": [
+    {
+      "base_url": {
+        "int": "https://id-int.unity.cn/",
+        "staging": "https://id-int.unity.cn/",
+        "prod": "https://id.unity.cn/"
+      }
+    }
+  ],
+  "subs_2yearCN_pay_page": [
+    {
+      "base_url": {
+        "int": "https://pay-int.unity.cn/os2/checkout?orderId=18966756384897&locale=zh_CN",
+        "staging": "https://pay-staging.unity.cn/os2/orders/new?locale=zh_CN&item=unity-pro-2-year-prepaid-cn&source=store&currency=CNY&seats=1",
+        "prod": "https://pay.unity.cn/os2/checkout?orderId=18966756384897&locale=zh_CN"
+      }
+    }
+  ],
+  "subs_3yearCN_pay_page": [
+    {
+      "base_url": {
+        "int": "https://pay-int.unity.cn/os2/checkout?orderId=18966756384900&locale=zh_CN",
+        "staging": "https://pay-staging.unity.cn/os2/orders/new?locale=zh_CN&item=unity-pro-3-year-prepaid-cn&source=store&currency=CNY&seats=1",
+        "prod": "https://pay.unity.cn/os2/checkout?orderId=18966756384900&locale=zh_CN"
+      }
+    }
+  ]
+}

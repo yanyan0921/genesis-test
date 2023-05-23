@@ -1,0 +1,311 @@
+{
+  "testcase": {
+    "name": "Test_3DS_V2_FRICTIONLESS_IDENTIFIED",
+    "owner": "taoxiaoqing",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to test world pay 3DS_V2_FRICTIONLESS_IDENTIFIED",
+      "steps": {
+        "step": [
+          {
+            "description": "create user via api",
+            "index": "1",
+            "resource": "identity.user_service",
+            "action": [
+              {
+                "method": "create_login_user",
+                "param": {
+                  "country": "BR"
+                },
+                "sleep": "7"
+              }
+            ]
+          },
+          {
+            "description": "accept the cookies",
+            "index": "2",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "icon_sign_in",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "prepare sign in on home page",
+            "index": "3",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click"
+              },
+              {
+                "element": "href_sign_in",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "4",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "${email_step_1}"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "Confirm reading navigation",
+            "index": "5",
+            "page": "assetStore.asset_guide_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "guide_OK_btn",
+                "method": "click"
+              }
+            ]
+          },
+           {
+            "description": "search asset item",
+            "index": "6",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element":"ABtest",
+                 "method": "script",
+                "value": "document.getElementsByClassName(\"ifont ifont-close _1sqyZ\")[0].click()",
+                "sleep": "5"
+              },
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "gameflow",
+                "sleep": "3"
+              },
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "click item name",
+            "index": "7",
+            "page": "assetStore.asset_search_result_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "item_name",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_1-e15 _25P-Q\")[0].click()",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "add item to cart",
+            "index": "8",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "add_to_cart_main",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_3UE3J MtRkn auto _1EJPn _2xeq5\")[0].click()",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "proceed to checkout",
+            "index": "9",
+            "page": "assetStore.asset_cart_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "Qty_box",
+                "method": "click"
+              },
+              {
+                "element": "Qty_1",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "label_price",
+                "method": "text",
+                "value": "$10",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_proceed_to_checkout",
+                "method": "click",
+                "sleep": "10"
+              },
+              {
+                "element": "Accept_btn",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_2V-G7\")[4].click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "input credit card info and set the Cardholder's name is 3DS_V2_FRICTIONLESS_IDENTIFIED,then pay now",
+            "index": "10",
+            "page": "assetStore.asset_pay_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_country",
+                "method": "click"
+              },
+              {
+                "element": "div_country_brazil",
+                "method": "click",
+                "present": "false",
+                "sleep": "8"
+              },
+              {
+                "element": "input_firstname",
+                "method": "send_keys",
+                "value": "Xiaoqing",
+                "present": "false"
+              },
+              {
+                "element": "input_lastname",
+                "method": "send_keys",
+                "value": "Tao"
+              },
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "${email_step_1}"
+              },
+              {
+                "element": "input_phone",
+                "method": "send_keys",
+                "value": "12345678"
+              },
+              {
+                "element": "input_address",
+                "method": "send_keys",
+                "value": "test road"
+              },
+              {
+                "element": "input_postalCode",
+                "method": "send_keys",
+                "value": "100000"
+              },
+              {
+                "element": "input_city",
+                "method": "send_keys",
+                "value": "shanghai"
+              },
+              {
+                "element": "input_creditcard",
+                "method": "send_keys",
+                "value": "4444 3333 2222 1111",
+                "present": "false",
+                "sleep": "8"
+              },
+              {
+                "element": "month_box",
+                "method": "click",
+                "present": "false"
+              },
+              {
+                "element": "month",
+                "method": "click",
+                "present": "false"
+              },
+              {
+                "element": "year_box",
+                "method": "click"
+              },
+              {
+                "element": "year",
+                "method": "click",
+                "present": "false"
+              },
+              {
+                "element": "cvc_cvv2",
+                "method": "send_keys",
+                "value": "123"
+              },
+              {
+                "element": "Cardholder_name_box",
+                "method": "send_keys",
+                "value": "3DS_V2_FRICTIONLESS_IDENTIFIED"
+              },
+              {
+                "element": "future_purchase_checkbox",
+                "method": "click"
+              },
+              {
+                "element": "checkbox_terms",
+                "method": "script",
+                "value": "document.getElementById(\"order_terms\").click()"
+              },
+              {
+                "element": "btn_pay_now",
+                "method": "click",
+                "sleep": "25"
+              }
+            ]
+          },
+          {
+            "description": "verify total amount and tax",
+            "index": "11",
+            "page": "assetStore.asset_receipt_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "label_total_amount",
+                "method": "text",
+                "value": "$10"
+              },
+              {
+                "element": "label_tax",
+                "method": "text",
+                "value": "$0"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "testcase": {
+    "name": "cpq_change_org_yes_without_orgId",
+    "owner": "LiChen",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to purchase subs",
+      "steps": {
+        "step": [
+          {
+            "description": "create user via api",
+            "index": "1",
+            "resource":"identity.user_service",
+            "action": [
+              {
+                "method": "create_login_user",
+                "param": {
+                  "country":"US"
+                },
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "prepare sign in on home page",
+            "index": "2",
+            "page": "subs.subs_store_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "present": "false"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "3",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "${email_step_1}"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "post purchase quote",
+            "index": "4",
+            "resource": "subs.subs_service",
+            "action": [
+              {
+                "method": "post_purchase_quote_without_org_id",
+                "param": {
+                  "pi_type": "CREDITCARD_OR_PAYPAL",
+                  "email": "${email_step_1}"
+                },
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "get org id",
+            "index": "5",
+            "resource": "identity.user_service",
+            "action": [
+              {
+                "method": "get_org_id",
+                "param": {
+                  "org_name": "${org_name_step_1}"
+                },
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "check out purchase quote",
+            "index": "6",
+            "page": "subs.subs_org_select_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "btn_select_org_1",
+                "method": "click",
+                "sleep": "20"
+              }
+            ]
+          },
+          {
+            "description": "back to the org selection page",
+            "index": "7",
+            "page": "subs.cpq_pay_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_to_change_org",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

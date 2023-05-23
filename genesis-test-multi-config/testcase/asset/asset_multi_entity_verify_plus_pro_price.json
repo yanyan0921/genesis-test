@@ -1,0 +1,228 @@
+{
+  "testcase": {
+    "name": "asset_multi_entity_verify_plus_pro_price",
+    "owner": "taoxiaoqing",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to verify multi entity plus pro price",
+      "steps": {
+        "step": [
+          {
+            "description": "accept the cookies",
+            "index": "1",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "icon_sign_in",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "search asset item",
+            "index": "2",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+               {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "site_stg_1"
+              },
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "click item name",
+            "index": "7",
+            "page": "assetStore.asset_search_result_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "item_name",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_1-e15 _25P-Q\")[0].click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "verify plus pro price",
+            "index": "4",
+            "page": "assetStore.asset_site_stg1_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "original_price",
+                "method": "text",
+                "value": "$4.99",
+                "sleep": "3"
+              },
+              {
+                "element": "single_multi_choice",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_2NQ0d ifont ifont-icon-arrow-up _2NQ0d\")[1].click()",
+                "sleep": "3"
+              },
+              {
+                "element": "multi",
+                "method": "click",
+                "present": "false"
+              },
+              {
+                "element": "asset_common_price",
+                "method": "text",
+                "value": "$14.97",
+                "present": "false"
+              }
+            ]
+          },
+          {
+            "description": "prepare sign in on home page",
+            "index": "5",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click"
+              },
+              {
+                "element": "href_sign_in",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "6",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "taoxiaoqing+prouser03@unity3d.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "7"
+              }
+            ]
+          },
+          {
+            "description": "verify language english",
+            "index": "7",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element":"page_header",
+                "method": "script",
+                 "value": "document.getElementsByClassName(\"_17EkZ\")[0].click()",
+                "sleep":"2"
+              },
+              {
+                "element": "footer_language_English",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView()",
+                "sleep": "4"
+              },
+              {
+                "element": "footer_language_English",
+                "method": "click",
+                "sleep": "4"
+              }
+            ]
+          },
+          {
+            "description": "search asset item",
+            "index": "8",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "site_stg_1"
+              },
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "click item name",
+            "index": "7",
+            "page": "assetStore.asset_search_result_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "item_name",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_1-e15 _25P-Q\")[0].click()",
+                "sleep": "12"
+              }
+            ]
+          },
+          {
+            "description": "verify plus pro price",
+            "index": "10",
+            "page": "assetStore.asset_site_stg1_purchased_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "plus_pro_price",
+                "method": "text",
+                "value": "$3.99",
+                "sleep": "10"
+              },
+              {
+                "element": "single_multi_choice",
+                "present": "false",
+                "method": "click"
+              },
+              {
+                "element": "multi",
+                "method": "click",
+                "present": "false"
+              },
+              {
+                "element": "asset_common_price",
+                "method": "text",
+                "value": "$14.97",
+                "present": "false"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "testcase": {
+    "name": "asset_recommendItem_slide",
+    "owner": "taoxiaoqing",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to  test the sliding of recommended assets",
+      "steps": {
+        "step": [
+          {
+            "description": "create user via api",
+            "index": "1",
+            "resource": "identity.user_service",
+            "action": [
+              {
+                "method": "create_login_user",
+                "param": {
+                  "country": "BR"
+                },
+                "sleep": "7"
+              }
+            ]
+          },
+          {
+            "description": "prepare sign in on home page",
+            "index": "2",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click"
+              },
+              {
+                "element": "href_sign_in",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "3",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "${email_step_1}"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "Confirm reading navigation",
+            "index": "4",
+            "page": "assetStore.asset_guide_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "guide_OK_btn",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "search asset item",
+            "index": "5",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "GameFlow"
+              },
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "Keys.ENTER"
+              }
+            ]
+          },
+          {
+            "description": "choose search result",
+            "index": "6",
+            "page": "assetStore.asset_search_result_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "item_name",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "add item to cart",
+            "index": "7",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "add_to_cart_main",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "btn_view_cart",
+                "method": "click",
+                "present": "false",
+                "sleep": "8"
+              }
+            ]
+          },
+          {
+            "description": "slide page , check ui display",
+            "index": "8",
+            "page": "assetStore.asset_cart_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "Qty_box",
+                "method": "click"
+              },
+              {
+                "element": "Qty_1",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "label_price",
+                "method": "text",
+                "value": "$10",
+                "sleep": "5"
+              },
+              {
+                "element": "right_slide_button",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "left_slide_button",
+                "method": "click",
+                "present": "false",
+                "sleep": "5"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

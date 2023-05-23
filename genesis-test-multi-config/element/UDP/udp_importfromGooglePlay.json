@@ -1,0 +1,55 @@
+{
+  "page": {
+    "elements": {
+      "element": [
+        {
+          "name": "input_GooglePlaylink",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[5]/div[2]/div/div/div/div[2]/div[2]/div/div/div/input"
+          },
+          "methods": {
+            "method": [
+              "send_keys",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "icon_closeGoogleifont",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[5]/div[2]/div/div/div/div[1]/button/div"
+          },
+          "methods": {
+            "method": [
+              "click"
+            ]
+          }
+        },
+        {
+          "name": "btn_import",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[5]/div[2]/div/div/div/div[3]/div/button"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        }
+      ]
+    },
+    "related": {
+      "pages": [
+        "udp_login_page",
+        "udp_page",
+        "udp_gameinfo_page"
+      ]
+    },
+    "url": "https://distribute-staging.dashboard.unity.com/",
+    "path": "udp.importfromGooglePlay_page"
+  }
+}

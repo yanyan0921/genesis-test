@@ -1,0 +1,274 @@
+{
+  "testcase": {
+    "name": "post_idea_9pic_and_delete_from_homepage",
+    "owner": "guohua",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to post a idea in homepage",
+      "steps": {
+        "step": [
+            {
+            "description": "fill out the login form",
+            "index": "1",
+            "page": "connect.connect_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "btn_avatar",
+                "method": "script",
+                "value": "document.querySelector(\"#pageContent > div:nth-child(1) > div.header-wrap_GEr2c682 > div > div.user-actions_2nPAaNhU > div > div.right_ZNamn0lh > div.account-switcher_eSCn1fWL > unity-account-switcher\").shadowRoot.querySelector(\"div > a > user-avatar\").click()",
+                "sleep": "2"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "script",
+                "value": "document.querySelector(\"#pageContent > div:nth-child(1) > div.header-wrap_GEr2c682 > div > div.user-actions_2nPAaNhU > div > div.right_ZNamn0lh > div.account-switcher_eSCn1fWL > unity-account-switcher\").shadowRoot.querySelector(\"div > div > drop-down\").shadowRoot.querySelector(\"div > div:nth-child(2)\").click()",
+                "present": "false",
+                "sleep": "13"
+              }
+            ]
+          },
+          {
+            "description": "fill out the login form",
+            "index": "2",
+            "page": "connect.connect_login_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "hua.guo+11@unity3d.com",
+                "present": "false"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_login",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "post a idea",
+            "index": "3",
+            "page": "connect.home_post_idea",
+            "need_redirect": "false",
+            "action": [
+               {
+                "element": "div_input1",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView(true)",
+                  "present": "false",
+                 "sleep": "3"
+              },
+               {
+                "element": "div_input1",
+                "method": "click",
+                  "sleep": "2"
+               },
+               {
+                "element": "input_idea",
+                "method": "send_keys",
+                 "value": "nine picture text",
+                  "present": "false"
+               },
+               {
+                "element": "btn_post",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView(true)",
+                  "present": "false",
+                 "sleep": "3"
+              },
+               {
+                "element": "button_idea_pic",
+                "method": "click",
+                  "sleep": "2"
+               },
+               {
+                "element": "input_pic",
+                "method": "send_keys",
+                 "value": "./testcase/test_photo/c.jpg",
+                  "present": "false",
+                   "sleep": "4"
+               },
+                {
+                "element": "input_idea",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView(true)",
+                  "present": "false",
+                 "sleep": "3"
+              },
+               {
+                "element": "input_pic_add",
+                "method": "click",
+                  "sleep": "2"
+               },
+               {
+                "element": "input_pic",
+                "method": "send_keys",
+                 "value": "./testcase/test_photo/a.jpg",
+                  "present": "false",
+                   "sleep": "4"
+               },
+               {
+                "element": "input_pic_add",
+                "method": "click",
+                  "sleep": "2"
+               },
+               {
+                "element": "input_pic2",
+                "method": "send_keys",
+                 "value": "./testcase/test_photo/f.jpg",
+                  "present": "false",
+                   "sleep": "4"
+               },
+               {
+                "element": "input_pic_add",
+                "method": "click",
+                  "sleep": "2"
+               },
+               {
+                "element": "input_pic",
+                "method": "send_keys",
+                 "value": "./testcase/test_photo/c.jpg",
+                  "present": "false",
+                   "sleep": "4"
+               },
+               {
+                "element": "input_pic_add",
+                "method": "click",
+                  "sleep": "2"
+               },
+               {
+                "element": "input_pic",
+                "method": "send_keys",
+                 "value": "./testcase/test_photo/d.jpg",
+                  "present": "false",
+                   "sleep": "4"
+               },
+                {
+                "element": "input_pic_add",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView(true)",
+                  "present": "false",
+                 "sleep": "3"
+              },
+               {
+                "element": "input_pic_add",
+                "method": "click",
+                  "sleep": "2"
+               },
+               {
+                "element": "input_pic",
+                "method": "send_keys",
+                 "value": "./testcase/test_photo/e.jpg",
+                  "present": "false",
+                   "sleep": "4"
+               },
+                   {
+                "element": "input_pic_add",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView(true)",
+                  "present": "false",
+                 "sleep": "3"
+              },
+               {
+                "element": "input_pic_add",
+                "method": "click",
+                  "sleep": "2"
+               },
+               {
+                "element": "input_pic",
+                "method": "send_keys",
+                 "value": "./testcase/test_photo/e.jpg",
+                  "present": "false",
+                   "sleep": "4"
+               },
+                   {
+                "element": "input_pic_add",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView(true)",
+                  "present": "false",
+                 "sleep": "3"
+              },
+               {
+                "element": "input_pic_add",
+                "method": "click",
+                  "sleep": "2"
+               },
+               {
+                "element": "input_pic",
+                "method": "send_keys",
+                 "value": "./testcase/test_photo/e.jpg",
+                  "present": "false",
+                   "sleep": "4"
+               },
+                   {
+                "element": "input_pic_add",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView(true)",
+                  "present": "false",
+                 "sleep": "3"
+              },
+               {
+                "element": "input_pic_add",
+                "method": "click",
+                  "sleep": "2"
+               },
+               {
+                "element": "input_pic",
+                "method": "send_keys",
+                 "value": "./testcase/test_photo/e.jpg",
+                  "present": "false",
+                   "sleep": "4"
+               },
+              {
+                "element": "btn_post",
+                "method": "click",
+                "sleep": "5"
+              }
+           ,
+                {
+                "element": "icon_menu",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView(true)",
+                  "present": "false",
+                 "sleep": "3"
+              },
+               {
+                "element": "icon_menu",
+                "method": "click",
+                  "sleep": "2"
+               },
+              {
+                "element": "icon_delete",
+                "method": "click",
+                  "present": "false",
+                 "sleep": "2"
+              }
+            ]
+          },
+            {
+            "description": "post a idea",
+            "index": "4",
+            "page": "connect.alert_delete_page",
+            "need_redirect": "false",
+            "action": [
+                {
+               "element": "button_yes",
+               "method": "click",
+               "sleep": "2"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

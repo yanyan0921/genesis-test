@@ -1,0 +1,251 @@
+{
+  "testcase": {
+    "name": "publisher_reviews_reply",
+    "owner": "tanlinhui",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to test publisher reply",
+      "steps": {
+        "step": [
+          {
+            "description": "prepare sign in on home page",
+            "index": "1",
+            "page": "publisherPortalV2.publisher_login_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "linhui.tan+01@unity3d.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "7"
+              }
+            ]
+          },
+          {
+
+            "description": "prepare sign in on home page",
+            "index": "2",
+            "page": "publisherPortalV2.publisher_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_cookies",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "sleep": "5"
+              },
+              {
+                "element": "Reviews_management",
+                "present": "false",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "select reviews" ,
+            "index": "3",
+            "page": "publisherPortalV2.publisher_reviews_page",
+            "need_redirect": "false",
+            "action": [
+             {
+                "element": "input_search",
+                "method": "send_keys",
+               "value": "autoUI test ",
+               "sleep":"5"
+              },
+              {
+                "element": "reviews",
+                "present": "false",
+                "method": "click",
+                "sleep":"5"
+              }
+            ]
+          },
+          {
+            "description": "post reply and verify history",
+            "index": "4",
+            "page": "publisherPortalV2.publisher_reviews_detail_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_reply",
+                "method": "send_keys",
+                "value": "publisher reply"
+              },
+              {
+                "element": "btn_reply_post",
+                "method": "click",
+                "sleep":"5"
+              }
+            ]
+          },
+          {
+            "description": "verify reply",
+            "index": "5",
+            "page": "publisherPortalV2.publisher_reviews_detail_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "label_reply_content",
+                "present": "false",
+                "method": "text",
+                "value":"publisher reply"
+              },
+              {
+                "element": "icon_history",
+                "method": "click",
+                "sleep":"3"
+              },
+              {
+                "element": "label_reply_status_history",
+                 "present": "false",
+               "method": "text",
+                "value":"Replied by"
+              },
+              {
+                "element": "label_reply_content_history",
+               "method": "text",
+                "value":"publisher reply"
+              }
+            ]
+          },
+          {
+            "description": " edit reply content",
+            "index": "6",
+            "page": "publisherPortalV2.publisher_reviews_detail_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_edit",
+                "method": "click"
+              },
+              {
+                "element": "input_reply",
+                "present": "false",
+                "method": "clear",
+                "sleep": "2"
+              },
+              {
+                "element": "input_reply",
+                "method": "send_keys",
+                "value": "publisher reply edit"
+              },
+              {
+                "element": "btn_post_reply",
+                "method": "click",
+                "sleep":"5"
+              }
+            ]
+          },
+          {
+            "description": "verify edit reply and link to asset store",
+            "index": "7",
+            "page": "publisherPortalV2.publisher_reviews_detail_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "label_reply_content",
+                "present": "false",
+                "method": "text",
+                "value":"publisher reply edit"
+              },
+              {
+                "element": "label_reply_status_history",
+                "present": "false",
+               "method": "text",
+                "value":"Reply edited by"
+              },
+              {
+                "element": "label_reply_content_history",
+               "method": "text",
+                "value":"publisher reply edit"
+              },
+              {
+                "element": "link_view_on_AS",
+                "method": "click",
+                "sleep":"12"
+              }
+            ]
+          },
+          {
+            "description": "verify in asset store",
+            "switch_tab":"1",
+            "index": "8",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "accept_cookies",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "sleep": "10"
+              },
+              {
+                "element": "link_reviews",
+                "present": "false",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "filter_stars",
+                "method": "script",
+                "value": "document.getElementsByClassName('Y1yB6')[1].click()",
+                "sleep": "2"
+              },
+              {
+                "element": "label_1_star",
+                "method": "script",
+                "value": "document.getElementsByClassName('_3BlIq')[8].click()",
+                "sleep": "5"
+              },
+              {
+                "element": "label_publisher_reply",
+                "present": "false",
+                "method": "text",
+                "value": "publisher reply edit"
+              }
+            ]
+          },
+          {
+            "description": "verify in asset store",
+            "switch_tab":"0",
+            "index": "9",
+            "page": "publisherPortalV2.publisher_reviews_detail_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_delete",
+                "present": "false",
+                "method": "click"
+              },
+              {
+                "element": "btn_delete_ok",
+                "present": "false",
+               "method": "click",
+                "sleep":"2"
+              },
+               {
+                "element": "label_reply_status_history",
+                "present": "false",
+               "method": "text",
+                "value":"Reply deleted by"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

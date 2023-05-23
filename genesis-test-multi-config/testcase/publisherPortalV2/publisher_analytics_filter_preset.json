@@ -1,0 +1,146 @@
+{
+  "testcase": {
+    "name": "publisher_analytics_filter_preset",
+    "owner": "tanlinhui",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to test filter assets in analytics page",
+      "steps": {
+        "step": [
+          {
+            "description": "prepare sign in on home page",
+            "index": "1",
+            "page": "publisherPortalV2.publisher_login_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "linhui.tan+01@unity3d.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep":"2"
+              }
+            ]
+          },
+          {
+            "description": "creat preset",
+            "index": "2",
+            "page": "publisherPortalV2.publisher_analytics_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_cookies",
+                "method": "script",
+                "value": "document.getElementsByClassName('onetrust-close-btn-handler onetrust-close-btn-ui banner-close-button onetrust-lg ot-close-icon')[0].click()",
+                "sleep": "10"
+              },
+              {
+                "element": "filter_assets",
+                "present": "false",
+                "method": "click",
+                "sleep": "6"
+              },
+              {
+                "element":"icon_filter_allAssets",
+                "present": "false",
+                "method":"click",
+                "sleep":"2"
+              },
+
+              {
+                "element":"icon_filter_asset1",
+                "method":"click",
+                "sleep":"2"
+              },
+              {
+                "element":"icon_filter_asset2",
+                "method":"click",
+                "sleep":"2"
+              },
+              {
+                "element": "btn_create_preset",
+                "present": "false",
+                "method": "click",
+                "sleep":"3"
+              },
+              {
+                "element": "input_preset_name",
+                "present": "false",
+                "method": "send_keys",
+                "value": "test"
+              },
+              {
+                "element": "btn_presetOK",
+                "method": "click",
+                "sleep": "6"
+              },
+              {
+                "element": "label_preset",
+                "present": "false",
+                "method": "text",
+                "value": "test"
+              }
+            ]
+          },
+          {
+            "description": "filter as preset and delete preset",
+            "index": "3",
+            "page": "publisherPortalV2.publisher_analytics_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_apply",
+                "method": "click",
+                "sleep": "10"
+              },
+              {
+                "element": "label_filter_assets",
+                "present": "false",
+                "method": "text",
+                "value": "2 assets"
+              },
+              {
+                "element": "label_filter_assets",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "icon_preset",
+                "method": "script",
+                "value":"document.getElementsByClassName('MuiIconButton-label')[4].click()",
+                "sleep": "2"
+              },
+              {
+                "element": "btn_preset_delete",
+                "present": "false",
+                "method": "click"
+              },
+              {
+                "element": "btn_remove",
+                "present": "false",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "label_preset_intro",
+                "present": "false",
+                "method": "text",
+                "value": "Preset is a number of assets groupped for quick access. Select individual assets and click Create preset below"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

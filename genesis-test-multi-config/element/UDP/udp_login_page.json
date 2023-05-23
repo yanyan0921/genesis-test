@@ -1,0 +1,56 @@
+{
+  "page": {
+    "elements": {
+      "element": [
+        {
+          "name": "input_email",
+          "locator": {
+            "by": "ID",
+            "value": "conversations_create_session_form_email"
+          },
+          "methods": {
+            "method": [
+              "send_keys",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "input_password",
+          "locator": {
+            "by": "ID",
+            "value": "conversations_create_session_form_password"
+          },
+          "methods": {
+            "method": [
+              "send_keys",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_sign_in",
+          "locator": {
+            "by": "CLASS",
+            "value": "commit"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        }
+      ]
+    },
+    "related": {
+      "pages": [
+        "connect_page",
+        "account_page",
+        "reset_password_page"
+      ]
+    },
+    "url": "https://distribute-staging.dashboard.unity.com/",
+    "path": "udp.udp_login_page"
+  }
+}

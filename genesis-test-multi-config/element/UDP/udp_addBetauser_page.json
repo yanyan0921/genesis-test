@@ -1,0 +1,68 @@
+{
+  "page": {
+    "elements": {
+      "element": [
+        {
+          "name": "input_useremail",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[7]/div/div[3]/div/div[2]/div[1]/div[2]/div[2]/div[2]/div/div/div/div[2]/div/div[2]/div/div/textarea"
+          },
+          "methods": {
+            "method": [
+              "send_keys",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_closeBetauser",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[7]/div/div[3]/div/div[2]/div[1]/div[2]/div[2]/div[2]/div/div/div/div[1]/button/div"
+          },
+          "methods": {
+            "method": [
+              "click"
+            ]
+          }
+        },
+        {
+          "name": "btn_usercancel",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[7]/div/div[3]/div/div[2]/div[1]/div[2]/div[2]/div[2]/div/div/div/div[3]/div[1]/button"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_usercreate",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[7]/div/div[3]/div/div[2]/div[1]/div[2]/div[2]/div[2]/div/div/div/div[3]/div[2]/button"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        }
+      ]
+    },
+    "related": {
+      "pages": [
+        "udp_gameinfo_page",
+        "udp_page",
+        "udp_createpage"
+      ]
+    },
+    "url": "https://distribute-staging.dashboard.unity.com/",
+    "path": "udp.udp_addBetauser_page"
+  }
+}

@@ -1,0 +1,391 @@
+{
+  "testcase": {
+    "name": "publisher_restrictLink_verify",
+    "owner": "tanlinhui",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to test fill restrict link",
+      "steps": {
+        "step": [
+          {
+            "description": "prepare sign in on home page",
+            "index": "1",
+            "page": "publisherPortalV2.publisher_login_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "linhui.tan+01@unity3d.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "7"
+              }
+            ]
+          },
+          {
+            "description": "create value",
+            "index": "2",
+            "resource": "asset.asset_service",
+            "action": [
+              {
+                "method": "create_value",
+                "param": {
+                  "Digits": "5"
+                },
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "click create new btn",
+            "index": "3",
+            "page": "publisherPortalV2.publisher_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "create_new_package_btn",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "input_packagename",
+                "method": "action_chain",
+                "present": "false",
+                "chain": [
+                  {
+                    "method": "move_to_element",
+                    "param": {
+                      "element": "input_packagename"
+                    }
+                  },
+                  {
+                    "method": "send_keys_to_element",
+                    "param": {
+                      "element": "input_packagename",
+                      "value": "${value_step_2}"
+                    }
+                  }
+                ]
+              },
+              {
+                "element": "category_select_box",
+                "method": "action_chain",
+                "present": "false",
+                "sleep": "5",
+                "chain": [
+                  {
+                    "method": "move_to_element",
+                    "param": {
+                      "element": "category_select_box"
+                    }
+                  },
+                  {
+                    "method": "click",
+                    "param": {
+                      "element": "category_select_box"
+                    }
+                  },
+                  {
+                    "method": "send_keys",
+                    "param": {
+                      "value": "Keys.DOWN"
+                    }
+                  },
+                  {
+                    "method": "send_keys",
+                    "param": {
+                      "value": "Keys.ENTER"
+                    }
+                  }
+                ]
+              },
+              {
+                "element": "btn_save",
+                "method": "click",
+                "sleep": "8"
+              }
+            ]
+          },
+          {
+            "description": "accept the cookies",
+            "index": "6",
+            "page": "publisherPortalV2.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "icon_cookies",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": " edit releaseNote page",
+            "index": "7",
+            "page": "publisherPortalV2.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_releaseNote",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "input_Changelog",
+                "present": "false",
+                "method": "clear",
+                "sleep": "3"
+              },
+              {
+                "element": "input_Changelog",
+                "method": "send_keys",
+                "value": "https://www.artstation.com/",
+                "sleep": "3"
+              },
+              {
+                "element": "label_error_Changelog",
+                "present": "false",
+                "method": "text",
+                "value": "This link is not allowed."
+              }
+            ]
+          },
+          {
+            "description": " edit description page",
+            "index": "7",
+            "page": "publisherPortalV2.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_description",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "input_summary",
+                "present": "false",
+                "method": "send_keys",
+                "value": "https://sketchfab.com/",
+                "sleep": "3"
+              },
+              {
+                "element": "label_error_summary",
+                "present": "false",
+                "method": "text",
+                "value": "This link is not allowed."
+              },
+              {
+                "element": "input_Description",
+                "method": "action_chain",
+                "present": "false",
+                "sleep": "3",
+                "chain": [
+                  {
+                    "method": "move_to_element",
+                    "param": {
+                      "element": "input_Description"
+                    }
+                  },
+                  {
+                    "method": "send_keys_to_element",
+                    "param": {
+                      "element": "input_Description",
+                      "value": "https://assetstore.unity.com/packages/3d/environments/fantasy/pb-farmlands-1-142114?aid=1011ly9A&utm_source=aff"
+                    }
+                  }
+                ]
+              },
+              {
+                "element": "input_Technical_Details",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView()",
+                "sleep":"3"
+              },
+              {
+                "element": "label_error_Description",
+                "present": "false",
+                "method": "text",
+                "value": "You may not use an affiliate link."
+              },
+              {
+                "element": "input_Technical_Details",
+                "method": "action_chain",
+                "present": "false",
+                "sleep": "3",
+                "chain": [
+                  {
+                    "method": "move_to_element",
+                    "param": {
+                      "element": "input_Technical_Details"
+                    }
+                  },
+                  {
+                    "method": "send_keys_to_element",
+                    "param": {
+                      "element": "input_Technical_Details",
+                      "value": "hhttps://esotericsoftware.com/files/runtimes/unity/spine-unity-3.8-2019-09-05.unitypackage"
+                    }
+                  }
+                ]
+              },
+              {
+                "element": "label_error_Technical_Details",
+                "present": "false",
+                "method": "text",
+                "value": "Please host your downloadable content on Google Drive or Dropbox."
+              }
+            ]
+          },
+          {
+            "description": " edit Localization page",
+            "index": "7",
+            "page": "publisherPortalV2.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_Localization",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "icon_add_chinese",
+                "present": "false",
+                "method": "click",
+                "sleep":"3"
+              },
+              {
+                "element": "btn_edit_translation",
+                "present": "false",
+                "method": "click",
+                "sleep":"6"
+              },
+              {
+                "element": "input_chinese_Changelog",
+                "method": "action_chain",
+                "present": "false",
+                "sleep": "3",
+                "chain": [
+                  {
+                    "method": "move_to_element",
+                    "param": {
+                      "element": "input_chinese_Changelog"
+                    }
+                  },
+                  {
+                    "method": "send_keys_to_element",
+                    "param": {
+                      "element": "input_chinese_Changelog",
+                      "value": "https://www.patreon.com/"
+                    }
+                  }
+                ]
+              },
+              {
+                "element": "label_error_chinese_Changelog",
+                "present": "false",
+                "method": "text",
+                "value": "This link is not allowed."
+              },
+              {
+                "element": "input_chinese_Description",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView()"
+              },
+              {
+                "element": "input_chinese_Technical_Details",
+                "method": "action_chain",
+                "present": "false",
+                "sleep": "3",
+                "chain": [
+                  {
+                    "method": "move_to_element",
+                    "param": {
+                      "element": "input_chinese_Technical_Details"
+                    }
+                  },
+                  {
+                    "method": "send_keys_to_element",
+                    "param": {
+                      "element": "input_chinese_Technical_Details",
+                      "value": "https://www.epicgames.com/store/"
+                    }
+                  }
+                ]
+              },
+              {
+                "element": "label_error_chinese_Technical_Details",
+                "present": "false",
+                "method": "text",
+                "value": "This link is not allowed."
+              },
+              {
+                "element": "input_chinese_Description",
+                "method": "action_chain",
+                "present": "false",
+                "sleep": "3",
+                "chain": [
+                  {
+                    "method": "move_to_element",
+                    "param": {
+                      "element": "input_chinese_Description"
+                    }
+                  },
+                  {
+                    "method": "send_keys_to_element",
+                    "param": {
+                      "element": "input_chinese_Description",
+                      "value": "https://www.cgtrader.com/"
+                    }
+                  }
+                ]
+              },
+              {
+                "element": "label_error_chinese_Description",
+                "present": "false",
+                "method": "text",
+                "value": "This link is not allowed."
+              }
+            ]
+          },
+          {
+            "description": "delete draft",
+            "index": "7",
+            "page": "publisherPortalV2.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+                {
+                "element": "delete_draft",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView(false)"
+              },
+              {
+                "element": "delete_draft",
+                "present": "false",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "delete_draft_ok_btn",
+                "method": "click",
+                "present": "false",
+                "sleep": "4"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

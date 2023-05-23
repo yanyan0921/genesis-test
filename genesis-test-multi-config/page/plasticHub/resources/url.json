@@ -1,0 +1,272 @@
+{
+  "ph_home_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub-int.unity.cn/",
+        "staging": "https://plastichub-int.unity.cn/",
+        "prod": "https://plastichub.unity.cn/"
+      }
+    }
+  ],
+  "ph_id_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub-int.unity.cn/",
+        "staging": "https://plastichub-int.unity.cn/",
+        "prod": "https://plastichub.unity.cn/"
+      }
+    }
+  ],
+  "ph_user_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub-int.unity.cn/",
+        "staging": "https://plastichub-int.unity.cn/",
+        "prod": "https://plastichub.unity.cn/"
+      }
+    }
+  ],
+  "occupation_info_page": [
+    {
+      "base_url": {
+        "int": "https://id-int.unity.cn",
+        "staging": "https://id-int.unity.cn",
+        "prod": "https://id.unity.cn"
+      }
+    }
+  ],
+  "ph_repo_create_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub-int.unity.cn/repo/create",
+        "staging": "https://plastichub-int.unity.cn/repo/create",
+        "prod": "https://plastichub.unity.cn/repo/create"
+      }
+    }
+  ],
+  "ph_repo_code_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub-int.unity.cn/org_pp/int-py-used",
+        "staging": "https://plastichub-int.unity.cn/org_pp/int-py-used",
+        "prod": "https://plastichub.unity.cn/org_pp/int-py-used"
+      }
+    }
+  ],
+  "ph_settings_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub-int.unity.cn/xxyy_2/plastic_test_temp01/settings",
+        "staging": "https://plastichub-int.unity.cn/xxyy_2/plastic_test_temp01/settings",
+        "prod": "https://plastichub.unity.cn/xxyy_2/plastic_test_temp01/settings"
+      }
+    }
+  ],
+  "ph_explore_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub-int.unity.cn/explore/repos",
+        "staging": "https://plastichub-int.unity.cn/explore/repos",
+        "prod": "https://plastichub.unity.cn/explore/repos"
+      }
+    }
+  ],
+  "ph_repo_branch_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub-int.unity.cn/xxyy_2/int-py-used/commits/branch/main",
+        "staging": "https://plastichub-int.unity.cn/xxyy_2/int-py-used/commits/branch/main",
+        "prod": "https://plastichub.unity.cn/xxyy_2/int-py-used/commits/branch/main"
+      }
+    }
+  ],
+  "ph_repo_file_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub-int.unity.cn/xxyy_2/int-py-used/src/commit/",
+        "staging": "https://plastichub-int.unity.cn/xxyy_2/int-py-used/src/commit/",
+        "prod": "https://plastichub.unity.cn/xxyy_2/int-py-used/src/commit/"
+      }
+    }
+  ],
+    "ph_org_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub-int.unity.cn/#org_name#",
+        "staging": "https://plastichub-int.unity.cn/#org_name#",
+        "prod": "https://plastichub.unity.cn/#org_name#"
+      }
+    }
+  ],
+    "ph_org_create_team_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub-int.unity.cn/#org_name#/teams/new",
+        "staging": "https://plastichub-int.unity.cn/#org_name#/teams/new",
+        "prod": "https://plastichub.unity.cn/#org_name#/teams/new"
+      }
+    }
+  ],
+    "ph_org_team_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub-int.unity.cn/#org_name#/teams/#team_name#",
+        "staging": "https://plastichub-int.unity.cn/#org_name#/teams/#team_name#",
+        "prod": "https://plastichub.unity.cn/#org_name#/teams/#team_name#"
+      }
+    }
+  ],
+    "ph_org_team_edit_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub-int.unity.cn/org/annane/teams/#team_name#/edit",
+        "staging": "https://plastichub-int.unity.cn/org/annane/teams/#team_name#/edit",
+        "prod": "https://plastichub.unity.cn/org/annane/teams/#team_name#/edit"
+      }
+    }
+  ],
+    "ph_fork_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub-int.unity.cn/org_pp/int-py-used/issues",
+        "staging": "https://plastichub-int.unity.cn/org_pp/int-py-used/issues",
+        "prod": "https://plastichub.unity.cn/org_pp/int-py-used/issues"
+      }
+    }
+  ],
+    "ph_repo_labels_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub-int.unity.cn/#org_name#/#repo_name#/milestones",
+        "staging": "https://plastichub-int.unity.cn/#org_name#/#repo_name#/milestones",
+        "prod": "https://plastichub.unity.cn/#org_name#/#repo_name#/milestones"
+      }
+    }
+  ],
+    "ph_repo_issue_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub-int.unity.cn/#org_name#/#repo_name#/issues",
+        "staging": "https://plastichub-int.unity.cn/#org_name#/#repo_name#/issues",
+        "prod": "https://plastichub.unity.cn/#org_name#/#repo_name#/issues"
+      }
+    }
+  ],
+    "ph_repo_milestones_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub-int.unity.cn/#org_name#/#repo_name#/milestones",
+        "staging": "https://plastichub-int.unity.cn/#org_name#/#repo_name#/milestones",
+        "prod": "https://plastichub.unity.cn/#org_name#/#repo_name#/milestones"
+      }
+    }
+  ],
+    "ph_repo_milestones_create_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub-int.unity.cn/#org_name#/#repo_name#/milestones",
+        "staging": "https://plastichub-int.unity.cn/#org_name#/#repo_name#/milestones",
+        "prod": "https://plastichub.unity.cn/#org_name#/#repo_name#/milestones"
+      }
+    }
+  ],
+    "ph_issue_create_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub-int.unity.cn/org_pp/int-py-used/issues/new",
+        "staging": "https://plastichub-int.unity.cn/org_pp/int-py-used/issues/new",
+        "prod": "https://plastichub.unity.cn/org_pp/int-py-used/issues/new"
+      }
+    }
+  ],
+  "ph_repo_milestones_spec_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub-int.unity.cn/#org_name#/#repo_name#/milestones/#",
+        "staging": "https://plastichub-int.unity.cn/#org_name#/#repo_name#/milestones/#",
+        "prod": "https://plastichub.unity.cn/#org_name#/#repo_name#/milestones/#"
+      }
+    }
+  ],
+  "ph_repo_pull_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub-int.unity.cn/#org_name#/#repo_name#/pulls",
+        "staging": "https://plastichub-int.unity.cn/#org_name#/#repo_name#/pulls",
+        "prod": "https://plastichub.unity.cn/#org_name#/#repo_name#/pulls"
+      }
+    }
+  ],
+  "ph_repo_releases_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub-int.unity.cn/#org_name#/#repo_name#/releases",
+        "staging": "https://plastichub-int.unity.cn/#org_name#/#repo_name#/releases",
+        "prod": "https://plastichub.unity.cn/#org_name#/#repo_name#/releases"
+      }
+    }
+  ],
+  "ph_pull_create_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub-int.unity.cn/#org_name#/#repo_name#/compare/main...main",
+        "staging": "https://plastichub-int.unity.cn/#org_name#/#repo_name#/compare/main...main",
+        "prod": "https://plastichub.unity.cn/#org_name#/#repo_name#/compare/main...main"
+      }
+    }
+  ],
+  "ph_user_starred_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub-int.unity.cn/u/XXYY?tab=stars",
+        "staging": "https://plastichub-int.unity.cn/u/XXYY?tab=stars",
+        "prod": "https://plastichub.unity.cn/u/XXYY?tab=stars"
+      }
+    }
+  ],
+  "ph_repo_code_code_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub-int.unity.cn/org_pp/int-py-used",
+        "staging" : "https://plastichub-int.unity.cn/org_pp/int-py-used",
+        "prod": "https://plastichub.unity.cn/org_pp/int-py-used"
+      }
+    }
+  ],
+  "ph_notification_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub-int.unity.cn/notifications",
+        "staging" : "https://plastichub-int.unity.cn/notifications",
+        "prod": "https://plastichub.unity.cn/notifications"
+      }
+    }
+  ],
+  "ph_sh01_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub.unity.cn/plastic_test-02/2022-8-1-alksmd",
+        "staging" : "https://plastichub.unity.cn/plastic_test-02/2022-8-1-alksmd",
+        "prod": "https://plastichub.unity.cn/plastic_test-02/2022-8-1-alksmd"
+      }
+    }
+  ],
+  "ph_sh02_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub.unity.cn/plastic_test-03/20221103-01",
+        "staging" : "https://plastichub.unity.cn/plastic_test-03/20221103-01",
+        "prod": "https://plastichub.unity.cn/plastic_test-03/20221103-01"
+      }
+    }
+  ],
+  "ph_sh03_page": [
+    {
+      "base_url": {
+        "int": "https://plastichub.unity.cn/neworg-1118/20220823_12",
+        "staging" : "https://plastichub.unity.cn/neworg-1118/20220823_12",
+        "prod": "https://plastichub.unity.cn/neworg-1118/20220823_12"
+      }
+    }
+  ]
+}

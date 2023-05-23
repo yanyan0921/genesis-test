@@ -1,0 +1,194 @@
+{
+  "testcase": {
+    "name": "post_article_error",
+    "owner": "guohua",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to login connect home page",
+      "steps": {
+        "step": [
+                 {
+            "description": "fill out the login form",
+            "index": "1",
+            "page": "connect.connect_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "btn_avatar",
+                "method": "script",
+                "value": "document.querySelector(\"#pageContent > div:nth-child(1) > div.header-wrap_GEr2c682 > div > div.user-actions_2nPAaNhU > div > div.right_ZNamn0lh > div.account-switcher_eSCn1fWL > unity-account-switcher\").shadowRoot.querySelector(\"div > a > user-avatar\").click()",
+                "sleep": "2"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "script",
+                "value": "document.querySelector(\"#pageContent > div:nth-child(1) > div.header-wrap_GEr2c682 > div > div.user-actions_2nPAaNhU > div > div.right_ZNamn0lh > div.account-switcher_eSCn1fWL > unity-account-switcher\").shadowRoot.querySelector(\"div > div > drop-down\").shadowRoot.querySelector(\"div > div:nth-child(2)\").click()",
+                "present": "false",
+                "sleep": "13"
+              }
+            ]
+          },
+          {
+            "description": "fill out the login form",
+            "index": "2",
+            "page": "connect.connect_login_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "hua.guo+11@unity3d.com",
+                "present": "false"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_login",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "post a project",
+            "index": "3",
+            "page": "connect.connect_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_post_project",
+                "method": "click",
+                 "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "factor authentication",
+            "index": "4",
+            "page": "connect.post_article_factor_authentication",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_skip",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              }
+            ]
+          },
+           {
+            "description": "post a article",
+            "index": "5",
+            "page": "connect.post_project_alert_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_article",
+                "method": "click",
+                "present": "false",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "post a particle details",
+            "index": "6",
+            "page": "connect.post_article_page",
+            "need_redirect": "false",
+            "switch_tab": "1",
+            "action": [
+              {
+                "element": "btn_bgground",
+                "method": "click"
+              },
+              {
+                "element": "input_bgground",
+                "method": "send_keys",
+                "value": "./testcase/test_photo/c.jpg",
+                "sleep": "5"
+              },
+               {
+                "element": "div_article_title",
+                "method": "click"
+              },
+              {
+                "element": "input_article_title",
+                "method": "send_keys",
+                "value": ""
+              },
+              {
+                "element": "div_article_header",
+                "method": "click"
+              },
+              {
+                "element": "input_article_header",
+                "method": "send_keys",
+                "value": "ceshiyixiaranqqqaq12345678"
+              },
+              {
+                "element": "div_article_content",
+                "method": "click"
+              },
+              {
+                "element": "input_article_content",
+                "method": "send_keys",
+                "value": "21345gt6h7uj8ik9"
+              },
+              {
+                 "element": "btn_post",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+           {
+            "description": "factor authentication",
+            "index": "7",
+            "page": "connect.post_article_factor_authentication",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_skip",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              }
+            ]
+          },
+           {
+            "description": "post a article now",
+            "index": "8",
+            "page": "connect.article_now_post",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_post_succeed",
+                "method": "click",
+                "sleep": "1"
+              }
+            ]
+          },
+          {
+            "description": "no title",
+            "index": "9",
+            "page": "connect.post_article_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "label_error_msg",
+                "method": "text",
+                "value": "必填标题才可继续",
+                "present": "false"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

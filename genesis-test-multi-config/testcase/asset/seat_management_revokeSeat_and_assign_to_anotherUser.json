@@ -1,0 +1,191 @@
+{
+  "testcase": {
+    "name": "seat_management_revokeSeat_and_assign_to_anotherUser",
+    "owner": "taoxiaoqing",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to test seat management and assign seat",
+      "steps": {
+        "step": [
+          {
+            "description": "go to id page and log in",
+            "index": "1",
+            "page": "idPortal.id_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "silkcloudtest+bs2oiwiq356@gmail.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+           {
+            "description": "go to id page and log in",
+            "index": "2",
+            "page": "idPortal.account_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "organizations",
+                "method": "click"
+              }
+            ]
+          },
+           {
+            "description": "go to org details",
+            "index": "3",
+            "page": "idPortal.organizations_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "the_first_org",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "click assgin button",
+            "index": "4",
+            "page": "idPortal.org_details_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "assetManagement",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "manage seat",
+            "index": "6",
+            "page": "idPortal.asset_seatManagement_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "GameGlow_name",
+                "method": "text",
+                "value": "GameFlow",
+                "sleep": "4"
+              },
+              {
+                "element": "manage_seat",
+                "method": "script",
+                "value":"document.getElementsByClassName(\"action-ico ico-add-user tooltip open-alert\")[0].style.visibility=\"visible\"",
+                "sleep": "4"
+              },
+              {
+                "element": "manage_seat",
+                "method": "click",
+                "present": "false",
+                "sleep": "4"
+              }
+            ]
+          },
+          {
+            "description": "select email and revoke",
+            "index": "7",
+            "page": "idPortal.asset_assign_revoke_page",
+            "need_redirect": "false",
+            "action": [
+               {
+                "element": "selectAll_checkbox",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "Revoke_Seat_button",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "close_window_button",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "manage seat",
+            "index": "8",
+            "page": "idPortal.asset_seatManagement_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "manage_seat",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "select email and assign",
+            "index": "9",
+            "page": "idPortal.asset_assign_revoke_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "the_second_user",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "close_window_button",
+                "method": "click",
+                "sleep": "6"
+              }
+            ]
+          },
+          {
+            "description": "manage seat",
+            "index": "10",
+            "page": "idPortal.asset_seatManagement_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "manage_seat",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "select email and assign",
+            "index": "11",
+            "page": "idPortal.asset_assign_revoke_page",
+            "need_redirect": "false",
+            "action": [
+               {
+                "element": "selectAll_checkbox",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "Revoke_Seat_button",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "close_window_button",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

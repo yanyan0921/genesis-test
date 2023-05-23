@@ -1,0 +1,137 @@
+{
+  "page": {
+    "elements": {
+      "element": [
+        {
+          "name": "div_artitle_title",
+          "locator": {
+            "by": "XPATH",
+            "value": "//div[@id=\"Project/CreateV2Controller\"]/div/div[2]/div/div/div/div/div/div[2]/div/div/div[2]/div/div/div[2]/div/div/div/div"
+          },
+          "methods": {
+            "method": [
+              "click"
+            ]
+          }
+        },
+        {
+          "name": "input_artitle_title",
+          "locator": {
+            "by": "CSS_SELECTOR",
+            "value": ".title-wrap_2oXf8ZMG .public-DraftEditor-content"
+          },
+          "methods": {
+            "method": [
+             "send_keys"
+            ]
+          }
+        },
+         {
+          "name": "div_artitle_header",
+          "locator": {
+            "by": "XPATH",
+            "value": "//div[@id=\"Project/CreateV2Controller\"]/div/div[2]/div/div/div/div/div/div[2]/div/div[2]/div/div/div[2]/div/div/div/div"
+          },
+          "methods": {
+            "method": [
+             "click"
+            ]
+          }
+        },
+        {
+          "name": "input_artitle_header",
+          "locator": {
+            "by": "CSS_SELECTOR",
+            "value": ".subTitle-wrap_1vjY-uGP .public-DraftEditor-content"
+          },
+          "methods": {
+            "method": [
+             "send_keys"
+            ]
+          }
+        },
+{
+          "name": "div_artitle_content",
+          "locator": {
+            "by": "XPATH",
+            "value": "//div[@id='Project/CreateV2Controller']/div/div[2]/div/div/div/div/div/div[2]/div/div[3]/div/div/div/div/div/div/div/div[3]/div"
+          },
+          "methods": {
+            "method": [
+             "click"
+            ]
+          }
+        },
+ {
+          "name": "input_artitle_content",
+          "locator": {
+            "by": "CSS_SELECTOR",
+            "value": ".notranslate"
+          },
+          "methods": {
+            "method": [
+             "send_keys"
+            ]
+          }
+        },
+        {
+          "name": "btn_bgground",
+          "locator": {
+            "by": "CSS_SELECTOR",
+            "value": ".raised-btn-transparent_2agQEVMe"
+          },
+          "methods": {
+            "method": [
+             "click"
+            ]
+          }
+        },
+        {
+          "name": "input_bgground",
+          "locator": {
+            "by": "CSS_SELECTOR",
+            "value": ".subTitle-wrap_1vjY-uGP .public-DraftEditor-content"
+          },
+          "methods": {
+            "method": [
+             "send_keys"
+            ]
+          }
+        },
+        {
+          "name": "btn_post",
+          "locator": {
+            "by": "XPATH",
+            "value": "//div[@id='project-post']/button"
+          },
+          "methods": {
+            "method": [
+             "click"
+            ]
+          }
+        },
+        {
+          "name": "btn_post_succeed",
+          "locator": {
+            "by": "XPATH",
+            "value": "//div[@id='project-post']/div/div/div/div/div/div[4]/button"
+          },
+          "methods": {
+            "method": [
+              "send_keys",
+              "get_text"
+            ]
+          }
+        }
+      ]
+    },
+    "related": {
+      "pages": [
+        "id_page",
+        "post_article_page"
+      ]
+    },
+    "url": "https://connect-internal.unity.com/",
+    "path": "connect.post_article_page"
+  }
+}

@@ -1,0 +1,372 @@
+{
+  "testcase": {
+    "name": "test submit package",
+    "owner": "taoxiaoqing",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to test submit package",
+      "steps": {
+        "step": [
+          {
+            "description": "prepare sign in on home page",
+            "index": "1",
+            "page": "publisherPortal.publisher_login_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "taoxiaoqing+02@unity3d.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "7"
+              }
+            ]
+          },
+           {
+            "description": "click create new btn",
+            "index": "2",
+            "page": "publisherPortal.publisher_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "publisher_title",
+                "method": "text",
+                "value": "Hutong Games LLC"
+              },
+              {
+                "element": "package_tab",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "create_new_package_btn",
+                "method": "click",
+                "present": "false",
+                "sleep": "6"
+              }
+            ]
+          },
+          {
+            "description": " edit draft page",
+            "index": "3",
+            "page": "publisherPortal.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "version_changes_input",
+                "method": "clear",
+                "sleep": "3"
+              },
+              {
+                "element": "version_changes_input",
+                "method": "send_keys",
+                "value": "test input version changes",
+                "sleep": "6"
+              },
+              {
+                "element": "category_select_box",
+                "method": "click",
+                "sleep": "4"
+              },
+              {
+                "element": "model3D_characters",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "save_btn",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "detail_edit_ok_btn",
+                "method": "click",
+                "present": "false",
+                "sleep": "5"
+              },
+              {
+                "element": "metadata_edit",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "create value",
+            "index": "4",
+            "resource": "asset.asset_service",
+            "action": [
+              {
+                "method": "create_value",
+                "param": {
+                  "Digits": "3"
+                },
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "edit meta",
+            "index": "5",
+            "page": "publisherPortal.publisher_meta_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_title",
+                "method": "clear"
+              },
+              {
+                "element": "input_title",
+                "method": "send_keys",
+                "value": "${value_step_4}"
+              },
+              {
+                "element": "save_btn",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "ok_btn",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "go_Back",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "get current url",
+            "index": "6",
+            "page": "publisherPortal.publisher_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "publisher_title",
+                "method": "get_current_url",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "prepare access token ",
+            "index": "7",
+            "resource": "asset.asset_service",
+            "action": [
+              {
+                "method": "upload_pacman",
+                "param": {
+                  "email": "taoxiaoqing+02@unity3d.com"
+                },
+                "sleep": "30"
+              }
+            ]
+          },
+          {
+            "description": " edit draft page",
+            "index": "8",
+            "page": "publisherPortal.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "metadata_edit",
+                "method": "script",
+                "value": "location.reload()",
+                "sleep": "20"
+              },
+              {
+                "element": "pacman_package_remove",
+                "method": "text",
+                "value": "Remove",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "pacman_package_srp_edit",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": " edit pacman package srp parameter",
+            "index": "9",
+            "page": "publisherPortal.publisher_pacman_edit_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "save_btn",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "click image edit btn",
+            "index": "10",
+            "page": "publisherPortal.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "keyImages_edit",
+                "method": "click",
+                "sleep": "8"
+              }
+            ]
+          },
+          {
+            "description": "upload images",
+            "index": "11",
+            "page": "publisherPortal.publisher_imgageUpload_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "upload_icon",
+                "method": "send_keys",
+                "value": "./testcase/vettingTestImage/icon.jpg",
+                "sleep": "8"
+              },
+              {
+                "element": "upload_card",
+                "method": "send_keys",
+                "value": "./testcase/vettingTestImage/card.jpg",
+                "sleep": "8"
+              },
+              {
+                "element": "upload_cover",
+                "method": "send_keys",
+                "value": "./testcase/vettingTestImage/cover.jpg",
+                "sleep": "8"
+              },
+              {
+                "element": "go_Back",
+                "method": "click",
+                "sleep": "4"
+              }
+            ]
+          },
+          {
+            "description": " submit package",
+            "index": "12",
+            "page": "publisherPortal.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "protocol_checkbox",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "submit_btn",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "submit_ok_btn",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "prepare sign in on home page",
+            "index": "13",
+            "page": "publisherPortal.publisher_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "logout_tab",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "accept package",
+            "index": "14",
+            "page": "publisherPortal.publisher_dharma_login_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "clear"
+              },
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "taoxiaoqing@unity3d.com"
+              },
+              {
+                "element": "input_password",
+                "method": "clear"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test0000"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "40"
+              }
+            ]
+          },
+          {
+            "description": "accept package",
+            "index": "15",
+            "page": "publisherPortal.publisher_dharma_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_packageName",
+                "method": "send_keys",
+                "value": "${value_step_4}"
+              },
+              {
+                "element": "input_packageName",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                "sleep": "6"
+              },
+              {
+                "element": "package_menu",
+                "method": "click",
+                "present": "false"
+              },
+              {
+                "element": "decline_package",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "accept_decline_btn",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"button default\")[0].click()"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

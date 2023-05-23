@@ -1,0 +1,276 @@
+{
+  "testcase": {
+    "name": "asset_modify_in_minicart",
+    "owner": "tanlinhui",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to modify asset in mini-cart",
+      "steps": {
+        "step": [
+          {
+            "description": "accept the cookies",
+            "index": "1",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "icon_sign_in",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "prepare sign in on home page",
+            "index": "2",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click"
+              },
+              {
+                "element": "href_sign_in",
+                "method": "click",
+                "present": "false"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "3",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "silkcloudtest+pnznzlcua3n@gmail.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "search asset item",
+            "index": "4",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "gameflow",
+                "sleep": "3"
+              },
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "click item name",
+            "index": "5",
+            "page": "assetStore.asset_search_result_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "item_name",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_1-e15 _25P-Q\")[0].click()",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "add item to cart",
+            "index": "6",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "add_to_cart_main",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_3UE3J MtRkn auto _1EJPn _2xeq5\")[0].click()",
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "search second asset item",
+            "index": "7",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "Dynamic Bone",
+                "sleep": "3"
+              },
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "click item name",
+            "index": "8",
+            "page": "assetStore.asset_search_result_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "item_name",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_1-e15 _25P-Q\")[0].click()",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "add item to cart",
+            "index": "9",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "add_to_cart_main",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_3UE3J MtRkn auto _1EJPn _2xeq5\")[0].click()",
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "modify item in minicart",
+            "index": "10",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "Qty_box",
+                "method": "click",
+                "present": "false"
+              },
+              {
+                "element": "Qty_1",
+                "method": "click",
+                "present": "false",
+                "sleep": "5"
+              },
+              {
+                "element": "label_price_minicart",
+                "method": "text",
+                "value": "$30",
+                "sleep": "5"
+              },
+              {
+                "element": "Qty_box",
+                "method": "click",
+                "present": "false"
+              },
+              {
+                "element": "Qty_10",
+                "method": "click",
+                "present": "false",
+                "sleep": "5"
+              },
+              {
+                "element": "Qty_input_box",
+                "method": "click",
+                "present": "false"
+              },
+              {
+                "element": "Qty_input_box",
+                "method": "clear",
+                "present": "false"
+              },
+              {
+                "element": "Qty_input_box",
+                "method": "action_chain",
+                "present": "false",
+                "sleep": "5",
+                "chain": [
+                  {
+                    "method": "send_keys_to_element",
+                    "param": {
+                      "element": "Qty_input_box",
+                      "value": "100"
+                    }
+                  },
+                  {
+                    "method": "send_keys",
+                    "param": {
+                      "value": "Keys.ENTER"
+                    }
+                  }
+                ]
+              },
+              {
+                "element": "label_price_minicart",
+                "method": "text",
+                "value": "$2,010",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "move item to list",
+            "index": "11",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "icon_save_for_later",
+                "present": "false",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "remove item in mini-cart",
+            "index": "12",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "icon_remove",
+                "method": "click",
+                "present": "false",
+                "sleep": "5"
+              },
+              {
+                "element": "tips_empty",
+                "present": "false",
+                "method": "text",
+                "value": "Your shopping cart is empty"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

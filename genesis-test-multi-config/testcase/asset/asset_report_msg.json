@@ -1,0 +1,154 @@
+{
+  "testcase": {
+    "name": "asset_report_msg ",
+    "owner": "taoxiaoqing",
+    "priority": "Daily",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to report this asset",
+      "steps": {
+        "step": [
+          {
+            "description": "accept the cookies",
+            "index": "1",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "icon_sign_in",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "prepare sign in on home page",
+            "index": "2",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click"
+              },
+              {
+                "element": "href_sign_in",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "3",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "silkcloudtest+eekrpkivvh@gmail.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "12345678Test"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "search asset item",
+            "index": "4",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "GameFlow"
+              },
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "choose search result",
+            "index": "5",
+            "page": "assetStore.asset_search_result_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "item_name",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_1-e15 _25P-Q\")[0].click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "click report button",
+            "index": "6",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_report",
+                "method": "click",
+                "sleep": "10"
+              },
+              {
+                "element": "Input_box",
+                "method": "action_chain",
+                "present": "false",
+                "sleep": "5",
+                "chain": [
+                  {
+                    "method": "move_to_element",
+                    "param": {
+                      "element": "Input_box"
+                    }
+                  },
+                  {
+                    "method": "send_keys_to_element",
+                    "param": {
+                      "element": "Input_box",
+                      "value": "test"
+                    }
+                  }
+                ]
+              },
+              {
+                "element": "Submit_btn",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_3UE3J _3zD70 auto _3er3j\")[0].click()",
+                "sleep": "5"
+              },
+              {
+                "element": "lable_fedback",
+                "present": "false",
+                "method": "text",
+                "value": "Thanks for your feedback!"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

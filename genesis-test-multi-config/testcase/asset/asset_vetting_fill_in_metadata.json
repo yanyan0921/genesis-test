@@ -1,0 +1,139 @@
+{
+  "testcase": {
+    "name": "test fill in metadata",
+    "owner": "taoxiaoqing",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to  test publisher portal ",
+      "steps": {
+        "step": [
+          {
+            "description": "prepare sign in on home page",
+            "index": "1",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click"
+              },
+              {
+                "element": "href_sign_in",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "2",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "silkcloudtest+eekrpkivvh@gmail.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "12345678Test"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "search asset item",
+            "index": "3",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "GameGlow",
+                "present": "false"
+              },
+              {
+                "element": "btn_search",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "choose search result",
+            "index": "4",
+            "page": "assetStore.asset_search_result_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "item_name",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "click \"add tag \" button",
+            "index": "5",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "add_tag_btn",
+                "method": "click",
+                "sleep": "8"
+              }
+            ]
+          },
+          {
+            "description": "edit tag",
+            "index": "6",
+            "page": "assetStore.edit_tag_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "tag_input",
+                "method": "send_keys",
+                "value": "test",
+                "sleep":"2"
+              },
+              {
+                "element": "btn_add",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "remove_tag",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"ifont ifont-close _m4dg\")[0].click()",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "close tag dialog",
+            "index": "7",
+            "page": "assetStore.edit_tag_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "close_btn",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"ifont ifont-close _3GSE9\")[0].click()",
+                "sleep": "3"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

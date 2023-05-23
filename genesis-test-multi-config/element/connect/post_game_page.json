@@ -1,0 +1,197 @@
+{
+  "page": {
+    "elements": {
+      "element": [
+         {
+          "name": "btn_bgground",
+          "locator": {
+            "by": "CSS_SELECTOR",
+            "value": ".raised-btn-transparent_2agQEVMe"
+          },
+          "methods": {
+            "method": [
+              "click"
+            ]
+          }
+        },
+        {
+          "name": "input_bgground",
+          "locator": {
+            "by": "XPATH",
+            "value": "//input[@type='file']"
+          },
+          "methods": {
+            "method": [
+             "send_keys"
+            ]
+          }
+        },
+        {
+          "name": "div_game_title",
+          "locator": {
+            "by": "XPATH",
+            "value": "//div[@id='Project/CreateV2Controller']/div/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div/div/div/div"
+          },
+          "methods": {
+            "method": [
+              "click"
+            ]
+          }
+        },
+        {
+          "name": "input_game_title",
+          "locator": {
+            "by": "CSS_SELECTOR",
+            "value": ".title-wrap_-ekColTs .public-DraftEditor-content"
+          },
+          "methods": {
+            "method": [
+             "send_keys"
+            ]
+          }
+        },
+         {
+          "name": "div_game_desc",
+          "locator": {
+            "by": "XPATH",
+            "value": "//div[@id='Project/CreateV2Controller']/div/div[2]/div/div/div/div/div/div[2]/div[2]/div[2]/div/div/div[2]/div/div/div/div"
+          },
+          "methods": {
+            "method": [
+             "click"
+            ]
+          }
+        },
+        {
+          "name": "input_game_desc",
+          "locator": {
+            "by": "CSS_SELECTOR",
+            "value": ".desc-wrap_PnjADqsM .public-DraftEditor-content"
+          },
+          "methods": {
+            "method": [
+             "send_keys"
+            ]
+          }
+        },
+         {
+          "name": "btn_picture",
+          "locator": {
+            "by": "CSS_SELECTOR",
+            "value": ".button_dbLZhdMD > .raised-btn-blue_37QDrHj0"
+          },
+          "methods": {
+            "method": [
+              "click"
+            ]
+          }
+        },
+        {
+          "name": "input_picture",
+          "locator": {
+            "by": "CSS_SELECTOR",
+            "value": ".hide_3lAUgXb9"
+          },
+          "methods": {
+            "method": [
+             "send_keys"
+            ]
+          }
+        },
+        {
+          "name": "div_game_content",
+          "locator": {
+            "by": "CSS_SELECTOR",
+            "value": "div:nth-child(6) > .public-DraftStyleDefault-block"
+          },
+          "methods": {
+            "method": [
+             "click"
+            ]
+          }
+        },
+        {
+          "name": "input_game_content",
+          "locator": {
+            "by": "XPATH",
+            "value": "//div[@id='Project/CreateV2Controller']/div/div[2]/div/div/div/div/div/div[2]/div[2]/div[3]/div/div/div/div/div"
+          },
+          "methods": {
+            "method": [
+             "send_keys"
+            ]
+          }
+        },
+        {
+          "name": "btn_post",
+          "locator": {
+            "by": "XPATH",
+            "value": "//div[@id='project-post']/button"
+          },
+          "methods": {
+            "method": [
+             "click"
+            ]
+          }
+        },
+        {
+          "name": "icon_status",
+          "locator": {
+            "by": "CSS_SELECTOR",
+            "value": ".triangle_20fmw_FF"
+          },
+          "methods": {
+            "method": [
+             "click"
+            ]
+          }
+        },
+        {
+          "name": "select_status",
+          "locator": {
+            "by": "XPATH",
+            "value": "//div[@value='in_dev']"
+          },
+          "methods": {
+            "method": [
+             "click"
+            ]
+          }
+        },
+        {
+          "name": "select_genre",
+          "locator": {
+            "by": "XPATH",
+            "value": ".item_294YfbGH:nth-child(4) .inner_3Aw7Vcap"
+          },
+          "methods": {
+            "method": [
+               "click"
+            ]
+          }
+        },
+         {
+          "name": "btn_post_now",
+          "locator": {
+            "by": "XPATH",
+            "value": "//div[@id='project-post']/div/div/div/div/div/div[6]/button"
+          },
+          "methods": {
+            "method": [
+               "click"
+            ]
+          }
+        }
+      ]
+    },
+    "related": {
+      "pages": [
+        "connect_home_page",
+        "post_game_page",
+         "game_now_post"
+      ]
+    },
+    "url": "https://connect-internal.unity.com/",
+    "path": "connect.post_game_page"
+  }
+}

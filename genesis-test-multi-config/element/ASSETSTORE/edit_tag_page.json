@@ -1,0 +1,65 @@
+{
+  "page": {
+    "elements": {
+      "element": [
+        {
+          "name": "tag_input",
+          "locator": {
+            "by": "XPATH",
+            "value": "/html/body/div[2]/div/div[2]/div/div/div[1]/div/div/div[2]/div[1]/div[4]/div/input"
+          },
+          "methods": {
+            "method": [
+              "send_keys",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_add",
+          "locator": {
+            "by": "SELECTOR",
+            "value": "[class='_3UE3J pDJt- auto _15Ii0']"
+          },
+          "methods": {
+            "method": [
+             "click",
+             "get_text"
+            ]
+          }
+        },
+         {
+          "name": "remove_tag",
+          "locator": {
+            "by": "CLASS",
+            "value": "_1_tq3"
+          },
+          "methods": {
+            "method": [
+             "click"
+            ]
+          }
+        },
+        {
+          "name": "close_btn",
+          "locator": {
+            "by": "SELECTOR",
+            "value": "[class='ifont ifont-close _3GSE9']"
+          },
+          "methods": {
+            "method": [
+             "click"
+            ]
+          }
+        }
+      ]
+    },
+    "related": {
+      "pages": [
+        "asset_product_page"
+      ]
+    },
+    "url": "https://assetstore-staging.unity.com/",
+    "path": "assetStore.edit_tag_page"
+  }
+}

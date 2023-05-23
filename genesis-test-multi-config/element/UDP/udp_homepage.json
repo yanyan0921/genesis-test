@@ -1,0 +1,96 @@
+{
+  "page": {
+    "elements": {
+      "element": [
+        {
+          "name": "icon_console",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[1]/div/div/div[1]/div/a[1]/div/div/span"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "icon_about",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[1]/div/div/div[1]/div/a[2]/div/div/span"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        ,
+        {
+          "name": "icon_getstart",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[1]/div/div/div[1]/div/a[3]/div/div/span"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_Login",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[2]/div[3]/button"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "icon_login",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[1]/div/div/div[2]/div[2]/div/div/div/div/div"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "icon_language_dropdown",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[3]/div/button/div/div[2]"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        }
+      ]
+    },
+    "related": {
+      "pages": [
+        "udp_gameinfo_page",
+        "udp_page",
+        "udp_login_page"
+      ]
+    },
+    "url": "https://distribute-staging.dashboard.unity.com/",
+    "path": "udp.udp_homepage"
+  }
+}

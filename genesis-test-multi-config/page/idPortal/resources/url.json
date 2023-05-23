@@ -1,0 +1,147 @@
+{
+  "id_page": [
+    {
+      "base_url": {
+        "int": "https://id-int.unity.com",
+        "staging": "https://id-staging.unity.com",
+        "prod": "https://id.unity.com"
+      }
+    }
+  ],
+  "account_page": [
+    {
+      "base_url": {
+        "int": "https://id-int.unity.com/en/account",
+        "staging": "https://id-staging.unity.com/en/account",
+        "prod": "https://id-prod.unity.com/en/account"
+      }
+    }
+  ],
+  "asset_assign_revoke_page": [
+    {
+      "base_url": {
+        "int": "https://id-int.unity.com",
+        "staging": "https://id-staging.unity.com",
+        "prod": "https://id.unity.com"
+      }
+    }
+  ],
+  "asset_edit_label_page": [
+    {
+      "base_url": {
+        "int": "https://id-int.unity.com",
+        "staging": "https://id-staging.unity.com",
+        "prod": "https://id.unity.com"
+      }
+    }
+  ],
+  "asset_seatManagement_page": [
+    {
+      "base_url": {
+        "int": "https://id-int.unity.com",
+        "staging": "https://id-staging.unity.com",
+        "prod": "https://id.unity.com"
+      }
+    }
+  ],
+  "changeUser_page": [
+    {
+      "base_url": {
+        "int": "https://id-int.unity.com",
+        "staging": "https://id-staging.unity.com",
+        "prod": "https://id.unity.com"
+      }
+    }
+  ],
+  "orderRequests_page": [
+    {
+      "base_url": {
+        "int": "https://id-int.unity.com/en/organizations/order-request/order_requests",
+        "staging": "https://id-staging.unity.com/en/organizations/order-request/order_requests",
+        "prod": "https://id.unity.com/en/organizations/order-request/order_requests"
+      }
+    }
+  ],
+  "org_details_page": [
+    {
+      "base_url": {
+        "int": "https://id-int.unity.com/en/organizations/order-request",
+        "staging": "https://id-staging.unity.com/en/organizations/order-request",
+        "prod": "https://id.unity.com/en/organizations/order-request"
+      }
+    }
+  ],
+  "org_page": [
+    {
+      "base_url": {
+        "int": "https://id-int.unity.com/en/organizations/subsuitest",
+        "staging": "https://id-staging.unity.com/en/organizations/subsuitest",
+        "prod": "https://id.unity.com/en/organizations/subsuitest"
+      }
+    }
+  ],
+  "organizations_page": [
+    {
+      "base_url": {
+        "int": "https://id-int.unity.com/en/organizations",
+        "staging": "https://id-staging.unity.com/en/organizations",
+        "prod": "https://id.unity.com/en/organizations"
+      }
+    }
+  ],
+  "pay_page": [
+    {
+      "base_url": {
+        "int": "https://store-int.unity.com/",
+        "staging": "https://store-staging.unity.com/",
+        "prod": "https://store.unity.com/"
+      }
+    }
+  ],
+  "subscription_page.py": [
+    {
+      "base_url": {
+        "int": "https://id-int.unity.com/en/subscriptions",
+        "staging": "https://id-staging.unity.com/en/subscriptions",
+        "prod": "https://id.unity.com/en/subscriptions"
+      }
+    }
+  ],
+  "unity_University_page.py": [
+    {
+      "base_url": {
+        "int": "https://id-int.unity.com/en/account",
+        "staging": "https://id-staging.unity.com/en/account",
+        "prod": "https://id.unity.com/en/account"
+      }
+    }
+  ],
+  "urdp_id_page": [
+    {
+      "base_url": {
+        "int": "https://id-int.unity.cn",
+        "staging": "https://id-int.unity.cn",
+        "prod": "https://id.unity.cn/zh/conversations/927a6b7e-814b-4fbd-9335-42f2ee99bdd301ef"
+      }
+    }
+  ],
+  "cloud_desktop_page": [
+    {
+      "base_url": {
+        "int": "https://urdp-int.unity.cn/cloud-desktop",
+        "staging": "https://urdp-stg.unity.cn/cloud-desktop",
+        "prod": "https://urdp.unity.cn/cloud-desktop"
+      }
+    }
+  ],
+  "urdp_balance_page": [
+    {
+      "base_url": {
+        "int": "https://urdp-int.unity.cn/balance",
+        "staging": "https://urdp-stg.unity.cn/cloud-desktop",
+        "prod": "https://urdp.unity.cn/cloud-desktop"
+      }
+    }
+  ]
+
+}

@@ -1,0 +1,142 @@
+{
+  "testcase": {
+    "name": "test_connect_login",
+    "owner": "guohua",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to create a school",
+      "steps": {
+        "step": [
+          {
+            "description": "fill out the login form",
+            "index": "1",
+            "page": "connect.connect_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "btn_avatar",
+                "method": "click"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "frame_login",
+                "method": "switch_frame",
+                "present": "false"
+              },
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "hua.guo+11@unity3d.com",
+                "present": "false"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_login",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "click drop and down",
+            "index": "2",
+            "page": "connect.home_nav_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "drop_down",
+                "method": "click"
+              },
+               {
+                "element": "create_school",
+                "method": "click"
+              }
+            ]
+          },
+           {
+            "description": "create a school",
+            "index": "3",
+            "page": "connect.create_school_ok",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_ok",
+                "method": "click"
+              }
+            ]
+          },
+           {
+            "description": "create a school",
+            "index": "4",
+            "page": "connect.create_school",
+            "need_redirect": "false",
+            "action": [
+               {
+                "element": "btn_create",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView(true)",
+                 "sleep": "3"
+              },
+              {
+                "element": "btn_create",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "error_bgground",
+                "method": "text",
+                "value": "Cover Image is required",
+                 "present": "false"
+              },
+              {
+                "element": "error_camera",
+                "method": "text",
+                "value": "School logo is required.",
+                 "present": "false"
+              },
+                {
+                "element": "error_name",
+                "method": "text",
+                "value": "Required",
+                   "present": "false"
+              },
+                {
+                "element": "error_thumbnail",
+                "method": "text",
+                "value": "Required",
+                   "present": "false"
+              },
+              {
+                "element": "error_description",
+                "method": "text",
+                "value": "Required",
+                 "present": "false"
+              },
+                {
+                "element": "error_website",
+                "method": "text",
+                "value": "Required",
+                   "present": "false"
+              },
+               {
+                "element": "error_location",
+                "method": "text",
+                "value": "Required",
+                  "present": "false"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

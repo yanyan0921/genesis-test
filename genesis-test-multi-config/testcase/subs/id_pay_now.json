@@ -1,0 +1,235 @@
+{
+  "testcase": {
+    "name": "id_pay_now",
+    "owner": "LingZhai",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to purchase subs",
+      "steps": {
+        "step": [
+          {
+            "description": "create user via api",
+            "index": "1",
+            "resource":"identity.user_service",
+            "action": [
+              {
+                "method": "create_login_user",
+                "param": {
+                  "country":"US"
+                },
+                "sleep": "25"
+              }
+            ]
+          },
+          {
+            "description": "accept the cookies and sign in on home page",
+            "index": "2",
+            "page": "subs.subs_store_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "present": "false",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "3",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "${email_step_1}"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "post purchase quote",
+            "index": "4",
+            "resource": "subs.subs_service",
+            "action": [
+              {
+                "method": "post_purchase_quote",
+                "param": {
+                  "pi_type": "INVOICE_PAY",
+                  "org_name": "${org_name_step_1}",
+                  "email": "${email_step_1}"
+                },
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "check out purchase quote",
+            "index": "5",
+            "page": "subs.cpq_pay_page",
+            "need_redirect": "true",
+            "sleep": "20",
+            "action": [
+              {
+                "element": "div_copy_from_org_address",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "sleep": "5"
+              },
+              {
+                "element": "radio_no_po_number",
+                "method": "click",
+                "present": "false"
+              },
+              {
+                "element": "div_copy_from_org_address",
+                "method": "click"
+              },
+              {
+                "element": "checkbox_terms",
+                "method": "script",
+                "value": "document.getElementById(\"order_terms\").click()"
+              },
+              {
+                "element": "btn_pay_now",
+                "method": "click",
+                "sleep": "20"
+              }
+            ]
+          },
+          {
+            "description": "click manage seats",
+            "index": "6",
+            "page": "subs.subs_receipt_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "href_manage_seats",
+                "method": "click",
+                "sleep": "20"
+              }
+            ]
+          },
+          {
+            "description": "go to transaction history",
+            "index": "7",
+            "page": "idPortal.subscription_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "div_transaction_history",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "sleep": "8"
+              },
+              {
+                "element": "div_transaction_history",
+                "method": "click",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "click pay now",
+            "index": "8",
+            "page": "idPortal.subscription_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "div_pay_now",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "final pay",
+            "index": "9",
+            "page": "idPortal.pay_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_cc_number",
+                "method": "send_keys",
+                "value": "4444333322221111",
+                "present": "false"
+              },
+              {
+                "element": "div_cc_month",
+                "method": "click",
+                "present": "false"
+              },
+              {
+                "element": "div_cc_month_1",
+                "present": "false",
+                "method": "click"
+              },
+              {
+                "element": "div_cc_year",
+                "method": "click",
+                "present": "false"
+              },
+              {
+                "element": "div_cc_year_2022",
+                "present": "false",
+                "method": "click"
+              },
+              {
+                "element": "input_cc_cvc",
+                "method": "send_keys",
+                "value": "123"
+              },
+              {
+                "element": "input_cc_name",
+                "method": "send_keys",
+                "value": "zz",
+                "present": "false"
+              },
+              {
+                "element": "checkbox_terms",
+                "method": "script",
+                "value": "document.getElementById(\"order_terms\").click()"
+              },
+              {
+                "element": "btn_pay_now_from_id",
+                "method": "click",
+                "sleep": "12"
+              }
+            ]
+          },
+          {
+            "description": "verify payment status",
+            "index": "10",
+            "page": "idPortal.subscription_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "div_transaction_history",
+                "method": "click",
+                "sleep": "5"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,244 @@
+{
+  "testcase": {
+    "name": "subs_can_purchase_Pro_JP_invoicePay_2",
+    "owner": "LiChen",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to purchase subs",
+      "steps": {
+        "step": [
+          {
+            "description": "create user via api",
+            "index": "1",
+            "resource":"identity.user_service",
+            "action": [
+              {
+                "method": "create_login_user",
+                "param": {
+                  "country":"US"
+                },
+                "sleep": "25"
+              }
+            ]
+          },
+          {
+            "description": "accept the cookies and sign in on home page",
+            "index": "2",
+            "page": "subs.subs_store_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "icon_sign_in",
+                "method": "script",
+                "present": "false",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "sleep": "5"
+              },
+              {
+                "element": "icon_sign_in",
+                "present": "false",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "3",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "${email_step_1}"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click"
+              }
+            ]
+          },
+
+          {
+            "description": "select pro",
+            "index": "4",
+            "page": "subs.subs_store_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_pro",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "choose seat and plan",
+            "index": "5",
+            "page": "subs.subs_configPlan_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_change_currency",
+                "method": "click"
+              },
+              {
+                "element": "div_currency_JPY",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "div_2_seat",
+                "method": "click",
+                "present": "false"
+              },
+              {
+                "element": "div_prepaidPlus",
+                "method": "click"
+              },
+              {
+                "element": "btn_purchase",
+                "method": "click",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "accept terms and pay",
+            "index": "6",
+            "page": "subs.subs_pay_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_country",
+                "method": "click",
+                "present": "false"
+              },
+              {
+                "element": "div_country_japan",
+                "method": "click",
+                "present": "false",
+                "sleep": "12"
+              },
+              {
+                "element": "input_firstname",
+                "method": "send_keys",
+                "value": "li",
+                "present": "false"
+              },
+              {
+                "element": "input_lastname",
+                "method": "send_keys",
+                "value": "chen"
+              },
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "${email_step_1}"
+              },
+              {
+                "element": "input_phone",
+                "method": "send_keys",
+                "value": "12345678"
+              },
+              {
+                "element": "input_address",
+                "method": "send_keys",
+                "value": "test road"
+              },
+              {
+                "element": "input_postalCode",
+                "method": "send_keys",
+                "value": "999078 "
+              },
+              {
+                "element": "input_city",
+                "method": "send_keys",
+                "value": "tokyo "
+              },
+              {
+                "element": "input_phone",
+                "method": "click",
+                "sleep": "12"
+              },
+              {
+                "element": "input_phone",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "present": "false",
+                "sleep": "5"
+              },
+              {
+                "element": "radio_invoicePayment",
+                "method": "click",
+                "present": "false",
+                "sleep": "6"
+              },
+              {
+                "element": "radio_haveQuote",
+                "method": "click",
+                "present": "false",
+                "sleep": "5"
+              },
+              {
+                "element": "input_purchase_order_number",
+                "method": "send_keys",
+                "value": "1234567890",
+                "present": "false",
+                "sleep": "8"
+              },
+              {
+                "element": "div_copy_from_org_address",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              },
+              {
+                "element": "checkbox_terms",
+                "method": "script",
+                "value": "document.getElementById(\"order_terms\").click()",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_pay_now",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "click manage seats",
+            "index": "7",
+            "page": "subs.subs_receipt_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "href_manage_seats",
+                "method": "click",
+                "sleep": "5"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

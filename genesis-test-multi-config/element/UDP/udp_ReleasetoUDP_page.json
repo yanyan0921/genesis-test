@@ -1,0 +1,66 @@
+ {
+  "page": {
+    "elements": {
+      "element": [
+        {
+          "name": "input_releasenote",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[5]/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div[2]/div/div/textarea"
+          },
+          "methods": {
+            "method": [
+              "send_keys",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_cancelrelease",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[5]/div[2]/div/div/div/div[3]/div[1]/button"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_createrelease",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[5]/div[2]/div/div/div/div[3]/div[2]/button"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "icon_closereleaseifont",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[5]/div[2]/div/div/div/div[1]/button/div"
+          },
+          "methods": {
+            "method": [
+              "click"
+            ]
+          }
+        }
+      ]
+    },
+    "related": {
+      "pages": [
+        "game_page"
+      ]
+    },
+    "url": "https://distribute-staging.dashboard.unity.com/",
+    "path": "udp.udp_ReleasetoUDP_page"
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "testcase": {
+    "name": "test_connect_login",
+    "owner": "guohua",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to report a user",
+      "steps": {
+        "step": [
+           {
+            "description": "fill out the login form",
+            "index": "1",
+            "page": "connect.id_page",
+            "need_redirect": "true",
+            "action": [
+               {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "hua.guo+11@unity3d.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "select  connect",
+            "index": "2",
+            "page": "connect.account_setting_page",
+            "need_redirect": "true",
+            "action": [
+               {
+                "element": "icon_switcher",
+                "method": "click"
+              },
+              {
+                "element": "select_connect",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+           {
+            "description": "select job",
+            "index": "3",
+            "page": "connect.home_nav_page",
+             "switch_tab": "1",
+            "need_redirect": "true",
+            "action": [
+               {
+                "element": "icon_jobs",
+                "method": "click"
+              },
+              {
+                "element": "icon_search_jobs",
+                "method": "script",
+                "value": "document.querySelector(\"#pageContent > div:nth-child(1) > div.header-wrap_GEr2c682 > div > div.main-menu-wrapper_2eWH5ERW > div > div.menu-left_flKNOvnq > div.first-menu_1sbJSQP5 > div.menu-wrap_3skhSRHM > div > div > a:nth-child(1)\").click()",
+                "sleep": "2"
+              }
+            ]
+          },
+
+          {
+            "description": "select a job",
+            "index": "4",
+            "page": "connect.search_job",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "job_title",
+                "method": "click"
+              }
+            ]
+          },
+           {
+            "description": "click report button",
+            "index": "5",
+            "page": "connect.job_operation_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_report",
+                "method": "click",
+                "present": "false"
+              }
+            ]
+          },
+          {
+            "description": "choose report message",
+            "index": "6",
+            "page": "connect.job_operation_reportContent",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "radio_other",
+                "method": "click"
+              },
+              {
+                "element": "input_other",
+                "method": "send_keys",
+                "value": "涉嫌违法aaaaaaaaa"
+              },
+              {
+                "element": "btn_submit",
+                "method": "click",
+                "sleep": "2"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

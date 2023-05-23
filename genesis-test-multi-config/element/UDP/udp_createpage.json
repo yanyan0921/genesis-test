@@ -1,0 +1,54 @@
+{
+  "page": {
+    "elements": {
+      "element": [
+        {
+          "name": "input_title",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[2]/div/div/div/div[2]/div/div/div/div/input"
+          },
+          "methods": {
+            "method": [
+              "send_keys",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_cancel",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[2]/div/div/div/div[3]/div[1]/button"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_create",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[2]/div/div/div/div[3]/div[2]/button"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        }
+      ]
+    },
+    "related": {
+      "pages": [
+        "game_info_page"
+      ]
+    },
+    "url": "https://distribute-staging.dashboard.unity.com/",
+    "path": "udp.udp_createpage"
+  }
+}

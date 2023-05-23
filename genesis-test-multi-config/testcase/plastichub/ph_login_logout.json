@@ -1,0 +1,163 @@
+{
+  "testcase": {
+    "name": "ph_login_logout",
+    "owner": "YuanmingXiao",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to login and logout from plastic hub",
+      "steps": {
+        "step": [
+          {
+            "description": "create user via api",
+            "index": "1",
+            "resource":"identity.user_service",
+            "action": [
+              {
+                "method": "create_login_user",
+                "param": {
+                  "country":"US"
+                },
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "prepare sign in on home page",
+            "index": "2",
+            "page": "plasticHub.ph_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_login_by_account",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "icon_email_login",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "3",
+            "page": "plasticHub.ph_id_page",
+            "need_redirect": "false",
+            "sleep": "10",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "${email_step_1}"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "filling the occupation info",
+            "index": "4",
+            "page": "plasticHub.occupation_info_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "button_occupation",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "present": "false",
+                "sleep": "5"
+              },
+              {
+                "element": "choose_occupation",
+                "method": "click",
+                "present": "false",
+                "sleep": "1"
+              },
+              {
+                "element": "button_occupation",
+                "method": "click",
+                "present": "false",
+                "sleep": "1"
+              },
+              {
+                "element": "input_company_name",
+                "method": "send_keys",
+                "value": "unitytest"
+              },
+              {
+                "element": "choose_industry",
+                "method": "click",
+                "present": "false",
+                "sleep": "1"
+              },
+              {
+                "element": "button_industry",
+                "method": "click",
+                "present": "false",
+                "sleep": "1"
+              },
+              {
+                "element": "button_save",
+                "method": "click",
+                "present": "false",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "unity update confirm",
+            "index": "5",
+            "page": "plasticHub.occupation_info_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_unity_update1",
+                "present": "false",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "log out from user page",
+            "index": "6",
+            "page": "plasticHub.ph_user_page",
+            "need_redirect": "false",
+            "sleep": "15",
+            "action": [
+              {
+                "element": "icon_user",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              },
+              {
+                "element": "btn_log_out",
+                "method": "click",
+                "sleep": "5"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

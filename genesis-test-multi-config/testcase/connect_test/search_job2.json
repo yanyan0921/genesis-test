@@ -1,0 +1,105 @@
+{
+  "testcase": {
+    "name": "search_job2",
+    "owner": "guohua",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like search a project",
+      "steps": {
+        "step": [
+       {
+            "description": "fill out the login form",
+            "index": "1",
+            "page": "connect.connect_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "btn_avatar",
+                "method": "script",
+                "value": "document.querySelector(\"#pageContent > div:nth-child(1) > div.header-wrap_GEr2c682 > div > div.user-actions_2nPAaNhU > div > div.right_ZNamn0lh > div.account-switcher_eSCn1fWL > unity-account-switcher\").shadowRoot.querySelector(\"div > a > user-avatar\").click()",
+                "sleep": "2"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "script",
+                "value": "document.querySelector(\"#pageContent > div:nth-child(1) > div.header-wrap_GEr2c682 > div > div.user-actions_2nPAaNhU > div > div.right_ZNamn0lh > div.account-switcher_eSCn1fWL > unity-account-switcher\").shadowRoot.querySelector(\"div > div > drop-down\").shadowRoot.querySelector(\"div > div:nth-child(2)\").click()",
+                "present": "false",
+                "sleep": "13"
+              }
+            ]
+          },
+          {
+            "description": "fill out the login form",
+            "index": "1",
+            "page": "connect.connect_login_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "hua.guo+11@unity3d.com",
+                "present": "false"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_login",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "search",
+            "index": "3",
+            "page": "connect.home_nav_page",
+            "need_redirect": "false",
+            "action": [
+             {
+                "element": "icon_search",
+                 "method": "script",
+                "value": "document.querySelector(\"#pageContent > div:nth-child(1) > div.header-wrap_GEr2c682 > div > div.main-menu-wrapper_2eWH5ERW > div > div.menu-right_3N8zyF91 > div.search-wrap_D0fqU9nj > a\").click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "search a job",
+            "index": "4",
+            "page": "connect.search_nav_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_search",
+                "method": "send_keys",
+                "value": "617test",
+                "sleep": "2"
+              },
+              {
+                "element": "search_button",
+                "method": "click"
+              },
+               {
+                "element": "nav_jobs",
+                "method": "click",
+                 "sleep": "5"
+              },
+              {
+                "element": "result_search_job",
+                "method": "text",
+                "value": "617test",
+                "present": "false",
+                "sleep": "2"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

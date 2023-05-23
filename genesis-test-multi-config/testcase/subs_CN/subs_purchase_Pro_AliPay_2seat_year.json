@@ -1,0 +1,133 @@
+{
+  "testcase": {
+    "name": "subs_purchase_Plus_AliPay_2seat_year",
+    "owner": "LingZhai",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to purchase subs",
+      "steps": {
+        "step": [
+          {
+            "description": "Login on id page",
+            "index": "1",
+            "page": "subs_CN.id_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "btn_account_login",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "btn_email_login",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "input_email_address",
+                "method": "send_keys",
+                "value": "yuanming.xiao+2022081601@unity.cn",
+                "present": "false"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234",
+                "present": "false"
+              },
+              {
+                "element": "btn_login",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "Move to subs page",
+            "index": "2",
+            "page": "subs_CN.subs_store_page",
+            "need_redirect": "true",
+            "sleep": "3",
+            "action": [
+            ]
+          },
+          {
+            "description": "select plus",
+            "index": "3",
+            "page": "subs_CN.subs_store_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_pro",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView(true)",
+                "sleep": "3"
+              },
+              {
+                "element": "btn_pro",
+                "method": "click",
+                "present": "false",
+                "sleep": "1"
+              }
+            ]
+          },
+          {
+            "description": "choose seat and plan",
+            "index": "4",
+            "page": "subs_CN.subs_configPlan_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_seat",
+                "method": "send_keys",
+                "value": "2",
+                "sleep": "1"
+              },
+              {
+                "element": "btn_purchase",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "accept terms and pay",
+            "index": "5",
+            "page": "subs_CN.subs_pay_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_licence",
+                "method": "click",
+                "present": "false",
+                "sleep": "1"
+              },
+              {
+                "element": "btn_pay_now",
+                "method": "click",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "Confriem pay page",
+            "index": "6",
+            "page": "subs_CN.pay_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_ali_login",
+                "method": "click"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,258 @@
+{
+  "testcase": {
+    "name": "purchased by cc(billing addr is different from with org address)",
+    "owner": "taoxiaoqing",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "purchased by cc(Billing address is not same as organization address)",
+      "steps": {
+        "step": [
+          {
+            "description": "accept the cookies",
+            "index": "1",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "icon_sign_in",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "prepare sign in on home page",
+            "index": "2",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click"
+              },
+              {
+                "element": "href_sign_in",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "3",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "silkcloudtest+xmzk3nb99hw@gmail.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "search asset item",
+            "index": "4",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "gameflow",
+                "sleep": "3"
+              },
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "click item name",
+            "index": "5",
+            "page": "assetStore.asset_search_result_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "item_name",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_1-e15 _25P-Q\")[0].click()",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "add item to cart",
+            "index": "6",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "arrow_open_in_unity",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_3l4rA\")[0].click()",
+                "sleep": "3"
+              },
+              {
+                "element": "add_to_cart_btn",
+                "method": "script",
+                "value":"document.getElementsByClassName('_2V-G7')[0].click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "proceed to checkout",
+            "index": "7",
+            "page": "assetStore.asset_cart_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "Qty_box",
+                "method": "click"
+              },
+              {
+                "element": "Qty_1",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "label_price",
+                "method": "text",
+                "value": "$10",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_proceed_to_checkout",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "input credit card info and unselect same as checkbox ,then pay now",
+            "index": "8",
+            "page": "assetStore.asset_pay_page",
+            "need_redirect": "false",
+            "sleep": "8",
+            "action": [
+              {
+                "element": "checkbox_terms",
+                "method": "script",
+                "value": "document.getElementById(\"order_terms\").click()",
+                "sleep": "8"
+              },
+              {
+                "element": "add_new_hypertext",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "select_CreditCard",
+                "method": "click",
+                "present": "false"
+              },
+              {
+                "element": "input_creditcard",
+                "method": "send_keys",
+                "value": "4444 3333 2222 1111",
+                "present": "false"
+              },
+              {
+                "element": "month_box",
+                "method": "click"
+              },
+              {
+                "element": "month",
+                "method": "click",
+                "present": "false"
+              },
+              {
+                "element": "year_box",
+                "method": "click"
+              },
+              {
+                "element": "year",
+                "method": "click",
+                "present": "false"
+              },
+              {
+                "element": "cvc_cvv2",
+                "method": "send_keys",
+                "value": "123"
+              },
+              {
+                "element": "Cardholder_name_box",
+                "method": "send_keys",
+                "value": "joanntao"
+              },
+              {
+                "element": "future_purchase_checkbox",
+                "method": "click"
+              },
+              {
+                "element": "same_as_checkbox",
+                "method": "click",
+                "sleep": "7"
+              },
+              {
+                "element": "firstname_checkbox",
+                "method": "clear",
+                "sleep": "2"
+              },
+              {
+                "element": "firstname_checkbox",
+                "method": "send_keys",
+                "value": "test_update"
+              },
+              {
+                "element": "btn_pay_now",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "verify total amount and tax",
+            "index": "9",
+            "page": "assetStore.asset_receipt_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "label_total_amount",
+                "method": "text",
+                "value": "$10"
+              },
+              {
+                "element": "label_tax",
+                "method": "text",
+                "value": "$0"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

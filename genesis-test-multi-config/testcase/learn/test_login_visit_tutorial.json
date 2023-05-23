@@ -1,0 +1,122 @@
+{
+  "testcase": {
+    "owner": "aaronpeng",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "name": "test",
+    "scenario": {
+      "name": "visit tutorial page and no login",
+      "steps": {
+        "step": [
+          {
+            "description": "click the tutorial's tag",
+            "index": "1",
+            "page": "learn.no_login_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "accept_cookies_btn",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "dismiss_btn",
+                "present": "false",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "language_select_btn",
+                "present": "false",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "language_option_btn",
+                "present": "false",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "sign_in_btn",
+                "present": "false",
+                "method": "click",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "fill out the login form",
+            "index": "2",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "silkcloudtest+yhfbe6khfyh@gmail.com",
+                "sleep": "3"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234",
+                "sleep": "3"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "click the tutorial's tag",
+            "index": "3",
+            "page": "learn.login_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "navigate_browse",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "browse_tutorial_tab",
+                "present": "false",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "browse_tutorial_card",
+                "present": "false",
+                "method": "click",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "click on 'mark all' button",
+            "index": "4",
+            "page": "learn.tutorial_overview_page_login",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "mark_all_btn",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "start_again",
+                "present": "false",
+                "method": "click",
+                "sleep": "5"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

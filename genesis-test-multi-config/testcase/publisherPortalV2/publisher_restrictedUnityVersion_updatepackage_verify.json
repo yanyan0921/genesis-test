@@ -1,0 +1,308 @@
+{
+  "testcase": {
+    "name": "publisher_restrictedUnityVersion_updatepackage_verify",
+    "owner": "tanlinhui",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to test update package successful with unity version 2018.4.11f1",
+      "steps": {
+        "step": [
+          {
+            "description": "prepare sign in on home page",
+            "index": "1",
+            "page": "publisherPortalV2.publisher_login_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "linhui.tan+01@unity3d.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "7"
+              }
+            ]
+          },
+          {
+            "description": "filter published packags",
+            "index": "2",
+            "page": "publisherPortalV2.publisher_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_cookies",
+                "method": "script",
+                "value": "document.getElementsByClassName('onetrust-close-btn-handler onetrust-close-btn-ui banner-close-button onetrust-lg ot-close-icon')[0].click()",
+                "sleep": "8"
+              },
+              {
+                "element": "btn_columns",
+                "present": "false",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "label_modified",
+                "method": "script",
+                "value": "document.getElementsByClassName('MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button')[5].click()",
+                "sleep": "2"
+              }
+            ]
+          },
+          {
+            "description": "go to published package page ",
+            "index": "3",
+            "page": "publisherPortalV2.publisher_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "create_new_package_btn",
+                "method": "text",
+                "value":"Create a package",
+                "sleep": "10"
+              },
+              {
+                "element": "sort_modified",
+                "present": "false",
+                "method": "click",
+                "sleep": "6"
+              },
+              {
+                "element": "label_published",
+                "present": "false",
+                "method": "click",
+                "sleep": "6"
+              },
+              {
+                "element": "label_package",
+                "present": "false",
+                "method": "get_element_values",
+                "sleep": "3"
+              },
+              {
+                "element": "label_package",
+                "present": "false",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "new draft of published package",
+            "index": "4",
+            "page": "publisherPortalV2.publisher_published_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_new_draft",
+                "method": "click",
+                "present": "false",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": " edit draft page",
+            "index": "5",
+            "page": "publisherPortalV2.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "publisher_title",
+                "method": "get_current_url",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "upload asset package with 2018.4.0f1",
+            "index": "6",
+            "resource": "asset.asset_service_publisherV2",
+            "action": [
+              {
+                "method": "upload_unitypackage",
+                "param": {
+                  "email": "linhui.tan+01@unity3d.com",
+                  "unity_version": "2018.4.11f1"
+                },
+                "sleep": "7"
+              }
+            ]
+          },
+          {
+            "description": "upload 2018 unitypackage and delete orginal unitypackage",
+            "index": "7",
+            "page": "publisherPortalV2.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_refresh_package",
+                "method": "click",
+                "present": "false",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_unity_remove",
+                "method": "script",
+                "value": "document.getElementsByClassName('MuiButton-label')[7].click()",
+                "sleep": "2"
+              },
+              {
+                "element": "btn_remove_OK",
+                "present": "false",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "filling package dependencies and srps",
+            "index": "8",
+            "page": "publisherPortalV2.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_srp2018",
+                "method": "script",
+                "value": "document.getElementsByClassName('MuiIconButton-label')[2].click()",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "submit package",
+            "index": "9",
+            "page": "publisherPortalV2.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "delete_draft",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView(false)",
+                "sleep": "3"
+              },
+              {
+                "element": "btn_submit",
+                "present": "false",
+                "method": "click",
+                "sleep": "4"
+              },
+              {
+                "element": "checkbox_terms",
+                "present": "false",
+                "method": "click",
+                "sleep": "4"
+              },
+              {
+                "element": "btn_accepted",
+                "present": "false",
+                "method": "click",
+                "sleep": "15"
+              },
+              {
+                "element": "label_submitted",
+                "present": "false",
+                "method": "text",
+                "value": "Submitted!"
+              }
+            ]
+          },
+          {
+            "description": "log out",
+            "index": "10",
+            "page": "publisherPortalV2.publisher_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "btn_account",
+                "method": "click",
+                "sleep":"3"
+              },
+              {
+                "element": "logout_tab",
+                "present": "false",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "accept package",
+            "index": "11",
+            "page": "publisherPortal.publisher_dharma_login_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "clear"
+              },
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "taoxiaoqing@unity3d.com"
+              },
+              {
+                "element": "input_password",
+                "method": "clear"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test0000"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "40"
+              }
+            ]
+          },
+          {
+            "description": "accept package",
+            "index": "12",
+            "page": "publisherPortal.publisher_dharma_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_packageName",
+                "method": "send_keys",
+                "value": "${value_step_3}",
+                "sleep": "40"
+              },
+              {
+                "element": "input_packageName",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                "sleep": "10"
+              },
+              {
+                "element": "metaPackage_menu",
+                "method": "click",
+                "present": "false"
+              },
+              {
+                "element": "accept_package",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "accept_decline_btn",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"button default\")[0].click()"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

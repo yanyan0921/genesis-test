@@ -1,0 +1,104 @@
+{
+  "testcase": {
+    "owner": "ylzhao",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "name": "test",
+    "retry_count": 0,
+    "scenario": {
+      "name": "I would like to demo action chain",
+      "steps": {
+        "step": [
+          {
+            "description": "fill out the custom price",
+            "index": "1",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "arrow_support_the_creator",
+                "method": "click"
+              },
+              {
+                "element": "custom_support_price",
+                "method": "action_chain",
+                "present": "false",
+                "chain": [
+                  {
+                    "method": "move_to_element",
+                    "param": {
+                      "element": "custom_support_price"
+                    }
+                  },
+                  {
+                    "method": "send_keys_to_element",
+                    "param": {
+                      "element": "custom_support_price",
+                      "value": "123"
+                    }
+                  },
+                  {
+                    "method": "send_keys",
+                    "param": {
+                      "value": "Keys.ENTER"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},
+
+{
+  "testcase": {
+    "owner": "ylzhao",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "name": "test",
+    "retry_count": 0,
+    "scenario": {
+      "name": "I would like to demo action chain",
+      "steps": {
+        "step": [
+          {
+            "description": "fill out the custom price",
+            "index": "1",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "custom_support_price",
+                "method": "action_chain",
+                "present": "false",
+                "chain": [
+                  {
+                    "method": "click_and_hold",
+                    "param": {
+                      "element": "custom_support_price"
+                    }
+                  },
+                  {
+                    "method": "move_by_offset",
+                    "param": {
+                     "value":"-100,0"
+                    }
+                  },
+                  {
+                    "method": "release"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

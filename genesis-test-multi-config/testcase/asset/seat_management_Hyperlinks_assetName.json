@@ -1,0 +1,109 @@
+{
+  "testcase": {
+    "name": "seat_management_Hyperlinks_assetName",
+    "owner": "taoxiaoqing",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to test hyperlinks",
+      "steps": {
+        "step": [
+          {
+            "description": "go to id page and log in",
+            "index": "1",
+            "page": "idPortal.id_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "silkcloudtest+bs2oiwiq356@gmail.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "go to id page and log in",
+            "index": "2",
+            "page": "idPortal.account_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "organizations",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "go to org details",
+            "index": "3",
+            "page": "idPortal.organizations_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "the_first_org",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "click assgin button",
+            "index": "4",
+            "page": "idPortal.org_details_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "assetManagement",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "click label button",
+            "index": "5",
+            "page": "idPortal.asset_seatManagement_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "GameGlow_name",
+                "method": "text",
+                "value": "GameFlow",
+                "sleep": "4"
+              },
+              {
+                "element": "GameGlow_name",
+                "method": "click",
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "click label button",
+            "index": "6",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "switch_tab": "1",
+            "action": [
+              {
+                "element": "asset_name",
+                "method": "text",
+                "value": "GameFlow",
+                "sleep": "4"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "testcase": {
+    "name": "asset_switch_language",
+    "owner": "taoxiaoqing",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to test switch language",
+      "steps": {
+        "step": [
+          {
+            "description": "accept the cookies",
+            "index": "1",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "icon_sign_in",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "prepare sign in on home page",
+            "index": "1",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click"
+              },
+              {
+                "element": "href_sign_in",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "2",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "silkcloudtest+eekrpkivvh@gmail.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "12345678Test"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "verify language Korean ",
+            "index": "4",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "category_3D",
+                "method": "text",
+                "value": "3D",
+                "sleep":"8"
+              },
+              {
+                "element": "footer_language_Korean",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView()"
+              },
+              {
+                "element": "footer_language_Korean",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "popular_assets_title",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView()",
+                "present": "false",
+                "sleep": "5"
+              },
+              {
+                "element": "onSale",
+                "method": "text",
+                "value": "할인 중",
+                "present": "false"
+              }
+            ]
+          },
+          {
+            "description": "verify language Japanese ",
+            "index": "5",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "category_3D",
+                "method": "text",
+                "value": "3D",
+                "sleep":"8"
+              },
+              {
+                "element": "footer_language_Japanese",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView()"
+              },
+              {
+                "element": "footer_language_Japanese",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "popular_assets_title",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView()",
+                "present": "false"
+              },
+              {
+                "element": "onSale",
+                "method": "text",
+                "value": "セール中のみ",
+                "present": "false"
+              }
+            ]
+          },
+          {
+            "description": "verify language chinese",
+            "index": "6",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "category_3D",
+                "method": "text",
+                "value": "3D",
+                "sleep":"8"
+              },
+              {
+                "element": "footer_language_Chinese",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView()"
+              },
+              {
+                "element": "footer_language_Chinese",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "popular_assets_title",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView()",
+                "present": "false"
+              },
+              {
+                "element": "onSale",
+                "method": "text",
+                "value": "促销中",
+                "present": "false"
+              }
+            ]
+          },
+          {
+            "description": "verify language english",
+            "index": "7",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "category_3D",
+                "method": "text",
+                "value": "3D",
+                "sleep":"8"
+              },
+              {
+                "element": "footer_language_English",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView()",
+                "sleep": "4"
+              },
+              {
+                "element": "footer_language_English",
+                "method": "click",
+                "sleep": "4"
+              },
+              {
+                "element": "popular_assets_title",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView()",
+                "present": "false"
+              },
+              {
+                "element": "onSale",
+                "method": "text",
+                "value": "On sale",
+                "present": "false"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "testcase": {
+    "name": "post_showcase_picture",
+    "owner": "guohua",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to login connect home page",
+      "steps": {
+        "step": [
+         {
+            "description": "fill out the login form",
+            "index": "1",
+            "page": "connect.connect_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "btn_avatar",
+                "method": "script",
+                "value": "document.querySelector(\"#pageContent > div:nth-child(1) > div.header-wrap_GEr2c682 > div > div.user-actions_2nPAaNhU > div > div.right_ZNamn0lh > div.account-switcher_eSCn1fWL > unity-account-switcher\").shadowRoot.querySelector(\"div > a > user-avatar\").click()",
+                "sleep": "2"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "script",
+                "value": "document.querySelector(\"#pageContent > div:nth-child(1) > div.header-wrap_GEr2c682 > div > div.user-actions_2nPAaNhU > div > div.right_ZNamn0lh > div.account-switcher_eSCn1fWL > unity-account-switcher\").shadowRoot.querySelector(\"div > div > drop-down\").shadowRoot.querySelector(\"div > div:nth-child(2)\").click()",
+                "present": "false",
+                "sleep": "13"
+              }
+            ]
+          },
+          {
+            "description": "fill out the login form",
+            "index": "2",
+            "page": "connect.connect_login_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "hua.guo+11@unity3d.com",
+                "present": "false"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_login",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+           {
+            "description": "post a project",
+            "index": "3",
+            "page": "connect.connect_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_post_project",
+                "method": "click",
+                "sleep": "5"
+              }
+            ]
+          },
+           {
+            "description": "factor authentication",
+            "index": "4",
+            "page": "connect.post_article_factor_authentication",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_skip",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              }
+            ]
+          },
+           {
+            "description": "post a showcase",
+            "index": "5",
+            "page": "connect.post_project_alert_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_showcase",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "post a showcase details",
+            "index": "6",
+            "page": "connect.post_showcase_page",
+            "need_redirect": "false",
+            "switch_tab": "1",
+            "action": [
+              {
+                "element": "div_showcase_title",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "input_showcase_title",
+                "method": "send_keys",
+                "value": "showcaseceshi",
+                   "sleep": "2"
+              },
+                {
+                "element": "btn_picture",
+                "method": "click",
+                  "sleep": "2"
+              },
+              {
+                "element": "input_picture",
+                "method": "send_keys",
+                "value": "./testcase/test_photo/d.jpg",
+                "sleep": "5"
+              },
+              {
+                "element": "div_showcase_content",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "input_showcase_content",
+                "method": "send_keys",
+                "value": "21",
+                "sleep": "2"
+              },
+              {
+                 "element": "btn_post",
+                "method": "click",
+                   "sleep": "2"
+              }
+            ]
+          },
+           {
+            "description": "factor authentication",
+            "index": "7",
+            "page": "connect.post_article_factor_authentication",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_skip",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              }
+            ]
+          },
+           {
+            "description": "post a showcase now",
+            "index": "8",
+            "page": "connect.showcase_now_post",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_post_now",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+           {
+            "description": "Agree to skip validation",
+            "index": "9",
+            "page": "connect.post_game_verify",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "agree_post",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

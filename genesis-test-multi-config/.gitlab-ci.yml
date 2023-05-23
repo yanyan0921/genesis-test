@@ -1,0 +1,15 @@
+variables:
+  REGISTRY: gcr.io/unity-genesis-prd-prd
+
+stages:
+  - pushimage
+
+pushimage:
+  stage: pushimage
+  script:
+    - docker build -t $REGISTRY/genesis/test-frontend:$CI_COMMIT_REF_NAME -t $REGISTRY/genesis/test-frontend:$CI_COMMIT_REF_NAME-$CI_COMMIT_SHORT_SHA .
+    - docker push $REGISTRY/genesis/test-frontend:$CI_COMMIT_REF_NAME
+    - docker push $REGISTRY/genesis/test-frontend:$CI_COMMIT_REF_NAME-$CI_COMMIT_SHORT_SHA
+    - echo -e "$REGISTRY/genesis/test-frontend:$CI_COMMIT_REF_NAME-$CI_COMMIT_SHORT_SHA"
+  only:
+    - ui-auto-py@genesis/test

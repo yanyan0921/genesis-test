@@ -1,0 +1,202 @@
+{
+  "testcase": {
+    "name": "asset_add_to_new_list",
+    "owner": "taoxiaoqing",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "[disabled]I would like to test add to list e2e flow",
+      "steps": {
+        "step": [
+          {
+            "description": "create user via api",
+            "index": "1",
+            "resource": "identity.user_service",
+            "action": [
+              {
+                "method": "create_login_user",
+                "param": {
+                  "country": "BR"
+                },
+                "sleep": "7"
+              }
+            ]
+          },
+          {
+            "description": "prepare sign in on home page",
+            "index": "2",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click"
+              },
+              {
+                "element": "href_sign_in",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "3",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "${email_step_1}"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "Confirm reading navigation",
+            "index": "4",
+            "page": "assetStore.asset_guide_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "guide_OK_btn",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "search asset item",
+            "index": "5",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "GameFlow"
+              },
+             {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "Keys.ENTER"
+              }
+            ]
+          },
+          {
+            "description": "choose search result",
+            "index": "6",
+            "page": "assetStore.asset_search_result_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "item_name",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "prepare to click add to list btn",
+            "index": "7",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "add_to_list_btn",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "click create new list btn",
+            "index": "8",
+            "page": "assetStore.asset_edit_list_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "create_newList_btn",
+                "method": "click",
+                "sleep": "2"
+              }
+            ]
+          },
+          {
+            "description": "add item to cart",
+            "index": "9",
+            "page": "assetStore.asset_edit_list_page2",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "list_name",
+                "method": "send_keys",
+                "value": "test"
+              },
+              {
+                "element": "save_btn",
+                "method": "click",
+                "sleep": "35"
+              }
+            ]
+          },
+          {
+            "description": "select test list",
+            "index": "10",
+            "page": "assetStore.asset_list_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "test_list",
+                "method": "click",
+                "sleep": "8"
+              }
+            ]
+          },
+          {
+            "description": "edit list info",
+            "index": "11",
+            "page": "assetStore.asset_subList_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "edit_btn",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "delete_list",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              }
+            ]
+          },
+          {
+            "description": "delete list + remove asset",
+            "index": "12",
+            "page": "assetStore.asset_deleteList_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "Yes_btn",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,456 @@
+{
+  "page": {
+    "elements": {
+      "element": [
+        {
+          "name": "btn_mygames",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[1]/div/div/div[1]/div/a[1]/div/div/span"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_reporting",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[1]/div/div/div[1]/div/a[2]/div/div/span"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_partnerstores",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[1]/div/div/div[1]/div/a[3]/div/div/span"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_documentation",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[1]/div/div/div[1]/div/a[4]/div/div/span"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_importfromGooglePlay",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[2]/div/div/div/div[1]/div[2]"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_gamecancel",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[1]/div[2]/div[1]/button"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_gamesave",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[1]/div[2]/div[2]/button"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_editinfo",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[1]/div[2]/div[1]"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_release",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[1]/div[2]/div[2]/button"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "input_gametitle",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[2]/div/div/div/div[2]/div/div[1]/div[2]/div/div/input"
+          },
+          "methods": {
+            "method": [
+              "send_keys",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "icon_genre_dropdown",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[2]/div/div/div/div[2]/div/div[2]/div[2]/div/button/div/div[2]"
+          },
+          "methods": {
+            "method": [
+              "click"
+            ]
+          }
+        },
+        {
+          "name": "icon_genre_board",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[2]/div/div/div/div[2]/div/div[2]/div[2]/div/div/div/div[1]/div/div[4]"
+          },
+          "methods": {
+            "method": [
+              "click"
+            ]
+          }
+        },
+        {
+          "name": "icon_gameicon",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[2]/div/div/div/div[2]/div/div[5]/div[2]/div/div[1]/div/div/div/div[2]"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "input_gameicon",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\\\"pageBody\\\"]/div[3]/div[2]/div/div/div/div[2]/div/div[5]/div[2]/div/div[1]/div/input"
+          },
+          "methods": {
+            "method": [
+              "send_keys",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "input_description",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[2]/div/div/div/div[2]/div/div[6]/div[2]/div/div/textarea"
+          },
+          "methods": {
+            "method": [
+              "send_keys",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_gamebanner",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[2]/div/div/div/div[2]/div/div[7]/div[2]/div/div[1]/div/div/div/div[2]"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "input_gamebanner",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\\\"pageBody\\\"]/div[3]/div[2]/div/div/div/div[2]/div/div[7]/div[2]/div/div[1]/div/input"
+          },
+          "methods": {
+            "method": [
+              "send_keys",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_uploadimage",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[2]/div/div/div/div[2]/div/div[8]/div/div[1]/div[2]/div[1]"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "input_uploadimage",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\\\"pageBody\\\"]/div[3]/div[2]/div/div/div/div[2]/div/div[8]/div/input[1]"
+          },
+          "methods": {
+            "method": [
+              "send_keys",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_uploadvideo",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[2]/div/div/div/div[2]/div/div[8]/div/div[1]/div[2]/div[2]"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "input_uploadvideo",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\\\"pageBody\\\"]/div[3]/div[2]/div/div/div/div[2]/div/div[8]/div/input[2]"
+          },
+          "methods": {
+            "method": [
+              "send_keys",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_uploadyoutubelink",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[2]/div/div/div/div[2]/div/div[8]/div/div[1]/div[2]/div[3]"
+          },
+          "methods": {
+            "method": [
+              "send_keys",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_uploadapkfile",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[2]/div/div/div/div[3]/div[2]/div[1]/div/div[2]/div/div"
+          },
+          "methods": {
+            "method": [
+              "send_keys",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "txt_premiumprice",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\\\"pageBody\\\"]/div[3]/div[2]/div/div/div/div[4]/div[1]/div/div[1]"
+          },
+          "methods": {
+            "method": [
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_additem",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[3]/div/div[1]/div[2]/span[2]"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_addIAPprice",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[3]/div/div[3]/div/div[2]/div[2]/div[2]"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "input_IAPprice",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[3]/div/div[4]/div[2]/div/div/div[1]/div/div/div[2]/div/div[2]/div/div[2]/div/div[1]/input"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_saveIAPprice",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[3]/div/div[4]/div[2]/div/div/div[1]/div/div/div[3]/div[2]/button"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "input_projectid",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[4]/div/div[2]/div[1]/div[1]/div/div[2]/div/div/input"
+          },
+          "methods": {
+            "method": [
+              "send_keys",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "input_CallbackURL",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[4]/div/div[2]/div[2]/div[5]/div[2]/div/div/input"
+          },
+          "methods": {
+            "method": [
+              "send_keys",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_addnewaccount",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[5]/div/div[1]/div[2]/span[2]"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "input_searchuser",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[7]/div/div[3]/div/div[1]/div/div/input"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_newuser",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[7]/div/div[3]/div/div[2]/div[1]/div[1]/span[2]"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "icon_language_dropdown",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[4]/div[3]/div/button/div/div[2]"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        }
+      ]
+    },
+    "related": {
+      "pages": [
+        "udp_createpage",
+        "udp_page",
+        "udp_homepage"
+      ]
+    },
+    "url": "https://distribute-staging.dashboard.unity.com/",
+    "path": "udp.udp_gameinfo_page"
+  }
+}

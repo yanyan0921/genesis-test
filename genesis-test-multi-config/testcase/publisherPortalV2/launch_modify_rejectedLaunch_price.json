@@ -1,0 +1,343 @@
+{
+  "testcase": {
+    "name": "launch_modify_rejectedLaunch_price",
+    "owner": "tanlinhui",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to test modify launch price of rejected package",
+      "steps": {
+        "step": [
+          {
+            "description": "prepare sign in on home page",
+            "index": "1",
+            "page": "publisherPortalV2.publisher_login_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "linhui.tan+02_stg@unity3d.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "7"
+              }
+            ]
+          },
+          {
+            "description": "go to pending package page ",
+            "index": "2",
+           "page": "publisherPortalV2.publisher_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_cookies",
+                "method": "script",
+                "value": "document.getElementsByClassName('onetrust-close-btn-handler onetrust-close-btn-ui banner-close-button onetrust-lg ot-close-icon')[0].click()",
+                "sleep": "10"
+              },
+              {
+                "element": "label_rejected",
+                "present": "false",
+                "method": "click",
+                "sleep": "6"
+              },
+              {
+                "element":"input_search",
+                "method": "send_keys",
+                "value": "launch",
+                "sleep":"3"
+              },
+              {
+                "element": "label_package",
+                "present": "false",
+                "method": "get_element_values",
+                "sleep": "3"
+              },
+              {
+                "element": "label_package",
+                 "present": "false",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "new draft",
+            "index": "3",
+            "page": "publisherPortalV2.publisher_published_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_new_draft",
+                "method": "click",
+                "present": "false",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "modify price,duration and percent of package",
+            "index": "4",
+            "page": "publisherPortalV2.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_details",
+                "method": "click",
+                "present": "false",
+                "sleep": "6"
+              },
+              {
+                "element": "input_price",
+                "present": "false",
+                 "method": "clear"
+              },
+              {
+                "element": "input_price",
+                "method": "send_keys",
+                "present": "false",
+                "value": "10",
+                "sleep":"3"
+              },
+              {
+                "element": "price_error_msg",
+                "method": "text",
+                "present": "false",
+                "value": "Price for discounted assets must be $15 or higher. Increase price or remove discount.",
+                "sleep":"3"
+              },
+              {
+                "element": "input_price",
+                 "method": "clear"
+              },
+              {
+                "element": "input_price",
+                "method": "send_keys",
+                "present": "false",
+                "value": "30",
+                "sleep":"1"
+              },
+              {
+                "element": "btn_percent",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "div_percent30",
+                "method": "click",
+                "present": "false",
+                "sleep":"2"
+              },
+              {
+                "element": "btn_week",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "div_week2",
+                "method": "click",
+                "present": "false",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "submit package",
+            "index": "5",
+            "page": "publisherPortalV2.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "delete_draft",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView(false)",
+                "sleep": "3"
+              },
+              {
+                "element": "btn_submit",
+                "present": "false",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "checkbox_terms",
+                "present": "false",
+                "method": "click",
+                "sleep": "4"
+              },
+              {
+                "element": "btn_accepted",
+                "present": "false",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "label_submitted",
+                "present": "false",
+                "method": "text",
+                "value": "Submitted!"
+              }
+            ]
+          },
+          {
+            "description": "search launch package",
+            "index": "6",
+            "page": "publisherPortalV2.publisher_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element":"create_new_package_btn",
+                "method": "text",
+                "value": "Create a package",
+                "sleep":"12"
+              },
+              {
+                "element":"label_pending",
+                "method": "click",
+                "sleep":"5"
+              },
+              {
+                "element": "input_search",
+                "present": "false",
+                "method": "send_keys",
+                "value": "${value_step_2}",
+                "sleep": "8"
+              },
+              {
+                "element": "label_price",
+                "present": "false",
+                "method": "text",
+                "value": "$30.00"
+              },
+              {
+                "element": "label_package",
+                "method": "click",
+                "sleep": "6"
+              }
+            ]
+          },
+          {
+            "description": "verify modify launch discount success",
+            "index": "7",
+            "page": "publisherPortalV2.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_details",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "btn_percent",
+                "present": "false",
+                "method": "text",
+                "value": "30% discount upon launch"
+              },
+              {
+                "element": "btn_week",
+                "present": "false",
+                "method": "text",
+                "value": "2 week after launch"
+              }
+            ]
+          },
+          {
+            "description": "log out",
+            "index": "8",
+            "page": "publisherPortalV2.publisher_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "btn_account",
+                "method": "click",
+                "sleep":"3"
+              },
+              {
+                "element": "logout_tab",
+                "present": "false",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "accept package",
+            "index": "9",
+            "page": "publisherPortal.publisher_dharma_login_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "clear"
+              },
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "taoxiaoqing@unity3d.com"
+              },
+              {
+                "element": "input_password",
+                "method": "clear"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test0000"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "40"
+              }
+            ]
+          },
+          {
+            "description": "accept package",
+            "index": "10",
+            "page": "publisherPortal.publisher_dharma_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_packageName",
+                "method": "send_keys",
+                "value": "${value_step_2}",
+                "sleep": "40"
+              },
+              {
+                "element": "input_packageName",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                "sleep": "10"
+              },
+              {
+                "element": "package_menu",
+                "method": "click",
+                "present": "false"
+              },
+              {
+                "element": "decline_package",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "accept_decline_btn",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"button default\")[0].click()"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

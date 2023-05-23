@@ -1,0 +1,212 @@
+{
+  "testcase": {
+    "name": "publisher_restrictedUnityVersion_verify",
+    "owner": "tanlinhui",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to test submit new package failed with 2018.4.0f1 unitypackage",
+      "steps": {
+        "step": [
+          {
+            "description": "prepare sign in on home page",
+            "index": "1",
+            "page": "publisherPortalV2.publisher_login_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "linhui.tan+01@unity3d.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "7"
+              }
+            ]
+          },
+          {
+            "description": "create value",
+            "index": "2",
+            "resource": "asset.asset_service",
+            "action": [
+              {
+                "method": "create_value",
+                "param": {
+                  "Digits": "5"
+                },
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "click create new btn",
+            "index": "3",
+            "page": "publisherPortalV2.publisher_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "create_new_package_btn",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "input_packagename",
+                "method": "action_chain",
+                "present": "false",
+                "chain": [
+                  {
+                    "method": "move_to_element",
+                    "param": {
+                      "element": "input_packagename"
+                    }
+                  },
+                  {
+                    "method": "send_keys_to_element",
+                    "param": {
+                      "element": "input_packagename",
+                      "value": "${value_step_2}"
+                    }
+                  }
+                ]
+              },
+              {
+                "element": "category_select_box",
+                "method": "action_chain",
+                "present": "false",
+                "sleep": "5",
+                "chain": [
+                  {
+                    "method": "move_to_element",
+                    "param": {
+                      "element": "category_select_box"
+                    }
+                  },
+                  {
+                    "method": "click",
+                    "param": {
+                      "element": "category_select_box"
+                    }
+                  },
+                  {
+                    "method": "send_keys",
+                    "param": {
+                      "value": "Keys.DOWN"
+                    }
+                  },
+                  {
+                    "method": "send_keys",
+                    "param": {
+                      "value": "Keys.ENTER"
+                    }
+                  }
+                ]
+              },
+              {
+                "element": "btn_save",
+                "method": "click",
+                "sleep": "8"
+              }
+            ]
+          },
+          {
+            "description": " edit draft page",
+            "index": "4",
+            "page": "publisherPortalV2.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "publisher_title",
+                "method": "get_current_url",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "upload asset package",
+            "index": "5",
+            "resource": "asset.asset_service_publisherV2",
+            "action": [
+              {
+                "method": "upload_unitypackage",
+                "param":{
+                  "email": "linhui.tan+01@unity3d.com",
+                  "unity_version": "2018.4.0f1"
+                },
+                "sleep": "7"
+              }
+            ]
+          },
+          {
+            "description": "accept cookies",
+            "index": "6",
+            "page": "publisherPortalV2.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "icon_cookies",
+                "method": "script",
+                "value": "document.getElementsByClassName('onetrust-close-btn-handler onetrust-close-btn-ui banner-close-button onetrust-lg ot-close-icon')[0].click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "filling package dependencies and srps",
+            "index": "7",
+            "page": "publisherPortalV2.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_srp2018",
+                "present": "false",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element":"label_package_error",
+                "present": "false",
+                "method": "text",
+                "value":"Upload a package with editor version 2019.4 or higher"
+              }
+            ]
+          },
+          {
+            "description": "delete draft",
+            "index": "8",
+            "page": "publisherPortalV2.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "delete_draft",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView(false)",
+                "sleep": "3"
+              },
+              {
+                "element": "delete_draft",
+                "present": "false",
+                "method": "click",
+                "sleep":"2"
+              },
+              {
+                "element": "delete_draft_ok_btn",
+                "present": "false",
+                "method": "click",
+                "sleep":"2"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

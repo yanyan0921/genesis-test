@@ -1,0 +1,290 @@
+{
+  "testcase": {
+    "name": "asset_request_reject",
+    "owner": "TXQ",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to reject order request",
+      "steps": {
+        "step": [
+           {
+            "description": "accept the cookies",
+            "index": "1",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "icon_sign_in",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "sleep": "8"
+              }
+            ]
+          },
+          {
+            "description": "prepare sign in on home page",
+            "index": "2",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click"
+              },
+              {
+                "element": "href_sign_in",
+                "method": "click",
+                "present": "false"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "3",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "silkcloudtest+jmho056r24t@gmail.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "7"
+              }
+            ]
+          },
+          {
+            "description": "org switch",
+            "index": "4",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element":"page_header",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "logined_account",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "switch_org",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "order_request_org",
+                "method": "click",
+                "present": "false",
+                "sleep": "8"
+              }
+            ]
+          },
+          {
+            "description": "search asset item",
+            "index": "4",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "GameFlow",
+                "sleep": "3"
+              },
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "click item name",
+            "index": "5",
+            "page": "assetStore.asset_search_result_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "item_name",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_1-e15 _25P-Q\")[0].click()",
+                "sleep": "8"
+              }
+            ]
+          },
+          {
+            "description": "send order request",
+            "index": "6",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "arrow_open_in_unity",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_3l4rA\")[0].click()",
+                "sleep": "8"
+              },
+              {
+                "element": "arrow_support_the_creator",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView()"
+              },
+              {
+                "element": "btn_request_for_approval",
+                "method": "click",
+                "present": "false",
+                "sleep": "5"
+              },
+              {
+                "element": "request_approval_btn",
+                "method": "click",
+                "present": "false",
+                "sleep": "7"
+              }
+            ]
+          },
+          {
+            "description": "go to homepage and log out",
+            "index": "7",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "logined_account",
+                "method": "click",
+                "sleep":"3"
+              },
+              {
+                "element": "sign_out",
+                "method": "click",
+                "present": "false"
+              }
+            ]
+          },
+          {
+            "description": "prepare sign in on home page with another user",
+            "index": "8",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep":"5"
+              },
+              {
+                "element": "href_sign_in",
+                "method": "click",
+                "present": "false"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "9",
+            "page": "idPortal.id_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "silkcloudtest+gt5daymdgf6@gmail.com",
+                "present": "false"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "click org tab ",
+            "index": "11",
+            "page": "idPortal.account_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "organizations",
+                "method": "click",
+                "sleep": "4"
+              }
+            ]
+          },
+          {
+            "description": "click child org ",
+            "index": "12",
+            "page": "idPortal.organizations_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "order_request_org",
+                "method": "click",
+                "sleep": "4"
+              }
+            ]
+          },
+          {
+            "description": "click order requests",
+            "index": "13",
+            "page": "idPortal.org_details_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "orderRequest",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "click decline",
+            "index": "14",
+            "page": "idPortal.orderRequests_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "decline_btn",
+                "method": "click",
+                "present": "false",
+                "sleep": "4"
+              },
+              {
+                "element": "declinedByName",
+                "method": "text",
+                "value": "Declined by\nCh7bdypste0",
+                "present": "false",
+                "sleep": "8"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

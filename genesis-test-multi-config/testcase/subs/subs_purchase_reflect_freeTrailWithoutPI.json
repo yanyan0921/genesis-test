@@ -1,0 +1,213 @@
+{
+  "testcase": {
+    "name": "subs_purchase_reflect_freeTrailWithoutPI",
+    "owner": "LiChen",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to purchase subs",
+      "steps": {
+        "step": [
+          {
+            "description": "create user via api",
+            "index": "1",
+            "resource":"identity.user_service",
+            "action": [
+              {
+                "method": "create_login_user",
+                "param": {
+                  "country":"US"
+                },
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "accept the cookies and sign in on home page",
+            "index": "2",
+            "page": "subs.subs_store_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "icon_sign_in",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "sleep": "5"
+              },
+              {
+                "element": "icon_sign_in",
+                "present": "false",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "3",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "${email_step_1}"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "15"
+              }
+            ]
+          },
+
+          {
+            "description": "go to pay test page",
+            "index": "4",
+            "page": "subs.subs_pay_test_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_amount",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_subscription_name",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "sleep": "5"
+              },
+              {
+                "sleep": "15",
+                "element": "btn_subscription_name",
+                "method": "click"
+              },
+              {
+                "element": "div_unity_reflect",
+                "present": "false",
+                "method": "click"
+              },
+              {
+                "element": "btn_go",
+                "method": "click",
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "go to pay test page again",
+            "index": "5",
+            "page": "subs.subs_pay_test_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "btn_subscription_name",
+                "method": "click"
+              },
+              {
+                "element": "div_unity_reflect",
+                "present": "false",
+                "method": "click"
+              },
+              {
+                "element": "btn_go",
+                "method": "click",
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "accept terms and pay",
+            "index": "6",
+            "page": "subs.subs_pay_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_country",
+                "present": "false",
+                "method": "click"
+              },
+              {
+                "element": "div_country_japan",
+                "present": "false",
+                "method": "click",
+                "sleep": "7"
+              },
+              {
+                "element": "input_firstname",
+                "method": "send_keys",
+                "value": "ling",
+                "present": "false"
+              },
+              {
+                "element": "input_lastname",
+                "method": "send_keys",
+                "value": "zhai"
+              },
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "${email_step_1}"
+              },
+              {
+                "element": "input_phone",
+                "method": "send_keys",
+                "value": "12345678"
+              },
+              {
+                "element": "input_address",
+                "method": "send_keys",
+                "value": "test road"
+              },
+              {
+                "element": "input_postalCode",
+                "method": "send_keys",
+                "value": "100000"
+              },
+              {
+                "element": "input_city",
+                "method": "send_keys",
+                "value": "shanghai",
+                "sleep": "80000"
+              },
+              {
+                "element": "div_add_payment",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "checkbox_terms",
+                "method": "script",
+                "value": "document.getElementById(\"order_terms\").click()",
+                "sleep": "8"
+              },
+              {
+                "element": "btn_pay_now",
+                "method": "click",
+                "sleep": "30"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

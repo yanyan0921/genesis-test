@@ -1,0 +1,56 @@
+{
+  "page": {
+    "elements": {
+      "element": [
+        {
+          "name": "icon_chevron_down",
+          "locator": {
+            "by": "CLASS",
+            "value": "ico-chevron-down"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "icon_sign_out",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"user-panel\"]/div/a[4]/i"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "href_account_management",
+          "locator": {
+            "by": "CLASS",
+            "value": "ico-remove-user"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        }
+      ]
+    },
+    "related": {
+      "pages": [
+        "tfa_page",
+        "account_page",
+        "reset_password_page"
+      ]
+    },
+    "url": "https://id.unity.com/",
+    "path": "idPortal.account_page"
+  }
+}

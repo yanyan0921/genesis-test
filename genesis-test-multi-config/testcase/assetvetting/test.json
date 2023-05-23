@@ -1,0 +1,82 @@
+{
+  "testcase": {
+    "name": "test submit package",
+    "owner": "taoxiaoqing",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to test submit package",
+      "steps": {
+        "step": [
+          {
+            "description": "accept package",
+            "index": "12",
+            "page": "publisherPortal.publisher_dharma_login_page",
+            "need_redirect": "true",
+            "action": [
+               {
+                "element": "input_email",
+                "method": "clear"
+              },
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "yunlongzhao+dharma_admin_stg@unity3d.com"
+              },
+              {
+                "element": "input_password",
+                "method": "clear"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "7"
+              }
+            ]
+          },
+          {
+            "description": "accept package",
+            "index": "12",
+            "page": "publisherPortal.publisher_dharma_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_packageName",
+                "method": "send_keys",
+                "value": "123"
+              },
+              {
+                "element": "input_packageName",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                "sleep": "10"
+              },
+              {
+                "element": "package_menu",
+                "method": "click",
+                "present": "false"
+              },
+              {
+                "element": "accept_package",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "accept_btn",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"button default\")[0].click()"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

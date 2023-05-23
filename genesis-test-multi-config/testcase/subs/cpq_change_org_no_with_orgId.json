@@ -1,0 +1,159 @@
+{
+  "testcase": {
+    "name": "cpq_change_org_no_with_orgId",
+    "owner": "LiChen",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to purchase subs",
+      "steps": {
+        "step": [
+          {
+            "description": "create user via api",
+            "index": "1",
+            "resource":"identity.user_service",
+            "action": [
+              {
+                "method": "create_login_user",
+                "param": {
+                  "country":"US"
+                },
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "prepare sign in on home page",
+            "index": "2",
+            "page": "subs.subs_store_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "present": "false",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "3",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "${email_step_1}"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "post purchase quote",
+            "index": "4",
+            "resource": "subs.subs_service",
+            "action": [
+              {
+                "method": "post_purchase_quote",
+                "param": {
+                  "piType": "CREDITCARD_OR_PAYPAL",
+                  "org_name": "${org_name_step_1}",
+                  "email": "${email_step_1}"
+                },
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "check out purchase quote",
+            "index": "5",
+            "page": "subs.cpq_pay_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_cc_number",
+                "method": "send_keys",
+                "value": "4444333322221111",
+                "sleep": "8"
+              },
+              {
+                "element": "div_cc_month",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              },
+              {
+                "element": "div_cc_month_1",
+                "present": "false",
+                "method": "click"
+              },
+              {
+                "element": "div_cc_year",
+                "present": "false",
+                "method": "click"
+              },
+              {
+                "element": "div_cc_year_2022",
+                "present": "false",
+                "method": "click"
+              },
+              {
+                "element": "input_cc_cvc",
+                "method": "send_keys",
+                "value": "123"
+              },
+              {
+                "element": "input_cc_name",
+                "method": "send_keys",
+                "value": "zz",
+                "sleep": "2"
+              },
+              {
+                "element": "checkbox_terms",
+                "method": "script",
+                "present": "false",
+                "value": "document.getElementById(\"order_terms\").click()",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_pay_now",
+                "method": "click",
+                "sleep": "30"
+              }
+            ]
+          },
+          {
+            "description": "manage seats",
+            "index": "6",
+            "page": "subs.subs_receipt_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "href_manage_seats",
+                "method": "click",
+                "present": "false"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

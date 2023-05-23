@@ -1,0 +1,206 @@
+{
+  "testcase": {
+    "name": "asset_purchase_by_paypal",
+    "owner": "taoxiaoqing",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to purchase asset by paypal",
+      "steps": {
+        "step": [
+          {
+            "description": "prepare sign in on home page",
+            "index": "1",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click"
+              },
+              {
+                "element": "href_sign_in",
+                "method": "click",
+                "present": "false"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "2",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "silkcloudtest+do4v4ucfgz6@gmail.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "search asset item",
+            "index": "3",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "GameFlow"
+              },
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "Keys.ENTER"
+              }
+            ]
+          },
+          {
+            "description": "choose search result",
+            "index": "4",
+            "page": "assetStore.asset_search_result_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "item_name",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "add item to cart",
+            "index": "5",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "arrow_open_in_unity",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "btn_add_to_cart",
+                "method": "click",
+                "present": "false",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_view_cart",
+                "method": "click",
+                "present": "false",
+                "sleep": "14"
+              }
+            ]
+          },
+          {
+            "description": "proceed to checkout",
+            "index": "6",
+            "page": "assetStore.asset_cart_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_proceed_to_checkout",
+                "method": "click",
+                "sleep": "7"
+              }
+            ]
+          },
+          {
+            "description": "accept terms and pay",
+            "index": "7",
+            "page": "assetStore.asset_pay_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "select_paypal",
+                "method": "click",
+                "present": "false",
+                "sleep": "4"
+              },
+              {
+                "element": "input_paypal_email",
+                "method": "send_keys",
+                "value": "yunlongzhao@unity3d.com",
+                "present": "false"
+              },
+              {
+                "element": "checkbox_terms",
+                "method": "script",
+                "value": "document.getElementById(\"summary_terms\").click()"
+              },
+              {
+                "element": "btn_pay_now",
+                "method": "click",
+                "sleep": "180"
+              }
+            ]
+          },
+          {
+            "description": "edit paypal info and continue next step",
+            "index": "8",
+            "page": "assetStore.paypal_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_pw",
+                "method": "script",
+                "value": "document.getElementsByName(\"login_password\")[0].value=\"q1w2e3r4\"",
+                "sleep": "10"
+              },
+              {
+                "element": "login_paypal",
+                "method": "script",
+                "present": "document.getElementsByName(\"btnLogin\")[0].click[]",
+                "sleep": "10"
+              },
+              {
+                "element": "btn_agree_continue",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"btn full confirmButton continueButton\")[0].click()",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "btn_agree_continue",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"btn full confirmButton continueButton\")[0].click()",
+                "present": "false",
+                "sleep": "20"
+              }
+            ]
+          },
+          {
+            "description": "verify total amount and tax",
+            "index": "9",
+            "page": "assetStore.asset_receipt_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "label_total_amount",
+                "method": "text",
+                "value": "$10"
+              },
+              {
+                "element": "label_tax",
+                "method": "text",
+                "value": "$0"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

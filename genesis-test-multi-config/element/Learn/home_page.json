@@ -1,0 +1,81 @@
+{
+  "page": {
+    "elements": {
+      "element": [
+        {
+          "name": "input_email",
+          "locator": {
+            "by": "ID",
+            "value": "conversations_create_session_form_email"
+          },
+          "methods": {
+            "method": [
+              "send_keys",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "input_password",
+          "locator": {
+            "by": "ID",
+            "value": "conversations_create_session_form_password"
+          },
+          "methods": {
+            "method": [
+              "send_keys",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_sign_in",
+          "locator": {
+            "by": "CLASS",
+            "value": "commit"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "checkbox_remember_me",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\\\"conversations_create_session_form_remember_me\\\"]"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "label_error_msg",
+          "locator": {
+            "by": "CLASS",
+            "value": "error-msg"
+          },
+          "methods": {
+            "method": [
+              "get_text"
+            ]
+          }
+        }
+      ]
+    },
+    "related": {
+      "pages": [
+        "tfa_page",
+        "account_page",
+        "reset_password_page"
+      ]
+    },
+    "url": "https://id.unity.com/",
+    "path": "idPortal.id_page"
+  }
+}

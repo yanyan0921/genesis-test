@@ -1,0 +1,459 @@
+{
+  "testcase": {
+    "name": "publisher_restrictedUnityVersion_submit",
+    "owner": "tanlinhui",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to test submit new package successful with unity version 2018.4+2019.4",
+      "steps": {
+        "step": [
+          {
+            "description": "prepare sign in on home page",
+            "index": "1",
+            "page": "publisherPortalV2.publisher_login_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "linhui.tan+01@unity3d.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "7"
+              }
+            ]
+          },
+          {
+            "description": "create value",
+            "index": "2",
+            "resource": "asset.asset_service",
+            "action": [
+              {
+                "method": "create_value",
+                "param": {
+                  "Digits": "5"
+                },
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "click create new btn",
+            "index": "3",
+            "page": "publisherPortalV2.publisher_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "create_new_package_btn",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "input_packagename",
+                "method": "action_chain",
+                "present": "false",
+                "chain": [
+                  {
+                    "method": "move_to_element",
+                    "param": {
+                      "element": "input_packagename"
+                    }
+                  },
+                  {
+                    "method": "send_keys_to_element",
+                    "param": {
+                      "element": "input_packagename",
+                      "value": "${value_step_2}"
+                    }
+                  }
+                ]
+              },
+              {
+                "element": "category_select_box",
+                "method": "action_chain",
+                "present": "false",
+                "sleep": "5",
+                "chain": [
+                  {
+                    "method": "move_to_element",
+                    "param": {
+                      "element": "category_select_box"
+                    }
+                  },
+                  {
+                    "method": "click",
+                    "param": {
+                      "element": "category_select_box"
+                    }
+                  },
+                  {
+                    "method": "send_keys",
+                    "param": {
+                      "value": "Keys.DOWN"
+                    }
+                  },
+                  {
+                    "method": "send_keys",
+                    "param": {
+                      "value": "Keys.ENTER"
+                    }
+                  }
+                ]
+              },
+              {
+                "element": "btn_save",
+                "method": "click",
+                "sleep": "8"
+              }
+            ]
+          },
+          {
+            "description": " edit draft page",
+            "index": "4",
+            "page": "publisherPortalV2.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "publisher_title",
+                "method": "get_current_url",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "upload asset package with 2018.4.17f1",
+            "index": "5",
+            "resource": "asset.asset_service_publisherV2",
+            "action": [
+              {
+                "method": "upload_unitypackage",
+                "param": {
+                  "email": "linhui.tan+01@unity3d.com",
+                  "unity_version": "2018.4.17f1"
+                },
+                "sleep": "7"
+              }
+            ]
+          },
+          {
+            "description": "upload asset package with 2019.4.10f1",
+            "index": "5",
+            "resource": "asset.asset_service_publisherV2",
+            "action": [
+              {
+                "method": "upload_unitypackage",
+                "param": {
+                  "email": "linhui.tan+01@unity3d.com",
+                  "unity_version": "2019.4.10f1"
+                },
+                "sleep": "7"
+              }
+            ]
+          },
+          {
+            "description": "accept cookies",
+            "index": "6",
+            "page": "publisherPortalV2.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "icon_cookies",
+                "method": "script",
+                "value": "document.getElementsByClassName('onetrust-close-btn-handler onetrust-close-btn-ui banner-close-button onetrust-lg ot-close-icon')[0].click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "filling package dependencies and srps",
+            "index": "7",
+            "page": "publisherPortalV2.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "pacman_package_srp",
+                "present": "false",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "pacman_package_srp",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView()",
+                "sleep": "3"
+              },
+              {
+                "element": "icon_dependence_2rd",
+                "present": "false",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": " edit description page",
+            "index": "7",
+            "page": "publisherPortalV2.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "delete_draft",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView(false)",
+                "sleep": "3"
+              },
+              {
+                "element": "btn_description",
+                "present": "false",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "input_summary",
+                "present": "false",
+                "method": "send_keys",
+                "value": "CoolSoundFX is a sound mixing tool"
+              },
+              {
+                "element": "input_Description",
+                "method": "action_chain",
+                "present": "false",
+                "chain": [
+                  {
+                    "method": "move_to_element",
+                    "param": {
+                      "element": "input_Description"
+                    }
+                  },
+                  {
+                    "method": "send_keys_to_element",
+                    "param": {
+                      "element": "input_Description",
+                      "value": "test input description"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "description": " edit detail page",
+            "index": "8",
+            "page": "publisherPortalV2.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_details",
+                "present": "false",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "input_keywords",
+                 "method": "send_keys",
+                "value": "RPG",
+                "present": "false"
+              },
+              {
+                "element": "input_keywords",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                "sleep": "3"
+              },
+              {
+                "element": "input_keywords",
+                 "method": "send_keys",
+                "value": "sound",
+                "present": "false"
+              },
+              {
+                "element": "input_keywords",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                "sleep": "3"
+              },
+              {
+                "element": "input_keywords",
+                 "method": "send_keys",
+                "value": "SFX",
+                "present": "false"
+              },
+              {
+                "element": "input_keywords",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "Media upload",
+            "index": "9",
+            "page": "publisherPortalV2.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_Media_upload",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "upload_Keyimages",
+                "present": "false",
+                "method": "send_keys",
+                "value": "./testcase/vettingTestImage/cover.jpg",
+                "sleep": "15"
+              },
+              {
+                "element": "upload_Keyimages",
+                "present": "false",
+                "method": "send_keys",
+                "value": "./testcase/vettingTestImage/card.jpg",
+                "sleep": "15"
+              },
+              {
+                "element": "upload_Keyimages",
+                "present": "false",
+                "method": "send_keys",
+                "value": "./testcase/vettingTestImage/icon.jpg",
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "submit package",
+            "index": "10",
+            "page": "publisherPortalV2.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "delete_draft",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView(false)",
+                "sleep": "3"
+              },
+              {
+                "element": "btn_submit",
+                "present": "false",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "checkbox_terms",
+                "present": "false",
+                "method": "click",
+                "sleep": "4"
+              },
+              {
+                "element": "btn_accepted",
+                "present": "false",
+                "method": "click",
+                 "sleep": "15"
+              },
+              {
+                "element": "label_submitted",
+                "present": "false",
+                "method": "text",
+                "value": "Submitted!"
+              }
+            ]
+          },
+          {
+            "description": "log out",
+            "index": "11",
+            "page": "publisherPortalV2.publisher_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "btn_account",
+                "method": "click",
+                "sleep":"3"
+              },
+              {
+                "element": "logout_tab",
+                "present": "false",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "accept package",
+            "index": "12",
+            "page": "publisherPortal.publisher_dharma_login_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "clear"
+              },
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "taoxiaoqing@unity3d.com"
+              },
+              {
+                "element": "input_password",
+                "method": "clear"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test0000"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "40"
+              }
+            ]
+          },
+          {
+            "description": "accept package",
+            "index": "15",
+            "page": "publisherPortal.publisher_dharma_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_packageName",
+                "method": "send_keys",
+                "value": "${value_step_2}",
+                "sleep": "40"
+              },
+              {
+                "element": "input_packageName",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                "sleep": "10"
+              },
+              {
+                "element": "package_menu",
+                "method": "click",
+                "present": "false"
+              },
+              {
+                "element": "accept_package",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "accept_decline_btn",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"button default\")[0].click()"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

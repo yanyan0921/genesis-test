@@ -1,0 +1,166 @@
+{
+  "testcase": {
+    "name": "asset_plus_user_multi_entity_upgrade_mtom_promotion",
+    "owner": "taoxiaoqing",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to verify plus/pro user whether enjoy upgrade promotion(Promotion priority test :single-singe)",
+      "steps": {
+        "step": [
+          {
+            "description": "accept the cookies",
+            "index": "1",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "icon_sign_in",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "prepare sign in on home page",
+            "index": "2",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "href_sign_in",
+                "method": "click",
+                "present": "false",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "3",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "silkcloudtest+lkph4s23e38@gmail.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "7"
+              }
+            ]
+          },
+          {
+            "description": "search asset item",
+            "index": "4",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "site_stg_1",
+                "present": "false"
+              },
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "choose search result",
+            "index": "5",
+            "page": "assetStore.asset_search_result_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "item_name",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_1-e15 _25P-Q\")[0].click()",
+                "sleep": "8"
+              }
+            ]
+          },
+          {
+            "description": "go to site_stg_3 page",
+            "index": "6",
+            "page": "assetStore.asset_site_stg1_purchased_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "asset_name",
+                "method": "text",
+                "value": "site_stg_1",
+                "sleep": "5"
+              },
+              {
+                "element": "site_stg_3",
+                "method": "click",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "verify promotion price",
+            "index": "7",
+            "page": "assetStore.asset_site_stg3_product_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "asset_name",
+                "method": "text",
+                "value": "site_stg_3",
+                "sleep": "15"
+              },
+              {
+                "element": "asset_common_price",
+                "method": "text",
+                "value": "$3.99",
+                "present": "false",
+                "sleep": "4"
+              },
+              {
+                "element": "single_multi_choice",
+                "method": "click"
+              },
+              {
+                "element": "multi",
+                "method": "click",
+                "present": "false"
+              },
+              {
+                "element": "normal_upgrade_promotion_price",
+                "method": "text",
+                "value": "$6",
+                "present": "false"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

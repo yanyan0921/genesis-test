@@ -1,0 +1,430 @@
+{
+  "testcase": {
+    "name": "ph_issue",
+    "owner": "YuanmingXiao",
+    "priority": "comprehensive",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to add issue on repo with label, milestone, etc",
+      "steps": {
+        "step": [
+          {
+            "description": "create user via api",
+            "index": "1",
+            "resource":"identity.user_service",
+            "action": [
+              {
+                "method": "create_login_user",
+                "param": {
+                  "country":"US"
+                },
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "prepare sign in on home page",
+            "index": "2",
+            "page": "plasticHub.ph_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_login_by_account",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "icon_email_login",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "3",
+            "page": "plasticHub.ph_id_page",
+            "need_redirect": "false",
+            "sleep": "10",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "${email_step_1}"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "filling the occupation info",
+            "index": "4",
+            "page": "plasticHub.occupation_info_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "button_occupation",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "present": "false",
+                "sleep": "5"
+              },
+              {
+                "element": "choose_occupation",
+                "method": "click",
+                "present": "false",
+                "sleep": "1"
+              },
+              {
+                "element": "button_occupation",
+                "method": "click",
+                "present": "false",
+                "sleep": "1"
+              },
+              {
+                "element": "input_company_name",
+                "method": "send_keys",
+                "value": "unitytest"
+              },
+              {
+                "element": "choose_industry",
+                "method": "click",
+                "present": "false",
+                "sleep": "1"
+              },
+              {
+                "element": "button_industry",
+                "method": "click",
+                "present": "false",
+                "sleep": "1"
+              },
+              {
+                "element": "button_save",
+                "method": "click",
+                "present": "false",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "unity update confirm",
+            "index": "4",
+            "page": "plasticHub.occupation_info_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_unity_update1",
+                "present": "false",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "prepare create repository",
+            "index": "5",
+            "page": "plasticHub.ph_user_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "btn_repo_create",
+                "method": "click",
+                "present": "false",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "filling info in repo_create page",
+            "index": "6",
+            "page": "plasticHub.ph_repo_create_page",
+            "need_redirect": "false",
+            "sleep": "10",
+            "action": [
+              {
+                "element": "choose_owner",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "btn_owner",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "input_repo_name",
+                "method": "send_keys",
+                "value": "plastic_int_test",
+                "sleep": "2"
+              },
+              {
+                "element": "btn_repo_create",
+                "method": "click",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "Move to Label page",
+            "index": "7",
+            "page": "plasticHub.ph_repo_issue_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_issue_page",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              },
+              {
+                "element": "btn_labels_page",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              }
+            ]
+          },
+          {
+            "description": "Create default label",
+            "index": "8",
+            "page": "plasticHub.ph_repo_labels_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_default_label",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              }
+            ]
+          },
+          {
+            "description": "Move to Milestones page",
+            "index": "9",
+            "page": "plasticHub.ph_repo_issue_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_issue_page",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              },
+              {
+                "element": "btn_milestones_page",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              }
+            ]
+          },
+          {
+            "description": "prepare to create milestone",
+            "index": "10",
+            "page": "plasticHub.ph_repo_milestones_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_milestone_create",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              }
+            ]
+          },
+          {
+            "description": "filling info and create new milestone",
+            "index": "11",
+            "page": "plasticHub.ph_repo_milestones_create_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_title",
+                "method": "send_keys",
+                "present": "false",
+                "value": "milestone_test"
+              },
+              {
+                "element": "btn_create",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              }
+            ]
+          },
+          {
+            "description": "Move to Issue page",
+            "index": "12",
+            "page": "plasticHub.ph_repo_code_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_issue_page",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              }
+            ]
+          },
+          {
+            "description": "Prepare to create issue",
+            "index": "13",
+            "page": "plasticHub.ph_repo_issue_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_create_issue_page",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              }
+            ]
+          },
+          {
+            "description": "filling info and create new issue",
+            "index": "14",
+            "page": "plasticHub.ph_issue_create_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "info_title",
+                "method": "send_keys",
+                "present": "false",
+                "value": "issue_test"
+              },
+              {
+                "element": "btn_create",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              },
+              {
+                "element": "info_issue_create_verify",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              }
+            ]
+          },
+          {
+            "description": "move to explore page",
+            "index": "5",
+            "page": "plasticHub.ph_user_page",
+            "need_redirect": "false",
+            "sleep": "10",
+            "action": [
+              {
+                "element": "btn_explore",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              }
+            ]
+          },
+          {
+            "description": "search repository in explore page and move in",
+            "index": "6",
+            "page": "plasticHub.ph_explore_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_repo_search",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "input_search",
+                "method": "send_keys",
+                "value": "10086",
+                "present": "false"
+              },
+              {
+                "element": "btn_search",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "btn_repo_page",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "Move to Issue page",
+            "index": "12",
+            "page": "plasticHub.ph_repo_code_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_issue_page",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              }
+            ]
+          },
+          {
+            "description": "open issue",
+            "index": "13",
+            "page": "plasticHub.ph_repo_issue_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_issue_info",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              }
+            ]
+          },
+          {
+            "description": "Comment issue",
+            "index": "15",
+            "page": "plasticHub.ph_repo_issue_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_comment",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              },
+              {
+                "element": "btn_submit",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              },
+              {
+                "element": "info_issue_comment_verify",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

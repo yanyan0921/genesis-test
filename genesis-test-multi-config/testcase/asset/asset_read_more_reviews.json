@@ -1,0 +1,96 @@
+{
+  "testcase": {
+    "name": "asset_read_more_reviews",
+    "owner": "taoxiaoqing",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to test read more reviews button",
+      "steps": {
+        "step": [
+          {
+            "description": "accept the cookies",
+            "index": "1",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "icon_sign_in",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "prepare sign in on home page",
+            "index": "2",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "href_sign_in",
+                "method": "click",
+                "present": "false"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "3",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "silkcloudtest+d3tzfuahp8n@gmail.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+           "description": "link to product page and add item to cart",
+            "index": "6",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "true",
+            "action": [
+               {
+                "element": "btn_buy_now",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView()",
+                "sleep": "8"
+              },
+              {
+                "element": "read_more_review_btn",
+                "method": "script",
+                "value": "document.getElementsByClassName('D_-Sy')[0].click()",
+                "sleep": "5"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "page": {
+    "elements": {
+      "element": [
+        {
+          "name": "saveForLater",
+          "locator": {
+            "by": "CLASS",
+            "value": "row za-BQ"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "favorites",
+          "locator": {
+            "by": "SELECTOR",
+            "value": "row za-BQ _2vpRP"
+          },
+          "methods": {
+            "method": [
+              "click"
+            ]
+          }
+        }
+      ]
+    },
+    "related": {
+      "pages": [
+        "asset_home_page",
+        "asset_product_page"
+      ]
+    },
+    "url": "https://assetstore-staging.unity.com/",
+    "path": "assetStore.asset_list_page"
+  }
+}

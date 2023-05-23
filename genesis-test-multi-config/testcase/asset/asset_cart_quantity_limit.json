@@ -1,0 +1,158 @@
+{
+  "testcase": {
+    "name": "asset_cart_quantity_limit",
+    "owner": "taoxiaoqing",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to test seat asset quantity range",
+      "steps": {
+        "step": [
+          {
+            "description": "accept the cookies",
+            "index": "1",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "icon_sign_in",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "prepare sign in on home page",
+            "index": "2",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click"
+              },
+              {
+                "element": "href_sign_in",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "3",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "silkcloudtest+eekrpkivvh@gmail.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "12345678Test"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+           "description": "link to product page and add item to cart",
+            "index": "4",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "asset_name",
+                "method": "text",
+                "value": "GameFlow",
+                "sleep": "5"
+              },
+               {
+                "element": "arrow_open_in_unity",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_3l4rA\")[0].click()",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_add_to_cart",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_3UE3J ZQFsR auto _2kZZa\")[0].click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "verify cart info",
+            "index": "5",
+            "page": "assetStore.asset_cart_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "Qty_box",
+                "method": "click"
+              },
+              {
+                "element": "Qty_10",
+                "method": "click",
+                "sleep": "5",
+                "present": "false"
+              },
+              {
+                "element": "Qty_input_box",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              },
+              {
+                "element": "Qty_input_box",
+                "method": "clear"
+              },
+              {
+                "element": "Qty_input_box",
+                "method": "send_keys",
+                "value": "550",
+                "present": "false",
+                "sleep": "4"
+              },
+              {
+                "element": "label_price",
+                "method": "click",
+                "sleep": "4"
+              },
+              {
+                "element": "label_price",
+                "method": "text",
+                "value": "$5,000",
+                "present": "false",
+                "sleep": "5"
+              },
+              {
+                "element": "Clear_Cart_btn",
+                "method": "click"
+              },
+              {
+                "element": "Clear_confirm_btn",
+                "method": "click",
+                "present": "false"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

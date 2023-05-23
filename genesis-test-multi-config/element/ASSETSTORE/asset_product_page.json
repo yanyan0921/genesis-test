@@ -1,0 +1,96 @@
+{
+  "page": {
+    "elements": {
+      "element": [
+        {
+          "name": "btn_add_to_cart",
+          "locator": {
+            "by": "SELECTOR",
+            "value": "[class='_3UE3J ZQFsR auto _6dtXD']"
+          },
+          "methods": {
+            "method": [
+              "send_keys",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_view_cart",
+          "locator": {
+            "by": "SELECTOR",
+            "value": "[class='_3UE3J ZQFsR auto _24sbO']"
+          },
+          "methods": {
+            "method": [
+              "send_keys",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_express_text",
+          "locator": {
+            "by": "SELECTOR",
+            "value": "[class='_2VG4p _3ot9f']"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "arrow_open_in_unity",
+          "locator": {
+            "by": "SELECTOR",
+            "value": "[class='ifont ifont-icon-arrow-down h2TMq']"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "add_tag_btn",
+          "locator": {
+            "by": "SELECTOR",
+            "value": "[class='_3UE3J pDJt- auto _31f1z _3dfMi']"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_report",
+          "locator": {
+            "by": "CLASS",
+            "value": "eJP_z"
+          },
+          "methods": {
+            "method": [
+              "get_text",
+              "Click"
+            ]
+          }
+        }
+      ]
+    },
+    "related": {
+      "pages": [
+        "asset_report_page",
+        "edit_tag_page",
+        "asset_cart_page",
+        "asset_express_checkout_page"
+      ]
+    },
+    "url": "https://assetstore-staging.unity.com/packages/tools/visual-scripting/gameflow-14808",
+    "path": "assetStore.asset_product_page"
+  }
+}

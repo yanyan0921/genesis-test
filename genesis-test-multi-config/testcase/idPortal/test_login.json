@@ -1,0 +1,112 @@
+{
+  "testcase": {
+    "name": "test_login",
+    "owner": "ylzhao",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to login id portal",
+      "steps": {
+        "step": [
+          {
+            "description": "create user via api",
+            "index": "1",
+            "resource": "identity.user_service",
+            "action": [
+              {
+                "method": "create_login_user",
+                "param": {
+                  "country": "US"
+                },
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "create user via api",
+            "index": "2",
+            "resource": "identity.user_service",
+            "action": [
+              {
+                "method": "create_login_user",
+                "param": {
+                  "country": "US"
+                },
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "create organization for user_step_1",
+            "index": "3",
+            "resource": "identity.user_service",
+            "action": [
+              {
+                "method": "post_organization",
+                "param": {
+                  "email": "${email_step_1}"
+                },
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "add user_step_2 to org_step_3",
+            "index": "4",
+            "resource": "identity.user_service",
+            "action": [
+              {
+                "method": "add_user_to_org",
+                "param": {
+                  "org_id": "${org_id_step_3}",
+                  "user_id": "${user_id_step_2}"
+                },
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "fill out the login form",
+            "index": "5",
+            "page": "idPortal.id_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "${email_step_1}"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "logout on account page",
+            "index": "6",
+            "page": "idPortal.account_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "icon_chevron_down",
+                "method": "click"
+              },
+              {
+                "element": "icon_sign_out",
+                "method": "click"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

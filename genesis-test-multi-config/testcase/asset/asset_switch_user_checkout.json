@@ -1,0 +1,345 @@
+{
+  "testcase": {
+    "name": "asset_switch_user_checkout",
+    "owner": "Xiaoqing.T",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to purchase asset by credit card，then switch account to payment ",
+      "steps": {
+        "step": [
+          {
+            "description": "prepare sign in on home page",
+            "index": "1",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click"
+              },
+              {
+                "element": "href_sign_in",
+                "method": "click",
+                "present": "false"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "2",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "silkcloudtest+p0slp8jf4x9@gmail.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "search asset item",
+            "index": "3",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "GameFlow"
+              },
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "Keys.ENTER"
+              }
+            ]
+          },
+          {
+            "description": "choose search result",
+            "index": "4",
+            "page": "assetStore.asset_search_result_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "item_name",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "add item to cart",
+            "index": "5",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "arrow_open_in_unity",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_add_to_cart",
+                "method": "click",
+                "present": "false",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_view_cart",
+                "method": "click",
+                "present": "false"
+              }
+            ]
+          },
+          {
+            "description": "proceed to checkout",
+            "index": "6",
+            "page": "assetStore.asset_cart_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "Qty_box",
+                "method": "click"
+              },
+              {
+                "element": "Qty_1",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "label_price",
+                "method": "text",
+                "value": "$10",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_proceed_to_checkout",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "accept terms and pay",
+            "index": "7",
+            "page": "assetStore.asset_pay_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "checkbox_terms",
+                "method": "script",
+                "value": "document.getElementById(\"order_terms\").click()"
+              },
+              {
+                "element": "btn_pay_now",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "verify total amount and tax",
+            "index": "8",
+            "page": "assetStore.asset_receipt_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "label_total_amount",
+                "method": "text",
+                "value": "$10"
+              },
+              {
+                "element": "label_tax",
+                "method": "text",
+                "value": "$0",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "prepare login in another account",
+            "index": "9",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "logined_account",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "sign_out",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              }
+            ]
+          },
+          {
+            "description": "prepare sign in on home page",
+            "index": "10",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click"
+              },
+              {
+                "element": "href_sign_in",
+                "method": "click",
+                "present": "false"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "11",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "silkcloudtest+tmwvvpygax@gmail.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "search asset item",
+            "index": "12",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "GameFlow"
+              },
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "Keys.ENTER"
+              }
+            ]
+          },
+          {
+            "description": "choose search result",
+            "index": "6",
+            "page": "assetStore.asset_search_result_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "item_name",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "add item to cart",
+            "index": "14",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "arrow_open_in_unity",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_add_to_cart",
+                "method": "click",
+                "present": "false",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_view_cart",
+                "method": "click",
+                "present": "false"
+              }
+            ]
+          },
+          {
+            "description": "proceed to checkout",
+            "index": "15",
+            "page": "assetStore.asset_cart_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "Qty_box",
+                "method": "click"
+              },
+              {
+                "element": "Qty_1",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_proceed_to_checkout",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "accept terms and pay",
+            "index": "16",
+            "page": "assetStore.asset_pay_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "checkbox_terms",
+                "method": "script",
+                "value": "document.getElementById(\"order_terms\").click()"
+              },
+              {
+                "element": "btn_pay_now",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "verify total amount and tax",
+            "index": "17",
+            "page": "assetStore.asset_receipt_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "label_total_amount",
+                "method": "text",
+                "value": "$10"
+              },
+              {
+                "element": "label_tax",
+                "method": "text",
+                "value": "$0"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

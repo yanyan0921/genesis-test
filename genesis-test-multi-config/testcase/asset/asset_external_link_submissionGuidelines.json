@@ -1,0 +1,146 @@
+{
+  "testcase": {
+    "name": "asset_test_external_link_submissionGuidelines",
+    "owner": "taoxiaoqing",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "[disabled]I would like to test external_link",
+      "steps": {
+        "step": [
+          {
+            "description": "accept the cookies",
+            "index": "1",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "icon_sign_in",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "prepare sign in on home page",
+            "index": "2",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click"
+              },
+              {
+                "element": "href_sign_in",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "3",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "silkcloudtest+eekrpkivvh@gmail.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "12345678Test"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "verify submissionGuide link",
+            "index": "4",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "footer_SellAssetsonUnity_submissionGuide",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView()"
+              },
+              {
+                "element": "footer_SellAssetsonUnity_submissionGuide",
+                "method": "click",
+                "sleep": "4"
+              }
+            ]
+          },
+          {
+            "description": "verify submissionGuide title",
+            "index": "5",
+            "page": "assetStore.asset_external_submissionGuidelines_page",
+            "need_redirect": "false",
+            "switch_tab": "1",
+            "action": [
+              {
+                "element": "submissionGuidelines_title",
+                "method": "text",
+                "value": "Submission Guidelines"
+              }
+            ]
+          },
+          {
+            "description": "verify language english",
+            "index": "6",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "false",
+            "switch_tab": "0",
+            "action": [
+              {
+                "element": "footer_language_English",
+                "method": "click",
+                "sleep": "4"
+              },
+              {
+                "element": "top_assets_title",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView()",
+                "present": "false"
+              },
+              {
+                "element": "top_assets_title",
+                "method": "text",
+                "value": "Top Assets",
+                "present": "false"
+              }
+            ]
+          },
+          {
+            "description": "verify submissionGuide title",
+            "index": "7",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "top_assets_title",
+                "method": "text",
+                "value": "Top Assets"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

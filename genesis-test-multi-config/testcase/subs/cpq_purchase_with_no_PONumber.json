@@ -1,0 +1,128 @@
+{
+  "testcase": {
+    "name": "cpq_purchase_with_no_PONumber",
+    "owner": "LingZhai",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to purchase subs",
+      "steps": {
+        "step": [
+          {
+            "description": "create user via api",
+            "index": "1",
+            "resource":"identity.user_service",
+            "action": [
+              {
+                "method": "create_login_user",
+                "param": {
+                  "country":"US"
+                },
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "prepare sign in on home page",
+            "index": "2",
+            "page": "subs.subs_store_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "present": "false",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "3",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "${email_step_1}"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "8"
+              }
+            ]
+          },
+          {
+            "description": "post purchase quote",
+            "index": "4",
+            "resource": "subs.subs_service",
+            "action": [
+              {
+                "method": "post_purchase_quote",
+                "param": {
+                  "pi_type": "INVOICE_PAY",
+                  "org_name": "${org_name_step_1}",
+                  "email": "${email_step_1}"
+                },
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "check out purchase quote",
+            "index": "5",
+            "page": "subs.cpq_pay_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "radio_no_po_number",
+                "method": "click"
+              },
+
+              {
+                "element": "div_copy_from_org_address",
+                "method": "click"
+              },
+              {
+                "element": "checkbox_terms",
+                "method": "script",
+                "value": "document.getElementById(\"order_terms\").click()"
+              },
+              {
+                "element": "btn_pay_now",
+                "method": "click",
+                "sleep": "20"
+              }
+            ]
+          },
+          {
+            "description": "manage seats",
+            "index": "6",
+            "page": "subs.subs_receipt_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "href_manage_seats",
+                "method": "click",
+                "present": "false"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

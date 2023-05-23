@@ -1,0 +1,52 @@
+{
+  "page": {
+    "elements": {
+      "element": [
+        {
+          "name": "label_total_amount",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"main-layout-scroller\"]/div/div[1]/div/div/div[3]/div/div[2]/div[2]/div/div[2]"
+          },
+          "methods": {
+            "method": [
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "label_tax",
+          "locator": {
+            "by": "XPATH",
+            "value":"//*[@id=\"main-layout-scroller\"]/div/div[1]/div/div/div[3]/div/div[2]/div[1]/div[2]/div[4]/div[2]"
+          },
+          "methods": {
+            "method": [
+             "get_text"
+            ]
+          }
+        },
+        {
+          "name": "href_terms_of_services",
+          "locator": {
+            "by": "CLASS",
+            "value":"EJ5it"
+          },
+          "methods": {
+            "method": [
+             "get_text",
+              "click"
+            ]
+          }
+        }
+      ]
+    },
+    "related": {
+      "pages": [
+        "asset_product_page"
+      ]
+    },
+    "url": "https://assetstore-staging.unity.com/",
+    "path": "assetStore.asset_receipt_page"
+  }
+}

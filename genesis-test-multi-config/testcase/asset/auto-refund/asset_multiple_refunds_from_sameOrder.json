@@ -1,0 +1,514 @@
+{
+  "testcase": {
+    "name": "asset_multiple_refunds_from_sameOrder",
+    "owner": "tanlinhui",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to test about purchase 1 seat and 2 site item in same order,seat asset request is auto-reject,site assets are auto-approve",
+      "steps": {
+        "step": [
+          {
+            "description": "accept the cookies",
+            "index": "1",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "icon_sign_in",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "prepare sign in on home page",
+            "index": "2",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep":"2"
+              },
+              {
+                "element": "href_sign_in",
+                "method": "click",
+                "present": "false"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "3",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "silkcloudtest+xpiinozo806@gmail.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "filter seat items",
+            "index": "4",
+            "page": "assetStore.asset_category_filter_tools_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "filter_refine",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView()",
+                "present": "false",
+                "sleep": "8"
+              },
+              {
+                "element": "label_item",
+                "method": "script",
+                "value": "document.getElementsByClassName('_1-e15 _25P-Q')[3].click()",
+                "sleep": "8"
+              }
+            ]
+          },
+          {
+            "description": "add to cart",
+            "index": "5",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "add_to_cart_main",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_3UE3J MtRkn auto _1EJPn _2xeq5\")[0].click()",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "search asset item",
+            "index": "6",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_search",
+                "method": "send_keys",
+                "value": "Rain Drop Effect 2",
+                "sleep": "3"
+              },
+              {
+                "element": "input_search",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "click item name",
+            "index": "7",
+            "page": "assetStore.asset_search_result_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "item_name",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_1-e15 _25P-Q\")[0].click()",
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "add item to cart",
+            "index": "8",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "add_to_cart_main",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_3UE3J MtRkn auto _1EJPn _2xeq5\")[0].click()",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "search asset item",
+            "index": "6",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_search",
+                "method": "send_keys",
+                "value": "kjkp3_package",
+                "sleep": "3"
+              },
+              {
+                "element": "input_search",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "click item name",
+            "index": "10",
+            "page": "assetStore.asset_search_result_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "item_name",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_1-e15 _25P-Q\")[0].click()",
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "add item to cart",
+            "index": "11",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "add_to_cart_main",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_3UE3J MtRkn auto _1EJPn _2xeq5\")[0].click()",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "proceed to checkout",
+            "index": "15",
+            "page": "assetStore.asset_cart_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "btn_proceed_to_checkout",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "accept terms and pay",
+            "index": "16",
+            "page": "assetStore.asset_pay_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "checkbox_terms",
+                "method": "script",
+                "value": "document.getElementById(\"order_terms\").click()",
+                "sleep": "2"
+              },
+              {
+                "element": "btn_pay_now",
+                "method": "click",
+                "sleep": "25"
+              }
+            ]
+          },
+          {
+            "description": "request auto-refund",
+            "index": "17",
+            "page": "assetStore.asset_receipt_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "seat_management",
+                "present": "false",
+                "method": "text",
+                "value": "Assign Seats",
+                "sleep": "15"
+              },
+              {
+                "element": "icon_menu",
+                "present": "false",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "label_request_refund",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "btn_continue",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              },
+              {
+                "element": "box_request_reason",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              },
+              {
+              "element": "input_message",
+              "present": "false",
+              "value": "request from ui auto test - request from ui auto test",
+              "method": "send_keys",
+                "sleep":"2"
+              },
+              {
+                "element": "label_request_reason",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              },
+              {
+                "element": "btn_submit",
+                "method": "click",
+                "present": "false",
+                "sleep": "20"
+              },
+              {
+                "element": "label_submit",
+                "method": "text",
+                "present": "false",
+                "value": "Your request has been submitted"
+              },
+              {
+                "element": "icon_close",
+                "method": "script",
+                "value": "document.getElementsByClassName('ifont ifont-close _2qFWx')[0].click();",
+                "sleep": "8"
+              }
+            ]
+          },
+          {
+            "description": "verify first asset result of auto-refund",
+            "index": "18",
+            "page": "assetStore.asset_receipt_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "icon_menu",
+                "present": "false",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "label_refund_history",
+                "method": "click",
+                "present": "false",
+                "sleep": "5"
+              },
+              {
+                "element": "label_result",
+                "method": "text",
+                "present": "false",
+                "value": "Refund request pending"
+              },
+              {
+                "element": "icon_close",
+                "method": "script",
+                "value": "document.getElementsByClassName('ifont ifont-close _2qFWx')[0].click();",
+                "sleep": "2"
+              }
+            ]
+          },
+          {
+            "description": "second asset request auto-refund",
+            "index": "19",
+            "page": "assetStore.asset_receipt_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "icon_menu_second",
+                "method": "script",
+                "value": "document.getElementsByClassName('icon ifont ifont-more-vert _3RMvx')[2].click()",
+                "sleep": "2"
+              },
+              {
+                "element": "label_request_refund_second",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "btn_continue",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              },
+              {
+                "element": "box_request_reason",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              },
+              {
+              "element": "input_message",
+              "present": "false",
+              "value": "request from ui auto test - request from ui auto test",
+              "method": "send_keys",
+                "sleep":"2"
+              },
+              {
+                "element": "label_request_reason",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              },
+              {
+                "element": "btn_submit",
+                "method": "click",
+                "present": "false",
+                "sleep": "20"
+              },
+              {
+                "element": "icon_close",
+                "present": "false",
+                "method": "script",
+                "value": "document.getElementsByClassName('ifont ifont-close _2qFWx')[0].click();",
+                "sleep": "8"
+              }
+            ]
+          },
+          {
+            "description": "verify second asset result of auto-refund",
+            "index": "20",
+            "page": "assetStore.asset_receipt_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "icon_menu_second",
+                "method": "script",
+                "value": "document.getElementsByClassName('icon ifont ifont-more-vert _3RMvx')[2].click()",
+                "sleep": "2"
+              },
+              {
+                "element": "label_refund_history_second",
+                "method": "click",
+                "present": "false",
+                "sleep": "5"
+              },
+              {
+                "element": "label_result",
+                "method": "text",
+                "present": "false",
+                "value": "Refund request approved"
+              },
+              {
+                "element": "icon_close",
+                "method": "script",
+                "value": "document.getElementsByClassName('ifont ifont-close _2qFWx')[0].click();",
+                "sleep": "2"
+              }
+            ]
+          },
+          {
+            "description": "third asset request auto-refund",
+            "index": "21",
+            "page": "assetStore.asset_receipt_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "icon_menu_third",
+                "method": "script",
+                "value": "document.getElementsByClassName('icon ifont ifont-more-vert _3RMvx')[4].click()",
+                "sleep": "2"
+              },
+              {
+                "element": "label_request_refund_third",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "btn_continue",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              },
+              {
+                "element": "box_request_reason",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              },
+              {
+              "element": "input_message",
+              "present": "false",
+              "value": "request from ui auto test - request from ui auto test",
+              "method": "send_keys",
+                "sleep":"2"
+              },
+              {
+                "element": "label_request_reason",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              },
+              {
+                "element": "btn_submit",
+                "method": "click",
+                "present": "false",
+                "sleep": "20"
+              },
+              {
+                "element": "icon_close",
+                "present": "false",
+                "method": "script",
+                "value": "document.getElementsByClassName('ifont ifont-close _2qFWx')[0].click();",
+                "sleep": "8"
+              }
+            ]
+          },
+          {
+            "description": "verify third result of auto-refund",
+            "index": "22",
+            "page": "assetStore.asset_receipt_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "icon_menu_third",
+                "method": "script",
+                "value": "document.getElementsByClassName('icon ifont ifont-more-vert _3RMvx')[4].click()",
+                "sleep": "2"
+              },
+              {
+                "element": "label_refund_history_third",
+                "method": "click",
+                "present": "false",
+                "sleep": "5"
+              },
+              {
+                "element": "label_result",
+                "method": "text",
+                "present": "false",
+                "value": "Refund request approved"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

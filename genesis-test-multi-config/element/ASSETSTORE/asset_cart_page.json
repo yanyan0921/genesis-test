@@ -1,0 +1,84 @@
+{
+  "page": {
+    "elements": {
+      "element": [
+        {
+          "name": "btn_proceed_to_checkout",
+          "locator":
+          {
+            "by": "CLASS",
+            "value": "_19aWZ"
+          },
+          "methods":
+          {
+            "method":
+            [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "price_label",
+          "locator": {
+            "by": "CLASS",
+            "value": "price_label"
+          },
+          "methods": {
+            "method": [
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "Remove_btn",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"main-layout-scroller\"]/div/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[2]/button[1]"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "Save_for_later_btn",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"main-layout-scroller\"]/div/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[2]/button[2]"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "clearCart_btn",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"main-layout-scroller\"]/div/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/span"
+          },
+          "methods": {
+            "method": [
+              "get_text",
+              "click"
+            ]
+          }
+        }
+      ]
+    },
+    "related": {
+      "pages": [
+        "asset_product_page",
+        "asset_pay_page",
+        "asset_home_page"
+      ]
+    },
+    "url": "https://assetstore-staging.unity.com/account/cart",
+    "path": "assetStore.asset_cart_page"
+  }
+}

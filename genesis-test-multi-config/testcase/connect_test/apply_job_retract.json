@@ -1,0 +1,187 @@
+{
+  "testcase": {
+    "name": "apply_job_retract",
+    "owner": "guohua",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to apply a job",
+      "steps": {
+        "step": [
+     {
+            "description": "fill out the login form",
+            "index": "1",
+            "page": "connect.connect_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "btn_avatar",
+                "method": "script",
+                "value": "document.querySelector(\"#pageContent > div:nth-child(1) > div.header-wrap_GEr2c682 > div > div.user-actions_2nPAaNhU > div > div.right_ZNamn0lh > div.account-switcher_eSCn1fWL > unity-account-switcher\").shadowRoot.querySelector(\"div > a > user-avatar\").click()",
+                "sleep": "2"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "script",
+                "value": "document.querySelector(\"#pageContent > div:nth-child(1) > div.header-wrap_GEr2c682 > div > div.user-actions_2nPAaNhU > div > div.right_ZNamn0lh > div.account-switcher_eSCn1fWL > unity-account-switcher\").shadowRoot.querySelector(\"div > div > drop-down\").shadowRoot.querySelector(\"div > div:nth-child(2)\").click()",
+                "present": "false",
+                "sleep": "13"
+              }
+            ]
+          },
+          {
+            "description": "fill out the login form",
+            "index": "2",
+            "page": "connect.connect_login_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "hua.guo+11@unity3d.com",
+                "present": "false"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_login",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+           {
+            "description": "search job",
+            "index": "3",
+            "page": "connect.home_nav_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "icon_jobs",
+                "method": "click"
+              },
+               {
+                "element": "icon_search_jobs",
+                "method": "script",
+                 "value": "document.querySelector(\"#pageContent > div:nth-child(1) > div.header-wrap_GEr2c682 > div > div.main-menu-wrapper_2eWH5ERW > div > div.menu-left_flKNOvnq > div.first-menu_1sbJSQP5 > div.menu-wrap_3skhSRHM > div > div > a:nth-child(1)\").click()",
+                  "sleep": "2"
+
+              }
+            ]
+          },
+          {
+            "description": "search a job",
+            "index": "4",
+            "page": "connect.search_job",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_search",
+                "method": "send_keys",
+                "value": "617test",
+                 "sleep": "2"
+              },
+              {
+                "element": "input_search",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                 "sleep": "4"
+              },
+              {
+                "element": "div_job",
+                "method": "click",
+                "present": "false",
+                 "sleep": "2"
+              },
+              {
+                "element": "button_apply_job",
+                "method": "script",
+                "value": "document.querySelector(\"#pageBody > div > div > div > div.search-list-container_EFh8XyVh > div.jobs_1uRlNZW7 > div > div > div > div.status-wrap_1SedOx-l > div > button.raised-btn_2vTjL538.raised-btn-primary_MYOE9bp7.interested_1-0Vv3qU\").click()",
+                "present": "false",
+                "sleep": "4"
+              }
+            ]
+          },
+          {
+            "description": "apply a job detail",
+            "index": "5",
+            "page": "connect.apply_job_page",
+            "switch_tab": "1",
+            "need_redirect": "false",
+            "action": [
+               {
+                "element": "div_txt",
+                "method": "script",
+                 "value": "document.querySelector(\"#pageBody > div > div > div > div.attachments_3Sra5Taq > div.drag-upload_jIV_G-5w\").click()",
+                 "sleep": "2"
+              },
+              {
+                "element": "input_txt",
+                "method": "send_keys",
+                "value": "./testcase/test_photo/test.txt",
+                "sleep": "2"
+              },
+               {
+                "element": "select_project1",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView(true)",
+                  "present": "false",
+                 "sleep": "3"
+              },
+              {
+                "element": "select_project1",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "select_project2",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "select_project3",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                 "element": "button_apply_job",
+                "method": "click",
+                "sleep": "2"
+              }
+            ]
+          },
+          {
+            "description": "view application",
+            "index": "6",
+            "page": "connect.apply_job2_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "button_view_application",
+                "method": "click",
+                "sleep": "2"
+              }
+            ]
+          },
+           {
+            "description": "view application",
+            "index": "7",
+            "page": "connect.apply_job3_retract_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "button_retract",
+                "method": "click",
+                "sleep": "1"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

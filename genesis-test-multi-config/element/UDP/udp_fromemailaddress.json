@@ -1,0 +1,30 @@
+{
+  "page": {
+    "elements": {
+      "element": [
+        {
+          "name": "btn_fromemailaddress",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[7]/div/div[3]/div/div[2]/div[1]/div[2]/div"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        }
+      ]
+    },
+    "related": {
+      "pages": [
+        "udp_page",
+        "udp_gameinfo_page",
+        "udp_createpage"
+      ]
+    },
+    "url": "https://distribute-staging.dashboard.unity.com/",
+    "path": "udp.udp_fromemailaddress"
+  }
+}

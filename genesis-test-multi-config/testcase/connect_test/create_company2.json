@@ -1,0 +1,142 @@
+{
+  "testcase": {
+    "name": "test_connect_login",
+    "owner": "guohua",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to create a company from homepage",
+      "steps": {
+        "step": [
+          {
+            "description": "fill out the login form",
+            "index": "1",
+            "page": "connect.id_page",
+            "need_redirect": "true",
+            "action": [
+               {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "hua.guo+11@unity3d.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "select  connect",
+            "index": "2",
+            "page": "connect.account_setting_page",
+            "need_redirect": "true",
+            "action": [
+               {
+                "element": "icon_switcher",
+                "method": "click"
+              },
+              {
+                "element": "select_connect",
+                "method": "click",
+                "sleep": "7"
+              }
+            ]
+          },
+          {
+            "description": "click post job",
+            "index": "3",
+            "page": "connect.home_nav_page",
+            "switch_tab": "1",
+            "need_redirect": "true",
+            "action": [
+               {
+                "element": "drop_down",
+                "method": "click"
+              },
+              {
+                "element": "my_company",
+                "method": "click",
+                "present": "false"
+              },
+              {
+                "element": "create_company",
+                "method": "click",
+                "present": "false"
+              }
+            ]
+          },
+          {
+            "description": "create a company",
+            "index": "4",
+            "page": "connect.create_company",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_company_name",
+                "method": "send_keys",
+                "value": "unity2",
+                "sleep": "3"
+              },
+              {
+                "element": "icon_type",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "select_type",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "icon_scale",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "select_scale",
+                "method": "click",
+                "sleep": "2"
+              },
+                 {
+                "element": "input_city",
+                "method": "send_keys",
+                "value": "shanghai",
+                 "sleep": "2"
+              },
+              {
+                "element": "click_city",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                 "sleep": "2"
+              },
+              {
+                "element": "input_website",
+                "method": "send_keys",
+                "value": "https://connect-internal.unity.com/jobs/0/new/?type=job",
+                 "sleep": "2"
+              },
+               {
+                "element": "company_type",
+                "method": "script",
+                  "value":"document.querySelector(\"#pageContent > div:nth-child(1) > div:nth-child(7) > div.modal_2HSf4u4a > div > div > div.scroller_1zcid46f.auto > div > div > div.content > div > div.scroller_1zcid46f.auto > div > div.section_2XUaDtVQ.company-type_2ZNy-Ycm > div > div.options_3PcQXafa > div:nth-child(2) > div > div.container_nliE-BsI.blue_OemTWVwT > button\").click()",
+                "sleep": "2"
+              },
+              {
+                "element": "button_true",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

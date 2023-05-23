@@ -1,0 +1,223 @@
+{
+  "page": {
+    "elements": {
+      "element": [
+        {
+          "name": "checkbox_terms",
+          "locator": {
+            "by": "ID",
+            "value": "summary_terms"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_pay_now",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\\\"summary-right\\\"]/div/div[1]/div[1]/button"
+          },
+          "methods": {
+            "method": [
+             "click",
+             "get_text"
+            ]
+          }
+        },
+         {
+          "name": "icon_unity_logo",
+          "locator": {
+            "by": "CLASS",
+            "value": "unity-logo"
+          },
+          "methods": {
+            "method": [
+             "click",
+             "get_text"
+            ]
+          }
+        },
+        {
+          "name": "add_new_hypertext",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"payment_methods\"]/div[1]/a"
+          },
+          "methods": {
+            "method": [
+             "click"
+            ]
+          }
+        },
+        {
+          "name": "select_paypal",
+          "locator": {
+            "by": "XPATH",
+            "value":"//*[@id=\"pi-editor\"]/div[1]/dl[3]/dt/div/label/span"
+          },
+          "methods": {
+            "method": [
+             "click",
+             "get_text"
+            ]
+          }
+        },
+        {
+          "name": "future_purchase_checkbox",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"payment_methods\"]/div[3]/div/label"
+          },
+          "methods": {
+            "method": [
+             "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "input_paypal_emamil",
+          "locator": {
+            "by": "ID",
+            "value": "paypal-email"
+          },
+          "methods": {
+            "method": [
+              "get_text",
+              "send_keys"
+            ]
+          }
+        },
+        {
+          "name": "input_creditcard",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"cardnr\"]"
+          },
+          "methods": {
+            "method": [
+              "get_text",
+              "send_keys"
+            ]
+          }
+        },
+        {
+          "name": "month_box",
+          "locator": {
+            "by": "XPATH",
+            "value":"//*[@id=\"pi-editor\"]/div[2]/div[2]/dl[1]/dd[1]/div[1]/div/button"
+          },
+          "methods": {
+            "method": [
+             "click",
+             "get_text"
+            ]
+          }
+        },
+         {
+          "name": "month",
+          "locator": {
+            "by": "XPATH",
+            "value":"//*[@id=\"pi-editor\"]/div[2]/div[2]/dl[1]/dd[1]/div[1]/div/div/ul/li[2]/a/span[1]"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "year_box",
+          "locator": {
+            "by": "XPATH",
+            "value":"//*[@id=\"pi-editor\"]/div[2]/div[2]/dl[1]/dd[1]/div[2]/div/button"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "year",
+          "locator": {
+            "by": "XPATH",
+            "value":"//*[@id=\"pi-editor\"]/div[2]/div[2]/dl[1]/dd[1]/div[2]/div/div/ul/li[3]/a/span[1]"
+          },
+          "methods": {
+            "method": [
+             "click",
+             "get_text"
+            ]
+          }
+        },
+        {
+          "name": "cvc_cvv2",
+          "locator": {
+            "by": "SELECTOR",
+            "value":"[class='cvc req c201 c202']"
+          },
+          "methods": {
+            "method": [
+             "send_keys",
+             "get_text"
+            ]
+          }
+        },
+        {
+          "name": "Cardholder_name_box",
+          "locator": {
+            "by": "XPATH",
+            "value":"//*[@id=\"name\"]"
+          },
+          "methods": {
+            "method": [
+             "send_keys",
+             "get_text"
+            ]
+          }
+        },
+        {
+          "name": "same_as_checkbox",
+          "locator": {
+            "by": "XPATH",
+            "value":"//*[@id=\"billing_addr_same_as\"]/label"
+          },
+          "methods": {
+            "method": [
+             "click",
+             "get_text"
+            ]
+          }
+        },
+        {
+          "name": "firstname_checkbox",
+          "locator": {
+            "by": "NAME",
+            "value":"firstName"
+          },
+          "methods": {
+            "method": [
+             "send_keys",
+             "get_text"
+            ]
+          }
+        }
+      ]
+    },
+
+    "related": {
+      "pages": [
+        "paypal_page"
+      ]
+    },
+    "url": "https://assetstore-staging.unity.com/",
+    "path": "assetStore.asset_pay_page"
+  }
+}

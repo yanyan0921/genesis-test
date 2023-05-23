@@ -1,0 +1,54 @@
+{
+  "page": {
+    "elements": {
+      "element": [
+        {
+          "name": "title_locator",
+          "locator": {
+            "by": "CLASS",
+            "value": "_39YUl"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "item_price",
+          "locator": {
+            "by": "CLASS",
+            "value": "mErEH _223RA"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "remove_btn",
+          "locator": {
+            "by": "SELECTOR",
+            "value": "[class='_3UE3J _3vV3- auto _2HP8Q']"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        }
+      ]
+    },
+    "related": {
+      "pages": [
+        "asset_home_page"
+      ]
+    },
+    "url": "https://assetstore-staging.unity.com/",
+    "path": "assetStore.asset_save_for_later_page"
+  }
+}

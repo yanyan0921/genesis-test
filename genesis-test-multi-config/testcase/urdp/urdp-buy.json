@@ -1,0 +1,82 @@
+{
+  "testcase": {
+    "name": "urdp-buy",
+    "owner": "chenglong",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to buy a machine",
+      "steps": {
+        "step": [
+          {
+            "description": "Select the email login method",
+            "index": "1",
+            "page": "idPortal.urdp_id_page",
+            "need_redirect": "true",
+            "action":
+            [
+              {
+                "element": "decline_btn",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "decline_btn",
+                "method": "click",
+                "sleep": "2",
+                "present": "false"
+              },
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "Shangyun.zhou@unity.cn",
+                "present": "false"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Abc123456",
+                "present": "false"
+              },
+              {
+                "element": "login_btn",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "Enter the cloud desktop",
+            "index": "2",
+            "page": "idPortal.cloud_desktop_page",
+            "need_redirect": "true",
+            "action":
+            [
+              {
+                "element": "shanghai_btn",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "buyshanghaiT4jichu_btn",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "agree_btn",
+                "method": "click",
+                "present": "false",
+                "sleep": "1"
+              },
+              {
+                "element": "commit_btn",
+                "method": "click"
+              }
+
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

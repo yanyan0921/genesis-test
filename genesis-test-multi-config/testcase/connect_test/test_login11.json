@@ -1,0 +1,58 @@
+{
+  "testcase": {
+    "name": "test_connect_login",
+    "owner": "guohua",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to login connect home page",
+      "steps": {
+        "step": [
+          {
+            "description": "fill out the login form",
+            "index": "1",
+            "page": "connect.connect_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "sleep": "8",
+                "element": "btn_avatar",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "13"
+              },
+              {
+                "element": "frame_login",
+                "method": "switch_frame",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "hua.guo+11@unity3d.com",
+                "present": "false"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_login",
+                "method": "click",
+                "sleep": "2"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

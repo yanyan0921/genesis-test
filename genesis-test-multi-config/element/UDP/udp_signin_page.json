@@ -1,0 +1,30 @@
+{
+  "page": {
+    "elements": {
+      "element": [
+        {
+          "name": "icon_signin",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"avatar-menu-wrapper\"]/div/div/div/a"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        }
+      ]
+    },
+    "related": {
+      "pages": [
+        "udp_login_page",
+        "udp_page",
+        "udp_gameinfo_page"
+      ]
+    },
+    "url": "https://distribute-staging.dashboard.unity.com/",
+    "path": "udp.udp_signin_page"
+  }
+}

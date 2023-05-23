@@ -1,0 +1,85 @@
+{
+  "testcase": {
+    "owner": "aaronpeng",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "name": "test",
+    "scenario": {
+      "name": "visit tutorial page and no login",
+      "steps": {
+        "step": [
+          {
+            "description": "click the tutorial's tag",
+            "index": "1",
+            "page": "learn.no_login_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "accept_cookies_btn",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "dismiss_btn",
+                "present": "false",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "language_select_btn",
+                "present": "false",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "language_option_btn",
+                "present": "false",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "browse_btn",
+                "present": "false",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "tutorial_tab",
+                "present": "false",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "tutorial_card_elem",
+                "present": "false",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "click the tutorial's tag",
+            "index": "2",
+            "page": "learn.tutorial_overview_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "comment",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "general_sign_in_comment",
+                "present": "false",
+                "method": "text",
+                "value": "Sign in to comment",
+                "sleep": "3"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

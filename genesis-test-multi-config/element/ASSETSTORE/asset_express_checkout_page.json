@@ -1,0 +1,54 @@
+{
+  "page": {
+    "elements": {
+      "element": [
+        {
+          "name": "input_password",
+          "locator": {
+            "by": "SELECTOR",
+            "value": "[class='_17psx']"
+          },
+          "methods": {
+            "method": [
+              "send_keys",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_express_purchase",
+          "locator": {
+            "by": "SELECTOR",
+            "value": "[class='_3UE3J _3zD70 auto qsCb9']"
+          },
+          "methods": {
+            "method": [
+             "click",
+             "get_text"
+            ]
+          }
+        },
+         {
+          "name": "btn_cancel",
+          "locator": {
+            "by": "XPATH",
+            "value": "/html/body/div[2]/div/div[2]/div/div/div[1]/div/div/div[2]/div[5]/button[1]"
+          },
+          "methods": {
+            "method": [
+             "click",
+             "get_text"
+            ]
+          }
+        }
+      ]
+    },
+    "related": {
+      "pages": [
+        "asset_product_page"
+      ]
+    },
+    "url": "https://assetstore-staging.unity.com/",
+    "path": "assetStore.asset_express_checkout_page"
+  }
+}

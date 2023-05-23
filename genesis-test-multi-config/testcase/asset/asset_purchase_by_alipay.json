@@ -1,0 +1,215 @@
+{
+  "testcase": {
+    "name": "asset_purchase_by_alipay",
+    "owner": "taoxiaoqing",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to purchase asset by alipay pi",
+      "steps": {
+        "step": [
+          {
+            "description": "prepare sign in on home page",
+            "index": "1",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click"
+              },
+              {
+                "element": "href_sign_in",
+                "method": "click",
+                "present": "false"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "2",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "silkcloudtest+vgoirmuye8h@gmail.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "search asset item",
+            "index": "3",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "GameFlow"
+              },
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "Keys.ENTER"
+              }
+            ]
+          },
+          {
+            "description": "choose search result",
+            "index": "4",
+            "page": "assetStore.asset_search_result_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "item_name",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "add item to cart",
+            "index": "5",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "add_to_cart_main",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_view_cart",
+                "method": "click",
+                "present": "false",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "proceed to checkout",
+            "index": "6",
+            "page": "assetStore.asset_cart_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_proceed_to_checkout",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "accept terms and pay",
+            "index": "9",
+            "page": "assetStore.asset_pay_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "select_alipay",
+                "method": "click"
+              },
+              {
+                "element": "input_alipay",
+                "method": "send_keys",
+                "value": "alipaytest20091@gmail.com",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "checkbox_terms",
+                "method": "script",
+                "value": "document.getElementById(\"summary_terms\").click()",
+                "sleep": "3"
+              },
+              {
+                "element": "btn_pay_now",
+                "method": "click",
+                "sleep": "20"
+              },
+              {
+                "element": "login_btn",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"switch-tip-btn\")[0].click()"
+              }
+            ]
+          },
+          {
+            "description": "edit alipay info and continue next step",
+            "index": "10",
+            "page": "assetStore.alipay_page_1",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_account",
+                "method": "send_keys",
+                "value": "alipaytest20091@gmail.com",
+                "present": "false"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "111111",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "next_step",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "input password",
+            "index": "11",
+            "page": "assetStore.alipay_page_2",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "password_input",
+                "method": "send_keys",
+                "value": "111111",
+                "present": "false"
+              },
+              {
+                "element": "pay_btn",
+                "method": "click",
+                "sleep": "60"
+              }
+            ]
+          },
+          {
+            "description": "verify total amount and tax",
+            "index": "12",
+            "page": "assetStore.asset_receipt_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "label_total_amount",
+                "method": "text",
+                "value": "$10"
+              },
+              {
+                "element": "label_tax",
+                "method": "text",
+                "value": "$0"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

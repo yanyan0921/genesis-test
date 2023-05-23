@@ -1,0 +1,202 @@
+{
+  "testcase": {
+    "name": "vetting_published_newVersion_pass",
+    "owner": "tanlinhui",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to test new published package verison and accept it in vetting",
+      "steps": {
+        "step": [
+          {
+            "description": "prepare sign in on home page",
+            "index": "1",
+            "page": "publisherPortalV2.publisher_login_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "linhui.tan+01@unity3d.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "7"
+              }
+            ]
+          },
+          {
+            "description": "go to published package page ",
+            "index": "2",
+           "page": "publisherPortalV2.publisher_home_page",
+            "need_redirect": "true",
+            "action":[
+              {
+                "element": "icon_cookies",
+                "method": "script",
+                "value": "document.getElementsByClassName('onetrust-close-btn-handler onetrust-close-btn-ui banner-close-button onetrust-lg ot-close-icon')[0].click()",
+                "sleep": "8"
+              },
+              {
+                "element": "label_published",
+                "present": "false",
+                "method": "click",
+                "sleep": "6"
+              },
+              {
+                "element": "label_package",
+                "present": "false",
+                "method": "get_element_values",
+                "sleep": "3"
+              },
+              {
+                "element": "label_package",
+                 "present": "false",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "click create new btn",
+            "index": "3",
+            "page": "publisherPortalV2.publisher_published_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_create_new_draft",
+                "method": "click",
+                "present": "false",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "submit package",
+            "index": "4",
+            "page": "publisherPortalV2.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_submit",
+                "present": "false",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "checkbox_terms",
+                "present": "false",
+                "method": "click",
+                "sleep": "4"
+              },
+              {
+                "element": "btn_accepted",
+                "present": "false",
+                "method": "click",
+                 "sleep": "15"
+              },
+              {
+                "element": "label_submitted",
+                "present": "false",
+                "method": "text",
+                "value": "Submitted!"
+              }
+            ]
+          },
+          {
+            "description": "log out",
+            "index": "5",
+            "page": "publisherPortalV2.publisher_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "btn_account",
+                "method": "click",
+                "sleep":"3"
+              },
+              {
+                "element": "logout_tab",
+                "present": "false",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "accept package",
+            "index": "6",
+            "page": "publisherPortal.publisher_dharma_login_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "clear"
+              },
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "taoxiaoqing@unity3d.com"
+              },
+              {
+                "element": "input_password",
+                "method": "clear"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test0000"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "40"
+              }
+            ]
+          },
+          {
+            "description": "accept package",
+            "index": "7",
+            "page": "publisherPortal.publisher_dharma_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_packageName",
+                "method": "send_keys",
+                "value": "${value_step_2}",
+                "sleep": "40"
+              },
+              {
+                "element": "input_packageName",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                "sleep": "10"
+              },
+              {
+                "element": "metaPackage_menu",
+                "method": "click",
+                "present": "false"
+              },
+              {
+                "element": "accept_package",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "accept_decline_btn",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"button default\")[0].click()"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "page": {
+    "elements": {
+      "element": [
+        {
+          "name": "input_YouTubelink",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[2]/div/div/div/div[2]/div/div[8]/div/div[3]/div[2]/div/div/div/div[2]/div[1]/div/div/input"
+          },
+          "methods": {
+            "method": [
+              "send_keys",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "icon_closeYouTubelinkifont",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[2]/div/div/div/div[2]/div/div[8]/div/div[3]/div[2]/div/div/div/div[1]/button/div"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_deleteYouTube",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[2]/div/div/div/div[2]/div/div[8]/div/div[3]/div[2]/div/div/div/div[3]/div[1]/div/div[2]/div/div[2]/div[2]/a"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_OKYouTube",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[2]/div/div/div/div[2]/div/div[8]/div/div[3]/div[2]/div/div/div/div[4]/div/button"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        }
+      ]
+    },
+    "related": {
+      "pages": [
+        "udp_page",
+        "udp_createpage",
+        "udp_gameinfo_page"
+      ]
+    },
+    "url": "https://distribute-staging.dashboard.unity.com/",
+    "path": "udp.udp_addYouTubelink_page"
+  }
+}

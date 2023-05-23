@@ -1,0 +1,195 @@
+{
+  "testcase": {
+    "name": "create_group_public1",
+    "owner": "guohua",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to create a public group",
+      "steps": {
+        "step": [
+         {
+            "description": "fill out the login form",
+            "index": "1",
+            "page": "connect.connect_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "btn_avatar",
+                "method": "script",
+                "value": "document.querySelector(\"#pageContent > div:nth-child(1) > div.header-wrap_GEr2c682 > div > div.user-actions_2nPAaNhU > div > div.right_ZNamn0lh > div.account-switcher_eSCn1fWL > unity-account-switcher\").shadowRoot.querySelector(\"div > a > user-avatar\").click()",
+                "sleep": "2"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "script",
+                "value": "document.querySelector(\"#pageContent > div:nth-child(1) > div.header-wrap_GEr2c682 > div > div.user-actions_2nPAaNhU > div > div.right_ZNamn0lh > div.account-switcher_eSCn1fWL > unity-account-switcher\").shadowRoot.querySelector(\"div > div > drop-down\").shadowRoot.querySelector(\"div > div:nth-child(2)\").click()",
+                "present": "false",
+                "sleep": "13"
+              }
+            ]
+          },
+          {
+            "description": "fill out the login form",
+            "index": "2",
+            "page": "connect.connect_login_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "hua.guo+11@unity3d.com",
+                "present": "false"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_login",
+                "method": "click",
+                "sleep": "13"
+              }
+            ]
+          },
+          {
+            "description": "locate group",
+            "index": "3",
+            "page": "connect.home_nav_page",
+            "need_redirect": "false",
+            "action": [
+             {
+                "element": "icon_discover",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "icon_group",
+                "method": "script",
+                "value": "document.querySelector(\"#pageContent > div:nth-child(1) > div.header-wrap_GEr2c682 > div > div.main-menu-wrapper_2eWH5ERW > div > div.menu-left_flKNOvnq > div.first-menu_1dZys_oJ > div.menu-wrap_2w_GvYUd > div > div > a:nth-child(1)\").click()",
+                "sleep": "7"
+              }
+            ]
+          },
+           {
+            "description": "create group1",
+            "index": "4",
+            "page": "connect.group",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_create_group",
+                "method": "click",
+                "sleep": "2"
+              }
+            ]
+          },
+           {
+            "description": "create a random ascill",
+            "index": "5",
+            "resource":"identity.user_service",
+            "action": [
+              {
+                "method": "create_random_values",
+                "param": {
+
+                }
+
+              }
+            ]
+          },
+           {
+            "description": "create a public group detail",
+            "index": "6",
+            "page": "connect.create_group",
+            "need_redirect": "false",
+            "action": [
+               {
+                "element": "input_group_name",
+                "method": "send_keys",
+                 "value":"${random_value}"
+              },
+              {
+                "element": "icon_down",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "select_class",
+                "method": "click"
+              },
+              {
+                "element": "text_content",
+                "method": "send_keys",
+                "value": "快来加入我们这个小组吧"
+              },
+              {
+                "element": "icon_picture",
+                "method": "click",
+                  "sleep": "5"
+              },
+              {
+                "element": "input_picture",
+                "method": "send_keys",
+                "value": "./testcase/test_photo/c.jpg",
+                "sleep": "5"
+              },
+               {
+                "element": "btn_picture",
+                "method": "script",
+                "value": "document.querySelector('#pageContent > div:nth-child(1) > div:nth-child(8) > div.modal_2HSf4u4a > div > div > div.scroller_1zcid46f.auto > div > div > div.content > div:nth-child(2) > div > div.modal_2HSf4u4a > div > div > div.scroller_1zcid46f.auto > div > div > div.buttons_16lIDcK0 > button').click()",
+                 "sleep": "5"
+              },
+              {
+                "element": "icon_down2",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView(true)",
+                 "sleep": "2"
+              },
+               {
+                "element": "icon_down2",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "public_group",
+                "method": "click",
+                "sleep": "2"
+              },
+               {
+                "element": "btn_ok",
+                "method": "click",
+                  "sleep": "7"
+               }
+            ]
+          },
+             {
+            "description": "locate group",
+            "index": "7",
+            "page": "connect.create_group_language",
+            "need_redirect": "false",
+            "action": [
+             {
+                "element": "icon_language",
+                "method": "click",
+                "sleep": "2"
+              },
+               {
+                "element": "select_language",
+                "method": "click",
+                "sleep": "2"
+              },
+                 {
+                "element": "btn_save",
+                "method": "click",
+                "sleep": "5"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

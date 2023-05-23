@@ -1,0 +1,154 @@
+{
+  "testcase": {
+    "name": "ph_pull_request",
+    "owner": "YuanmingXiao",
+    "priority": "comprehensive",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to see ph_branch_notification",
+      "steps": {
+        "step": [
+          {
+            "description": "create user via api",
+            "index": "1",
+            "resource":"identity.user_service",
+            "action": [
+              {
+                "method": "create_login_user",
+                "param": {
+                  "country":"US"
+                },
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "prepare sign in on home page",
+            "index": "2",
+            "page": "plasticHub.ph_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_login_by_account",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "icon_email_login",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "3",
+            "page": "plasticHub.ph_id_page",
+            "need_redirect": "false",
+            "sleep": "10",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "annane@live.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test12345"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "move to explore page",
+            "index": "5",
+            "page": "plasticHub.ph_user_page",
+            "need_redirect": "false",
+            "sleep": "10",
+            "action": [
+              {
+                "element": "btn_explore",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              }
+            ]
+          },
+          {
+            "description": "search repository in explore page and move in",
+            "index": "6",
+            "page": "plasticHub.ph_explore_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_repo_search",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "input_search",
+                "method": "send_keys",
+                "value": "10086",
+                "present": "false"
+              },
+              {
+                "element": "btn_search",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              },
+              {
+                "element": "btn_repo_page",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              }
+            ]
+          },
+          {
+            "description": "Move to Compare&Merge page",
+            "index": "8",
+            "page": "plasticHub.ph_repo_code_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_notification",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              }
+            ]
+          },
+          {
+            "description": "create new request",
+            "index": "9",
+            "page": "plasticHub.ph_pull_create_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_apply",
+                "method": "click",
+                "present": "false",
+                "sleep": "5"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

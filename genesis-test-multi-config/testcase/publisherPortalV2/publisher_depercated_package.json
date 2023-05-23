@@ -1,0 +1,90 @@
+{
+  "testcase": {
+    "name": "publisher_depercated_package",
+    "owner": "tanlinhui",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to depercated published package",
+      "steps": {
+        "step": [
+          {
+            "description": "prepare sign in on home page",
+            "index": "1",
+            "page": "publisherPortalV2.publisher_login_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "linhui.tan+01@unity3d.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "7"
+              }
+            ]
+          },
+          {
+            "description": "go to published package page ",
+            "index": "2",
+           "page": "publisherPortalV2.publisher_home_page",
+             "need_redirect": "false",
+            "action": [
+              {
+                "element": "label_published",
+                "method": "click",
+                "sleep": "6"
+              },
+              {
+                "element": "label_package",
+                "present": "false",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "depercted package",
+            "index": "3",
+            "page": "publisherPortalV2.publisher_published_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "label_depercated",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "checkbox_terms",
+                "present": "false",
+                "method": "click",
+                "sleep": "4"
+              },
+              {
+                "element": "btn_depercated",
+                "present": "false",
+                "method": "click",
+                 "sleep": "15"
+              },
+              {
+                "element": "label_status",
+                "present": "false",
+                "method": "text",
+                 "value": "Deprecated"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

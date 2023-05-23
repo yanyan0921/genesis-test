@@ -1,0 +1,65 @@
+{
+  "publisher_draft_package_page": [
+    {
+      "base_url": {
+        "int": "https://publisher-int.unity.com/packages",
+        "staging": "https://publisher-staging.unity.com/packages",
+        "prod": "https://publisher.unity.com/packages"
+      }
+    }
+  ],
+  "publisher_home_page": [
+    {
+      "base_url": {
+        "int": "https://publisher-int.unity.com/packages",
+        "staging": "https://publisher-staging.unity.com/packages",
+        "prod": "https://publisher.unity.com/packages"
+      }
+    }
+  ],
+  "publisher_login_page": [
+    {
+      "base_url": {
+        "int": "https://publisher-int.unity.com/",
+        "staging": "https://publisher-staging.unity.com/",
+        "prod": "https://publisher.unity.com/"
+      }
+    }
+  ],
+  "publisher_published_page": [
+    {
+      "base_url": {
+        "int": "https://publisher-int.unity.com/packages",
+        "staging": "https://publisher-staging.unity.com/packages",
+        "prod": "https://publisher.unity.com/packages"
+      }
+    }
+  ],
+  "publisher_reviews_detail_page": [
+    {
+      "base_url": {
+         "int": "https://publisher-int.unity.com/reviews",
+        "staging": "https://publisher-staging.unity.com/reviews",
+        "prod": "https://publisher.unity.com/reviews"
+      }
+    }
+  ],
+  "publisher_reviews_page": [
+    {
+      "base_url": {
+        "int": "https://publisher-int.unity.com/reviews",
+        "staging": "https://publisher-staging.unity.com/reviews",
+        "prod": "https://publisher.unity.com/reviews"
+      }
+    }
+  ],
+  "publisher_analytics_page": [
+    {
+      "base_url": {
+        "int": "https://publisher-int.unity.com/analytics",
+        "staging": "https://publisher-staging.unity.com/analytics",
+        "prod": "https://publisher.unity.com/analytics"
+      }
+    }
+  ]
+}

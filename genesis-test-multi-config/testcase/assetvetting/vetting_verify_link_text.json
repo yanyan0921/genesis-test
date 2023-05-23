@@ -1,0 +1,82 @@
+{
+  "testcase": {
+    "name": "test verify link text",
+    "owner": "taoxiaoqing",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to verify link text",
+      "steps": {
+        "step": [
+          {
+            "description": "prepare sign in on home page",
+            "index": "1",
+            "page": "publisherPortal.publisher_login_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "taoxiaoqing+02@unity3d.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "7"
+              }
+            ]
+          },
+          {
+            "description": "click create new btn",
+            "index": "2",
+            "page": "publisherPortal.publisher_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "publisher_title",
+                "method": "text",
+                "value": "Hutong Games LLC"
+              },
+               {
+                "element": "link_text_0",
+                "method": "text",
+                "value": "Publish your assets on Sinespace: https://assetstore.unity.com/publisher/sinewave. Learn more about this opportunity: https://assetstore.unity.com/browse/publisher-sinespace-signup"
+              },
+              {
+                "element": "link_text_1",
+                "method": "text",
+                "value": "[Action is required] New product page design is live! Get more details and grab the new image templates here."
+              },
+              {
+                "element": "link_text_2",
+                "method": "text",
+                "value":"The update to our EULA, planned for September 16th, 2019, has been delayed. The EULA will be updated soon. Please visit the FAQ here"
+              },
+             {
+                "element": "link_text_3",
+                "method": "text",
+                "value":"For common questions about payouts, see our FAQ pages. https://support.unity3d.com/hc/en-us/sections/201163815-Asset-Store-Publishers"
+              },
+              {
+                "element": "link_text_4",
+                "method": "text",
+                "value":"Set max discount for your assets here"
+              },
+              {
+                "element": "link_text_5",
+                "method": "text",
+                "value":"Are you promoting Unity on your own website? the Unity Affiliate Program to monetize your content."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "testcase": {
+    "name": " test_modify_support_in_cart",
+    "owner": "tanlinhui",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to test modify support in cart",
+      "steps": {
+        "step": [
+           {
+            "description": "accept the cookies",
+            "index": "1",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "icon_sign_in",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "search asset item",
+            "index": "2",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "site_stg_1",
+                "present": "false"
+              },
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "choose search result",
+            "index": "3",
+            "page": "assetStore.asset_search_result_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "item_name",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_1-e15 _25P-Q\")[0].click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "add item to cart",
+            "index": "4",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "action": [
+               {
+                "element": "add_to_cart_anonymous",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_3UE3J _3zD70 auto _6dtXD _1CXMR\")[0].click()",
+                "sleep": "8"
+              }
+            ]
+          },
+          {
+            "description": "modify fixed tips in cart",
+            "index": "5",
+            "page": "assetStore.asset_cart_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "div_support_creator",
+                "method": "click",
+                 "sleep": "3"
+              },
+              {
+                "element": "btn_fixedtips_5",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_2RZxq\")[1].click()",
+                 "sleep": "3"
+              },
+              {
+                "element": "btn_confirm",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_3UE3J pDJt- auto _35H3w\")[0].click()",
+                "sleep": "3"
+              },
+              {
+                "element": "label_price",
+                "method": "text",
+                "value": "$9.99"
+              },
+              {
+                "element": "div_edit",
+                "method": "click",
+                "present": "false",
+                 "sleep": "3"
+              },
+              {
+                "element": "btn_fixedtips_3",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_2RZxq\")[0].click()",
+                 "sleep": "3"
+              },
+              {
+                "element": "btn_confirm",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_3UE3J pDJt- auto _35H3w\")[0].click()",
+                "sleep": "3"
+              },
+              {
+                "element": "label_price",
+                "method": "text",
+                "value": "$7.99"
+              },
+              {
+                "element": "div_edit",
+                "method": "click",
+                "present": "false",
+                 "sleep": "3"
+              },
+              {
+                "element": "btn_fixedtips_3",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_2RZxq\")[0].click()",
+                 "sleep": "3"
+              },
+              {
+                "element": "btn_confirm",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_3UE3J pDJt- auto _35H3w\")[0].click()",
+                "sleep": "3"
+              },
+              {
+                "element": "label_price",
+                "method": "text",
+                "value": "$4.99"
+              },
+              {
+                "element": "div_support_creator",
+                "method": "click",
+                "present": "false",
+                 "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "modify customer tips in cart",
+            "index": "6",
+            "page": "assetStore.asset_cart_page",
+            "need_redirect": "false",
+            "sleep": "5",
+            "action": [
+              {
+                "element": "btn_customer",
+                "method": "action_chain",
+                "present": "false",
+                "chain": [
+                  {
+                    "method": "send_keys_to_element",
+                    "param": {
+                      "element": "btn_customer",
+                      "value": "1000"
+                    }
+                  },
+                  {
+                    "method": "send_keys",
+                    "param": {
+                      "value": "Keys.ENTER"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "description": "verify price",
+            "index": "7",
+            "page": "assetStore.asset_cart_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_confirm",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_3UE3J pDJt- auto _35H3w\")[0].click()",
+                "sleep": "8"
+              },
+              {
+                "element": "label_price",
+                "method": "text",
+                "value": "$1,004.99"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

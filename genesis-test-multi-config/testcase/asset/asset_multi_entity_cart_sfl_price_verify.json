@@ -1,0 +1,230 @@
+{
+  "testcase": {
+    "name": "asset_multi_entity_cart_sfl_price_verify",
+    "owner": "taoxiaoqing",
+    "priority": "Daily",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "i would like to verify the price under cart and save for later page  --GAS2-2474",
+      "steps": {
+        "step": [
+          {
+            "description": "accept the cookies",
+            "index": "1",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "icon_sign_in",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "prepare sign in on home page",
+            "index": "2",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click"
+              },
+              {
+                "element": "href_sign_in",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "3",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "silkcloudtest+pmztarbd0bi@gmail.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "search asset item",
+            "index": "4",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "site package_1",
+                "present": "false"
+              },
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "choose search result",
+            "index": "5",
+            "page": "assetStore.asset_search_result_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "item_name",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_1-e15 _25P-Q\")[0].click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "verify plus pro price",
+            "index": "6",
+            "page": "assetStore.asset_site_stg1_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "original_price",
+                "method": "text",
+                "value": "$18.99"
+              },
+              {
+                "element": "single_multi_choice",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "multi",
+                "method": "click",
+                "present": "false",
+                "sleep": "5"
+              },
+              {
+                "element": "asset_common_price",
+                "method": "text",
+                "value": "$56.97",
+                "present": "false"
+              },
+              {
+                "element": "add_to_cart_main",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_3UE3J MtRkn auto _1EJPn _2xeq5\")[0].click()",
+                "sleep": "8"
+              }
+            ]
+          },
+          {
+            "description": "proceed to checkout",
+            "index": "7",
+            "page": "assetStore.asset_cart_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "label_price",
+                "method": "text",
+                "value": "$56.97",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "click save for later",
+            "index": "8",
+            "page": "assetStore.asset_cart_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "SaveForLater_btn",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "sfl_view_button",
+                "method": "click",
+                "present": "false",
+                "sleep": "10"
+              },
+              {
+                "element": "site_package_1_price",
+                "present": "false",
+                "method": "text",
+                "value": "$56.97",
+                "sleep": "5"
+              },
+              {
+                "element": "visibility",
+                "method": "action_chain",
+                "sleep": "8",
+                "present": "false",
+                "chain": [
+                  {
+                    "method": "move_to_element",
+                    "param": {
+                      "element": "visibility"
+                    }
+                  }
+                ]
+              },
+              {
+                "element": "add_to_cart",
+                "present": "false",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_3UE3J _3vV3- auto _1EJPn hnQ7H\")[0].click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "view the price under cart page",
+            "index": "9",
+            "page": "assetStore.asset_cart_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "label_price",
+                "method": "text",
+                "value": "$56.97",
+                "sleep": "5"
+              },
+              {
+                "element": "Clear_Cart_btn",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "Clear_confirm_btn",
+                "method": "click",
+                "present": "false"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

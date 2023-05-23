@@ -1,0 +1,317 @@
+{
+  "3D_world_pay": [
+    {
+      "base_url": {
+        "int": "https://secure-test.worldpay.com/jsp/test/shopper/ThreeDResponseSimulator.jsp?orderCode=18966698524720",
+        "staging": "https://secure-test.worldpay.com/jsp/test/shopper/ThreeDResponseSimulator.jsp?orderCode=18966698524720",
+        "prod": "https://secure-test.worldpay.com/jsp/test/shopper/ThreeDResponseSimulator.jsp?orderCode=18966698524720"
+      }
+    }
+  ],
+  "alipay_page_1": [
+    {
+      "base_url": {
+        "int": "https://excashier.alipaydev.com/standard/auth.htm?auth_order_id=exc_9253c40423e64eed92e32ca8de33cdc7",
+        "staging": "https://excashier.alipaydev.com/standard/auth.htm?auth_order_id=exc_9253c40423e64eed92e32ca8de33cdc7",
+        "prod": "https://excashier.alipaydev.com/standard/auth.htm?auth_order_id=exc_9253c40423e64eed92e32ca8de33cdc7"
+      }
+    }
+  ],
+  "alipay_page_2": [
+    {
+      "base_url": {
+        "int": "https://excashier.alipaydev.com/standard/auth.htm?auth_order_id=exc_9253c40423e64eed92e32ca8de33cdc7",
+        "staging": "https://excashier.alipaydev.com/standard/auth.htm?auth_order_id=exc_9253c40423e64eed92e32ca8de33cdc7",
+        "prod": "https://excashier.alipaydev.com/standard/auth.htm?auth_order_id=exc_9253c40423e64eed92e32ca8de33cdc7"
+      }
+    }
+  ],
+  "asset_cart_page": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/account/cart",
+        "staging": "https://assetstore-staging.unity.com/account/cart",
+        "prod": "https://assetstore.unity.com/account/cart"
+      }
+    }
+  ],
+  "asset_category_result_page": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/3d?exclude=true&orderBy=1",
+        "staging": "https://assetstore-staging.unity.com/3d?exclude=true&orderBy=1",
+        "prod": "https://assetstore.unity.com/3d?exclude=true&orderBy=1"
+      }
+    }
+  ],
+  "asset_category_filter_tools_page": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/?category=tools&exclude=true&orderBy=1",
+        "staging": "https://assetstore-staging.unity.com/?category=tools&exclude=true&orderBy=1",
+        "prod": "https://assetstore.unity.com/?category=tools&exclude=true&orderBy=1"
+      }
+    }
+  ],
+  "asset_deleteList_page": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/lists",
+        "staging": "https://assetstore-staging.unity.com/lists",
+        "prod": "https://assetstore.unity.com/lists"
+      }
+    }
+  ],
+  "asset_edit_list_page": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/packages/tools/visual-scripting/gameflow-14808",
+        "staging": "https://assetstore-staging.unity.com/packages/tools/visual-scripting/gameflow-14808",
+        "prod": "https://assetstore.unity.com/packages/tools/visual-scripting/gameflow-14808"
+      }
+    }
+  ],
+  "asset_edit_list_page2": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/packages/tools/visual-scripting/gameflow-14808",
+        "staging": "https://assetstore-staging.unity.com/packages/tools/visual-scripting/gameflow-14808",
+        "prod": "https://assetstore.unity.com/packages/tools/visual-scripting/gameflow-14808"
+      }
+    }
+  ],
+  "asset_express_checkout_page": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/",
+        "staging": "https://assetstore-staging.unity.com/",
+        "prod": "https://assetstore.unity.com/"
+      }
+    }
+  ],
+  "asset_external_FAQ_page": [
+    {
+      "base_url": {
+        "int": "https://support.unity.com/hc/en-us/sections/201163815-Asset-Store-Publishers",
+        "staging": "https://support.unity.com/hc/en-us/sections/201163815-Asset-Store-Publishers",
+        "prod": "https://support.unity.com/hc/en-us/sections/201163815-Asset-Store-Publishers"
+      }
+    }
+  ],
+  "asset_external_submissionGuidelines_page": [
+    {
+      "base_url": {
+        "int": "https://unity3d.com/asset-store/sell-assets/submission-guidelines",
+        "staging": "https://unity3d.com/asset-store/sell-assets/submission-guidelines",
+        "prod": "https://unity3d.com/asset-store/sell-assets/submission-guidelines"
+      }
+    }
+  ],
+  "asset_guide_page": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/",
+        "staging": "https://assetstore-staging.unity.com/",
+        "prod": "https://assetstore.unity.com/"
+      }
+    }
+  ],
+  "asset_home_page": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/",
+        "staging": "https://assetstore-staging.unity.com/",
+        "prod": "https://assetstore.unity.com/"
+      }
+    }
+  ],
+  "asset_list_page": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/account/lists",
+        "staging": "https://assetstore-staging.unity.com/account/lists",
+        "prod": "https://assetstore.unity.com/account/lists"
+      }
+    }
+  ],
+  "asset_my_assets_page": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/account/assets",
+        "staging": "https://assetstore-staging.unity.com/account/assets",
+        "prod": "https://assetstore.unity.com/account/assets"
+      }
+    }
+  ],
+  "asset_my_cart_page": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/account/cart",
+        "staging": "https://assetstore-staging.unity.com/account/cart",
+        "prod": "https://assetstore.unity.com/account/cart"
+      }
+    }
+  ],
+  "asset_my_favorites_page": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/account/lists",
+        "staging": "https://assetstore-staging.unity.com/account/lists",
+        "prod": "https://assetstore.unity.com/account/lists"
+      }
+    }
+  ],
+  "asset_order_requests_page": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/order-requests",
+        "staging": "https://assetstore-staging.unity.com/order-requests",
+        "prod": "https://assetstore.unity.com/order-requests"
+      }
+    }
+  ],
+  "asset_pay_page": [
+    {
+      "base_url": {
+        "int": "https://pay-int.unity.com/asv2/checkout?orderId=",
+        "staging": "https://pay-staging.unity.com/asv2/checkout?orderId=",
+        "prod": "https://pay.unity.com/asv2/checkout?orderId="
+      }
+    }
+  ],
+  "asset_product_page": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/packages/tools/visual-scripting/gameflow-14808",
+        "staging": "https://assetstore-staging.unity.com/packages/tools/visual-scripting/gameflow-14808",
+        "prod": "https://assetstore.unity.com/packages/tools/visual-scripting/gameflow-14808"
+      }
+    }
+  ],
+  "asset_receipt_page": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/orders",
+        "staging": "https://assetstore-staging.unity.com/orders",
+        "prod": "https://assetstore.unity.com/orders"
+      }
+    }
+  ],
+  "asset_report_page": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/",
+        "staging": "https://assetstore-staging.unity.com/",
+        "prod": "https://assetstore.unity.com/"
+      }
+    }
+  ],
+  "asset_request_details_page": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/order-requests",
+        "staging": "https://assetstore-staging.unity.com/order-requests",
+        "prod": "https://assetstore.unity.com/order-requests"
+      }
+    }
+  ],
+  "asset_save_for_later_page": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/account/lists",
+        "staging": "https://assetstore-staging.unity.com/account/lists",
+        "prod": "https://assetstore.unity.com/account/lists"
+      }
+    }
+  ],
+  "asset_saved_page": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/account/saved",
+        "staging": "https://assetstore-staging.unity.com/account/saved",
+        "prod": "https://assetstore.unity.com/account/saved"
+      }
+    }
+  ],
+  "asset_search_result_page": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/",
+        "staging": "https://assetstore-staging.unity.com/",
+        "prod": "https://assetstore.unity.com/"
+      }
+    }
+  ],
+  "asset_site_stg1_product_page": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/packages/3d/characters/animals/site-stg-1-82007",
+        "staging": "https://assetstore-staging.unity.com/packages/3d/characters/animals/site-stg-1-82007",
+        "prod": "https://assetstore.unity.com/packages/3d/characters/animals/site-stg-1-82007"
+      }
+    }
+  ],
+  "asset_site_stg1_purchased_product_page": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/packages/3d/characters/animals/site-stg-1-82007",
+        "staging": "https://assetstore-staging.unity.com/packages/3d/characters/animals/site-stg-1-82007",
+        "prod": "https://assetstore.unity.com/packages/3d/characters/animals/site-stg-1-82007"
+      }
+    }
+  ],
+  "asset_site_stg2_product_page": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/packages/3d/characters/animals/birds/site-stg-2-82008",
+        "staging": "https://assetstore-staging.unity.com/packages/3d/characters/animals/birds/site-stg-2-82008",
+        "prod": "https://assetstore.unity.com/packages/3d/characters/animals/birds/site-stg-2-82008"
+      }
+    }
+  ],
+  "asset_site_stg3_product_page": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/packages/3d/characters/animals/site-stg-3-82010",
+        "staging": "https://assetstore-staging.unity.com/packages/3d/characters/animals/site-stg-3-82010",
+        "prod": "https://assetstore.unity.com/packages/3d/characters/animals/site-stg-3-82010"
+      }
+    }
+  ],
+  "asset_site_stg3_purchased_product_page": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/packages/3d/characters/animals/site-stg-3-82010",
+        "staging": "https://assetstore-staging.unity.com/packages/3d/characters/animals/site-stg-3-82010",
+        "prod": "https://assetstore.unity.com/packages/3d/characters/animals/site-stg-3-82010"
+      }
+    }
+  ],
+  "asset_subList_page": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/account/lists",
+        "staging": "https://assetstore-staging.unity.com/account/lists",
+        "prod": "https://assetstore.unity.com/account/lists"
+      }
+    }
+  ],
+  "edit_tag_page": [
+    {
+      "base_url": {
+        "int": "https://assetstore-int.unity.com/",
+        "staging": "https://assetstore-staging.unity.com/",
+        "prod": "https://assetstore.unity.com/"
+      }
+    }
+  ],
+  "paypal_page": [
+    {
+      "base_url": {
+        "int": "https://www.sandbox.paypal.com",
+        "staging": "https://www.sandbox.paypal.com",
+        "prod": "https://www.sandbox.paypal.com"
+      }
+    }
+  ]
+}

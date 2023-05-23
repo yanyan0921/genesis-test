@@ -1,0 +1,200 @@
+{
+  "testcase": {
+    "name": "test_connect_login",
+    "owner": "guohua",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to create a school",
+      "steps": {
+        "step": [
+          {
+            "description": "fill out the login form",
+            "index": "1",
+            "page": "connect.id_page",
+            "need_redirect": "true",
+            "action": [
+               {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "hua.guo+11@unity3d.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "select  connect",
+            "index": "2",
+            "page": "connect.account_setting_page",
+            "need_redirect": "true",
+            "action": [
+               {
+                "element": "icon_switcher",
+                "method": "click"
+              },
+              {
+                "element": "select_connect",
+                "method": "click",
+                "sleep": "7"
+              }
+            ]
+          },
+          {
+            "description": "click drop and down",
+            "index": "3",
+            "page": "connect.home_nav_page",
+            "switch_tab": "1",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "drop_down",
+                "method": "click"
+              },
+               {
+                "element": "create_school",
+                "method": "click"
+              }
+            ]
+          },
+            {
+            "description": "factor authentication",
+            "index": "4",
+            "page": "connect.post_article_factor_authentication",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_skip",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              }
+            ]
+          },
+           {
+            "description": "create a school",
+            "index": "5",
+            "page": "connect.create_school_ok",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_ok",
+                "method": "click"
+              }
+            ]
+          },
+           {
+            "description": "create a school",
+            "index": "6",
+            "page": "connect.create_school",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_bgground",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "input_bgground",
+                "method": "send_keys",
+                "value": "./testcase/test_photo/c.jpg",
+                "sleep": "2"
+              },
+                {
+                "element": "btn_save",
+                "method": "click",
+                "present":"false",
+                "sleep": "2"
+              },
+               {
+                "element": "div_camera",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "input_camera",
+                "method": "send_keys",
+                "value": "./testcase/test_photo/c.jpg",
+                "sleep": "2"
+              },
+                {
+                "element": "btn_picture",
+                "method": "click",
+                  "present": "false",
+                "sleep": "2"
+              },
+              {
+                "element": "school_name",
+                "method": "send_keys",
+                "value": "上海大学",
+                "sleep": "2"
+              },
+                {
+                "element": "thumbnail_change",
+                "method": "click",
+                "sleep": "2"
+              },
+                {
+                "element": "thumbnail_input",
+                "method": "send_keys",
+                "value": "./testcase/test_photo/c.jpg",
+                "sleep": "2"
+              },
+               {
+                "element": "description",
+                "method": "send_keys",
+                "value": "上海大学（Shanghai University），简称“上大”，是上海市属、国家“211工程”重点建设的综合性大学，教育部与上海市人民政府共建高校，国防科技工业局与上海市人民政府共建高校，世界一流学科建设高校，入选“教育部来华留学示范基地”、“卓越工程师教育培养计划”、“卓越新闻传播人才教育培养计划”、“国家建设高水平大学公派研究生项目”、“111计划”、“上海市首批高水平地方高校建设试点”、“上海市首批深化创新创业教育改革示范高校”。",
+                "sleep": "2"
+              },
+               {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "1965078495@qq.com",
+                "sleep": "2"
+              },
+               {
+                "element": "input_website",
+                "method": "send_keys",
+                "value": "https://www.baidu.com/",
+                "sleep": "2"
+              },
+               {
+                "element": "input_location",
+                "method": "send_keys",
+                "value": "shanghai",
+                "sleep": "2"
+              },
+               {
+                "element": "input_location",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                 "sleep": "2"
+              },
+                {
+                "element": "btn_create",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView(true)",
+                  "present": "false",
+                 "sleep": "4"
+              },
+                {
+                "element": "btn_create",
+                "method": "click",
+                "sleep": "7"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

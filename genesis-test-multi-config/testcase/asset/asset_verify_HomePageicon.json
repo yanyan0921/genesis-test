@@ -1,0 +1,149 @@
+{
+  "testcase": {
+    "name": "asset_verify_HomePageicon",
+    "owner": "taoxiaoqing",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to verify icon under homepage",
+      "steps": {
+        "step": [
+          {
+            "description": "prepare sign in on home page",
+            "index": "1",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click"
+              },
+              {
+                "element": "href_sign_in",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "2",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "silkcloudtest+eekrpkivvh@gmail.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "12345678Test"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "verify my assets icon",
+            "index": "3",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "footer_language_English",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView()",
+                "sleep": "4"
+              },
+              {
+                "element": "footer_language_English",
+                "method": "click",
+                "sleep": "4"
+              },
+              {
+                "element": "input_search_box",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView()",
+                "present": "false",
+                "sleep":"5"
+              }
+            ]
+          },
+          {
+            "description": "verify my assets icon",
+            "index": "6",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "myAssetsIcon",
+                "present": "false",
+                "method": "click",
+                "sleep": "8"
+              }
+            ]
+          },
+          {
+            "description": "check title",
+            "index": "7",
+            "page": "assetStore.asset_my_assets_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "myAssets_title",
+                "method": "text",
+                "value": "My Assets"
+              }
+            ]
+          },
+          {
+            "description": "verify my favorites icon",
+            "index": "8",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "myFavoritesIcon",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"kvXTJ favs ifont ifont-header-favsV2\")[0].click()",
+                "sleep": "8"
+              }
+            ]
+          },
+          {
+            "description": "check title",
+            "index": "9",
+            "page": "assetStore.asset_my_favorites_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "myFavorites_title",
+                "method": "text",
+                "value": "Saved assets"
+              }
+            ]
+          },
+          {
+            "description": "verify my cart icon",
+            "index": "10",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "myCartIcon",
+                "method": "click"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

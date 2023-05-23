@@ -1,0 +1,301 @@
+{
+  "testcase": {
+    "name": "subs_monthly_India_payRemaining",
+    "owner": "LingZhai",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to purchase subs",
+      "steps": {
+        "step": [
+          {
+            "description": "create user via api",
+            "index": "1",
+            "resource":"identity.user_service",
+            "action": [
+              {
+                "method": "create_login_user",
+                "param": {
+                  "country":"US"
+                },
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "accept the cookies and sign in on home page",
+            "index": "2",
+            "page": "subs.subs_store_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep": "20"
+              },
+              {
+                "element": "icon_sign_in",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "present": "false",
+                "sleep": "5"
+              },
+              {
+                "element": "icon_sign_in",
+                "present": "false",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "3",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "${email_step_1}"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click"
+              }
+            ]
+          },
+
+          {
+            "description": "select pro",
+            "index": "4",
+            "page": "subs.subs_store_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_pro",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "choose seat and plan",
+            "index": "5",
+            "page": "subs.subs_configPlan_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "div_monthlyPro",
+                "method": "click"
+              },
+              {
+                "element": "btn_purchase",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "accept terms and pay",
+            "index": "6",
+            "page": "subs.subs_pay_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "div_country_india",
+                "method": "script",
+                "present": "false",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_country",
+                "method": "click",
+                "present": "false"
+              },
+              {
+                "element": "div_country_india",
+                "method": "click",
+                "present": "false",
+                "sleep": "12"
+              },
+              {
+                "element": "btn_province",
+                "method": "click",
+                "present": "false"
+              },
+              {
+                "element": "div_province_india",
+                "method": "click",
+                "present": "false",
+                "sleep": "12"
+              },
+              {
+                "element": "input_firstname",
+                "method": "send_keys",
+                "value": "li",
+                "present": "false"
+              },
+              {
+                "element": "input_lastname",
+                "method": "send_keys",
+                "value": "chen"
+              },
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "${email_step_1}"
+              },
+              {
+                "element": "input_phone",
+                "method": "send_keys",
+                "value": "12345678"
+              },
+              {
+                "element": "input_address",
+                "method": "send_keys",
+                "value": "test road"
+              },
+              {
+                "element": "input_postalCode",
+                "method": "send_keys",
+                "value": "795007",
+                "sleep": "5"
+              },
+              {
+                "element": "input_city",
+                "method": "send_keys",
+                "value": "Karong",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_taxno",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_select_cc2",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "checkbox_terms",
+                "method": "script",
+                "value": "document.getElementById(\"order_terms\").click()",
+                "sleep": "3"
+              },
+              {
+                "element": "btn_pay_now",
+                "method": "click",
+                "sleep": "8"
+              }
+            ]
+          },
+          {
+            "description": "CC pay",
+            "index": "7",
+            "page": "subs.subs_cc_pay_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_visa",
+                "method": "click",
+                "present": "false",
+                "sleep": "5"
+              },
+              {
+                "element": "input_cc_number",
+                "method": "send_keys",
+                "value": "4444333322221111",
+                "present": "false",
+                "sleep": "8"
+              },
+              {
+                "element": "input_cc_month",
+                "method": "send_keys",
+                "value": "01",
+                "sleep": "2"
+              },
+              {
+                "element": "input_cc_year",
+                "method": "send_keys",
+                "value": "25",
+                "sleep": "2"
+              },
+              {
+                "element": "input_cc_name",
+                "method": "send_keys",
+                "value": "zz",
+                "sleep": "2"
+              },
+              {
+                "element": "btn_pay_now",
+                "method": "click",
+                "present": "false",
+                "sleep": "30"
+              }
+            ]
+          },
+          {
+            "description": "manage seats",
+            "index": "8",
+            "page": "subs.subs_receipt_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "href_manage_seats",
+                "method": "click",
+                "sleep": "20"
+              }
+            ]
+          },
+          {
+            "description": "pay remaining",
+            "index": "9",
+            "page": "idPortal.subscription_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_add_seat",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "present": "false",
+                "sleep": "5"
+              },
+              {
+                "element": "div_pay_remaining",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "pay remaining -confirm purchase",
+            "index": "10",
+            "page": "subs.subs_pay_remaining_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "div_confirm_purchase",
+                "method": "click",
+                "sleep": "2"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

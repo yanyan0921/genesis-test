@@ -1,0 +1,98 @@
+{
+  "testcase": {
+    "name": "urdp-login",
+    "owner": "chenglong",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to login urdp",
+      "steps": {
+        "step": [
+          {
+            "description": "Select the email login method",
+            "index": "1",
+            "page": "idPortal.urdp_id_page",
+            "need_redirect": "true",
+            "action":
+            [
+              {
+                "element": "decline_btn",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "decline_btn",
+                "method": "click",
+                "sleep": "2",
+                "present": "false"
+              },
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "Xizhi.zhang@unity.cn",
+                "present": "false"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Abc123456",
+                "present": "false"
+              },
+              {
+                "element": "login_btn",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "Enter the balance",
+            "index": "2",
+            "page": "idPortal.urdp_balance_page",
+            "need_redirect": "true",
+            "action":
+            [
+              {
+                "element": "voucherstext",
+                "method": "get_element_values",
+                "present": "true",
+                "sleep": "1"
+              }
+            ]
+          },
+          {
+            "description": "Enter the cloud desktop",
+            "index": "3",
+            "page": "idPortal.cloud_desktop_page",
+            "need_redirect": "true",
+            "action":[
+              {
+                "sleep": "1",
+                "element": "DailyCheckIn_btn",
+                "method": "click",
+                "present": "false"
+              }
+            ]
+          },
+          {
+             "description": "back the balance page",
+            "index": "4",
+            "page": "idPortal.urdp_balance_page",
+            "need_redirect": "true",
+            "action":[
+              {
+                "element": "voucherstext",
+                "method": "text",
+                "value": "${value_step_2}+1000",
+                "present": "false",
+                "sleep": "1"
+              }
+
+            ]
+          }
+
+        ]
+      }
+    }
+  }
+}

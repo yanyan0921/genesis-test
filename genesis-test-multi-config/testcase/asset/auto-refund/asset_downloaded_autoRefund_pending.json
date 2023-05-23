@@ -1,0 +1,447 @@
+{
+  "testcase": {
+    "name": "asset_downloaded_autoRefund_pending",
+    "owner": "tanlinhui",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like test request auto refund after downloaded asset and get refund pending",
+      "steps": {
+        "step": [
+          {
+            "description": "create user via api",
+            "index": "1",
+            "resource": "identity.user_service",
+            "action": [
+              {
+                "method": "create_login_user",
+                "param": {
+                  "country": "BR"
+                },
+                "sleep": "7"
+              }
+            ]
+          },
+          {
+            "description": "accept the cookies",
+            "index": "2",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "icon_sign_in",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "prepare sign in on home page",
+            "index": "3",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click"
+              },
+              {
+                "element": "href_sign_in",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "4",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "${email_step_1}"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "Confirm reading navigation",
+            "index": "5",
+            "page": "assetStore.asset_guide_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_guide_update",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "guide_OK_btn",
+                "present": "false",
+                "method": "click"
+              },
+              {
+                "element": "guide2_OK_btn",
+                "present": "false",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "search asset item",
+            "index": "6",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "ABtest",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"ifont ifont-close _1sqyZ\")[0].click()",
+                "sleep": "5"
+              },
+              {
+                "element": "input_search_box",
+                "present": "false",
+                "method": "send_keys",
+                "value": "Pixel Down",
+                "sleep": "3"
+              },
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "choose search result",
+            "index": "7",
+            "page": "assetStore.asset_search_result_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "item_name",
+                "present": "false",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "add item to cart",
+            "index": "8",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_buy_now",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "accept_terms",
+                "method": "script",
+                "value": "document.getElementsByClassName('_3UE3J pDJt- auto')[0].click()",
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "input credit paypal and pay now",
+            "index": "9",
+            "page": "assetStore.asset_pay_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "checkbox_terms",
+                "method": "script",
+                "value": "document.getElementById(\"order_terms\").click()",
+                "sleep": "8"
+              },
+              {
+                "element": "btn_country",
+                "method": "click"
+              },
+              {
+                "element": "div_country_brazil",
+                "method": "click",
+                "present": "false",
+                "sleep": "8"
+              },
+              {
+                "element": "input_firstname",
+                "method": "send_keys",
+                "value": "Xiaoqing",
+                "present": "false"
+              },
+              {
+                "element": "input_lastname",
+                "method": "send_keys",
+                "value": "Tao"
+              },
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "${email_step_1}"
+              },
+              {
+                "element": "input_phone",
+                "method": "send_keys",
+                "value": "12345678"
+              },
+              {
+                "element": "input_address",
+                "method": "send_keys",
+                "value": "test road"
+              },
+              {
+                "element": "input_postalCode",
+                "method": "send_keys",
+                "value": "100000"
+              },
+              {
+                "element": "input_city",
+                "method": "send_keys",
+                "value": "shanghai",
+                "sleep": "5"
+              },
+              {
+                "element": "input_postalCode",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView()",
+                "present": "false",
+                "sleep": "5"
+              },
+              {
+                "element": "input_paypal_email",
+                "method": "send_keys",
+                "value": "yunlongzhao@unity3d.com",
+                "present": "false",
+                "sleep": "10"
+              },
+              {
+                "element": "btn_pay_now",
+                "method": "click",
+                "sleep": "8"
+              }
+            ]
+          },
+          {
+            "description": "edit paypal info",
+            "index": "10",
+            "page": "assetStore.paypal_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_pw",
+                "method": "action_chain",
+                "present": "false",
+                "sleep": "10",
+                "chain": [
+                  {
+                    "method": "send_keys_to_element",
+                    "param": {
+                      "element": "input_pw",
+                      "value": "q1w2e3r4"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "description": "continue next step",
+            "index": "11",
+            "page": "assetStore.paypal_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "login_paypal",
+                "method": "script",
+                "value": "document.getElementById(\"btnLogin\").click()",
+                "present": "false",
+                "sleep": "20"
+              },
+              {
+                "element": "btn_agree_continue",
+                "method": "script",
+                "value": "document.getElementById(\"payment-submit-btn\").click()",
+                "present": "false",
+                "sleep": "30"
+              }
+            ]
+          },
+          {
+            "description": "verify total amount and tax",
+            "index": "12",
+            "page": "assetStore.asset_receipt_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "item_name",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "redirect page ",
+            "index": "13",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "asset_name",
+                "method": "get_current_url",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "download asset",
+            "index": "14",
+            "resource": "asset.asset_service_publisherV2",
+            "action": [
+              {
+                "sleep": "15",
+                "method": "download_unitypackage",
+                "param": {
+                  "userid": "${user_id_step_1}",
+                  "package_version_id": "241949"
+                }
+              }
+            ]
+          },
+          {
+            "description": "link to order detail page",
+            "index": "15",
+            "page": "assetStore.asset_receipt_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "label_order_detail",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "request auto-refund",
+            "index": "16",
+            "page": "assetStore.asset_receipt_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "icon_menu",
+                "present": "false",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "label_request_refund",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              },
+              {
+                "element": "btn_continue",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              },
+              {
+                "element": "box_request_reason",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              },
+              {
+                "element": "label_request_reason",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              },
+              {
+              "element": "input_message",
+              "present": "false",
+              "value": "request from ui auto test - request from ui auto test",
+              "method": "send_keys",
+                "sleep":"2"
+              },
+              {
+                "element": "btn_submit",
+                "method": "click",
+                "present": "false",
+                "sleep": "20"
+              },
+              {
+                "element": "label_submit",
+                "method": "text",
+                "present": "false",
+                "value": "Your request has been submitted"
+              },
+              {
+                "element": "icon_close",
+                "method": "script",
+                "value": "document.getElementsByClassName('ifont ifont-close _2qFWx')[0].click();",
+                "sleep": "2"
+              }
+            ]
+          },
+          {
+            "description": "verify result of auto-refund",
+            "index": "17",
+            "page": "assetStore.asset_receipt_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "seat_management",
+                "present": "false",
+                "method": "text",
+                "value": "Assign Seats",
+                "sleep": "15"
+              },
+              {
+                "element": "icon_menu",
+                "present": "false",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "label_refund_history",
+                "method": "click",
+                "present": "false",
+                "sleep": "5"
+              },
+              {
+                "element": "label_result",
+                "method": "text",
+                "present": "false",
+                "value": "Refund request pending"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

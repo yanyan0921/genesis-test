@@ -1,0 +1,79 @@
+{
+  "page": {
+    "elements": {
+      "element": [
+        {
+          "name": "btn_post_project",
+          "locator": {
+            "by": "CLASS",
+            "value": "link_1vCaVFnC GA_btn_header_postProject"
+          },
+          "methods": {
+            "method": [
+              "click"
+            ]
+          }
+        },
+        {
+          "name": "btn_article",
+          "locator": {
+            "by": "CLASS",
+            "value": "card_1dBBoTqX article_sLKK9hOz"
+          },
+          "methods": {
+            "method": [
+             "click"
+            ]
+          }
+        },
+         {
+          "name": "btn_game",
+          "locator": {
+            "by": "CLASS",
+            "value": "card_1dBBoTqX game_11cXBfbg"
+          },
+          "methods": {
+            "method": [
+             "click"
+            ]
+          }
+        },
+       {
+          "name": "btn_showcase",
+          "locator": {
+            "by": "CLASS",
+            "value": "card_1dBBoTqX showcase_1tABhI1E"
+          },
+          "methods": {
+            "method": [
+             "click"
+            ]
+          }
+        },
+
+        {
+          "name": "btn_search",
+          "locator": {
+            "by": "CLASS",
+            "value": "_22Uz9"
+          },
+          "methods": {
+            "method": [
+              "send_keys",
+              "get_text"
+            ]
+          }
+        }
+      ]
+    },
+    "related": {
+      "pages": [
+        "id_page",
+        "account_page",
+        "asset_cart_page"
+      ]
+    },
+    "url": "https://assetstore-staging.unity.com/",
+    "path": "connect.post_project_alert_page"
+  }
+}

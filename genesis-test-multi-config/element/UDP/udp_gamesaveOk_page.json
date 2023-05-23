@@ -1,0 +1,44 @@
+{
+  "page": {
+    "elements": {
+      "element": [
+        {
+          "name": "btn_saveOK",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[5]/div[2]/div/div/div/div[3]/div/button"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "icon_language_dropdown",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[4]/div[3]/div/button/div/div[2]"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        }
+      ]
+    },
+    "related": {
+      "pages": [
+        "udp_homepage",
+        "udp_createpage",
+        "udp_page",
+        "udp_gameinfo_page"
+      ]
+    },
+    "url": "https://distribute-staging.dashboard.unity.com/",
+    "path": "udp.udp_gamesaveOk_page"
+  }
+}

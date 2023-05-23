@@ -1,0 +1,106 @@
+{
+  "testcase": {
+    "name": "asset_fillter_categories",
+    "owner": "taoxiaoqing",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to test fillter categories",
+      "steps": {
+        "step": [
+          {
+            "description": "prepare sign in on home page",
+            "index": "1",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click"
+              },
+              {
+                "element": "href_sign_in",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "2",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "silkcloudtest+eekrpkivvh@gmail.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "12345678Test"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "verify language english",
+            "index": "3",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "footer_language_English",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView()",
+                "sleep": "4"
+              },
+              {
+                "element": "footer_language_English",
+                "method": "click",
+                "sleep": "4"
+              },
+              {
+                "element": "top_assets_title",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView()",
+                "present": "false"
+              },
+              {
+                "element": "top_assets_title",
+                "method": "text",
+                "value": "Top Assets",
+                "present": "false"
+              }
+            ]
+          },
+          {
+            "description": "test categories",
+            "index": "4",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "category_3D",
+                "method": "click",
+                "sleep": "4"
+              },
+              {
+                "element": "filter_quantity",
+                "method": "text",
+                "value": "1-24",
+                "present": "false"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,313 @@
+{
+  "testcase": {
+    "name": "asset_save_for_later_in_new_list",
+    "owner": "tanlinhui",
+    "priority": "Daily",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to test new add and modify list",
+      "steps": {
+        "step": [
+          {
+            "description": "accept the cookies",
+            "index": "1",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "icon_sign_in",
+                "method": "script",
+                "value": "document.getElementById(\"onetrust-accept-btn-handler\").click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "prepare sign in on home page",
+            "index": "2",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click"
+              },
+              {
+                "element": "href_sign_in",
+                "method": "click",
+                "present": "false"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "3",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "silkcloudtest+mfqgzd7nvy1@gmail.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "8"
+              }
+            ]
+          },
+          {
+            "description": "search asset item",
+            "index": "4",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "footer_language_English",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView()",
+                "sleep": "4"
+              },
+              {
+                "element": "footer_language_English",
+                "method": "click",
+                "sleep": "4"
+              },
+              {
+                "element": "input_search_box",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView()",
+                "present": "false"
+              },
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "GameFlow"
+              },
+             {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "choose search result",
+            "index": "5",
+            "page": "assetStore.asset_search_result_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "item_name",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_1-e15 _25P-Q\")[0].click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "prepare to click add to list btn",
+            "index": "6",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "add_to_list_btn",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "btn_new_list",
+                "present": "false",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "input_list_name",
+                "present": "false",
+                "method": "send_keys",
+                "value": "test",
+                 "sleep": "8"
+              },
+              {
+                "element": "btn_save_for_list",
+                "present": "false",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "btn_save_for_item",
+                "present": "false",
+                "method": "click",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "modify list privacy",
+            "index": "7",
+            "page": "assetStore.asset_save_for_later_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "btn_test_title",
+                "method": "click",
+                "sleep": "10"
+              },
+              {
+                "element":"icon_compare_close",
+                 "method": "script",
+                "value": "document.getElementsByClassName(\"uty-2-10-compBar-close\")[0].click()",
+                "sleep": "5"
+              },
+              {
+                "element": "icon_Privacy",
+                "present": "false",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "icon_Public",
+                "present": "false",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_save",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_3UE3J pDJt- auto IaiTq\")[0].click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "verify privacy",
+            "index": "8",
+            "page": "assetStore.asset_save_for_later_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "icon_share",
+                "present": "false",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "label_share",
+                "present": "false",
+                "method": "text",
+                "value": "Share Asset List",
+                 "sleep": "5"
+              },
+              {
+                "element": "icon_close",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"ifont ifont-close _2E9BH\")[0].click()",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "modify description",
+            "index": "9",
+            "page": "assetStore.asset_save_for_later_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "icon_setting",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_3kYVA\")[2].click()",
+                "sleep": "5"
+              },
+              {
+                "element": "input_list_name",
+                "present": "false",
+                "method": "send_keys",
+                "value": " rename",
+                "sleep":"3"
+              },
+              {
+                "element": "input_description",
+                "method": "action_chain",
+                "present": "false",
+                "sleep": "5",
+                "chain": [
+                  {
+                    "method": "move_to_element",
+                    "param": {
+                      "element": "input_description"
+                    }
+                  },
+                  {
+                    "method": "send_keys_to_element",
+                    "param": {
+                      "element": "input_description",
+                      "value": "test"
+                    }
+                  }
+                ]
+              },
+              {
+                "element": "btn_save",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_3UE3J pDJt- auto IaiTq\")[0].click()",
+                "sleep": "8"
+              },
+              {
+                "element": "label_title",
+                "present": "false",
+                "method": "text",
+                "value": "test rename"
+              },
+              {
+                "element": "label_description",
+                "method": "text",
+                "value": "test"
+              }
+            ]
+          },
+          {
+            "description": "delete list",
+            "index": "10",
+            "page": "assetStore.asset_save_for_later_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "icon_setting",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_3kYVA\")[2].click()",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_delete_list",
+                "present": "false",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_yes",
+                "present": "false",
+                "method": "script",
+                "value": "document.getElementsByClassName(\"_3UE3J _3zD70 auto _27Drk\")[0].click()",
+                "sleep": "3"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "page": {
+    "elements": {
+      "element": [
+        {
+          "name": "input_productid",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[3]/div/div[4]/div[2]/div/div/div/div[2]/div[1]/div/div[1]/div[1]/div/input"
+          },
+          "methods": {
+            "method": [
+              "send_keys",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "input_productname",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[3]/div/div[4]/div[2]/div/div/div/div[2]/div[1]/div/div[2]/div/div/input"
+          },
+          "methods": {
+            "method": [
+              "send_keys",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_checkbox_consumble",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[3]/div/div[4]/div[2]/div/div/div/div[2]/div[1]/div/div[3]/div[2]/div/button"
+          },
+          "methods": {
+            "method": [
+              "click"
+            ]
+          }
+        },
+        {
+          "name": "input_iapdescription",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[3]/div/div[4]/div[2]/div/div/div/div[2]/div[1]/div/div[4]/div/div/textarea"
+          },
+          "methods": {
+            "method": [
+              "get_text",
+              "send_keys"
+            ]
+          }
+        },
+        {
+          "name": "icon_closeiapifont",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[3]/div/div[4]/div[2]/div/div/div/div[1]/button/div"
+          },
+          "methods": {
+            "method": [
+              "click"
+            ]
+          }
+        },
+        {
+          "name": "btn_iapcancel",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[3]/div/div[4]/div[2]/div/div/div/div[3]/div[1]/button"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        },
+        {
+          "name": "btn_iapsave",
+          "locator": {
+            "by": "XPATH",
+            "value": "//*[@id=\"pageBody\"]/div[3]/div[3]/div/div[4]/div[2]/div/div/div/div[3]/div[2]/button"
+          },
+          "methods": {
+            "method": [
+              "click",
+              "get_text"
+            ]
+          }
+        }
+      ]
+    },
+    "related": {
+      "pages": [
+        "udp_homepage",
+        "udp_createpage",
+        "udp_page",
+        "udp_gameinfo_page"
+      ]
+    },
+    "url": "https://distribute-staging.dashboard.unity.com/",
+    "path": "udp.udp_addIAPitem_page"
+  }
+}

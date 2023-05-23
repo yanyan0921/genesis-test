@@ -1,0 +1,199 @@
+{
+  "testcase": {
+    "name": "test_world_pay_ERROR",
+    "owner": "taoxiaoqing",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to test world pay ERROR",
+      "steps": {
+        "step": [
+          {
+            "description": "prepare sign in on home page",
+            "index": "1",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_sign_in",
+                "method": "click"
+              },
+              {
+                "element": "href_sign_in",
+                "method": "click",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "filling the login info",
+            "index": "2",
+            "page": "idPortal.id_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "silkcloudtest+eekrpkivvh@gmail.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "12345678Test"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "search asset item",
+            "index": "3",
+            "page": "assetStore.asset_home_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_search_box",
+                "method": "send_keys",
+                "value": "GameFlow"
+              },
+              {
+                "element": "btn_search",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "choose search result",
+            "index": "4",
+            "page": "assetStore.asset_search_result_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "div_search_item",
+                "method": "click",
+                "sleep":"10"
+              }
+            ]
+          },
+          {
+            "description": "add item to cart",
+            "index": "5",
+            "page": "assetStore.asset_product_page",
+            "need_redirect": "false",
+            "action": [
+             {
+                "element": "arrow_open_in_unity",
+                "method": "click",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_add_to_cart",
+                "method": "click",
+                "present": "false",
+                "sleep": "5"
+              },
+              {
+                "element": "btn_view_cart",
+                "method": "click",
+                "present": "false",
+                "sleep": "5"
+              }
+           ]
+          },
+          {
+            "description": "proceed to checkout",
+            "index": "6",
+            "page": "assetStore.asset_cart_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element":"btn_proceed_to_checkout",
+                "method": "click",
+                "sleep": "5"
+              }
+            ]
+          },
+          {
+            "description": "input credit card info and set the Cardholder's name is ERROR,then pay now",
+            "index": "7",
+            "page": "assetStore.asset_pay_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "add_new_hypertext",
+                "method": "click"
+              },
+              {
+                "element":"select_CreditCard",
+                "method": "click",
+                "present": "false"
+              },
+               {
+                 "element": "input_creditcard",
+                 "method": "send_keys",
+                 "value": "4444 3333 2222 1111",
+                 "present": "false"
+              },
+              {
+                "element": "month_box",
+                "method":"click"
+              },
+               {
+                "element": "month",
+                "method":"click"
+              },
+              {
+                "element": "year_box",
+                "method":"click"
+              },
+              {
+                "element": "year",
+                "method":"click"
+              },
+              {
+                "element": "cvc_cvv2",
+                "method":"send_keys",
+                "value": "123"
+              },
+              {
+                "element": "Cardholder_name_box",
+                "method":"send_keys",
+                "value": "ERROR"
+              },
+              {
+                "element": "future_purchase_checkbox",
+                 "method": "click"
+              },
+              {
+                "element": "checkbox_terms",
+                "method": "script",
+                "value": "document.getElementById(\"summary_terms\").click()"
+              },
+              {
+                "element": "btn_pay_now",
+                "method": "click",
+                "sleep": "15"
+              }
+            ]
+          },
+          {
+            "description": "verify error code msg",
+            "index": "8",
+            "page": "assetStore.asset_pay_page",
+            "need_redirect": "false",
+            "action": [
+              {"element": "error_code_msg",
+                "method": "text",
+                "value": "The system failed to process your card at this time. Please double check your billing details, try a new credit card, or contact your bank."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

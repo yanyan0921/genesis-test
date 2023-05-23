@@ -1,0 +1,74 @@
+{
+  "publisher_dharma_home_page": [
+    {
+      "base_url": {
+        "int": "https://dharma-dev.assetstore.unity3d.com/",
+        "staging": "https://dharma-qa.assetstore.unity3d.com/",
+        "prod": "https://dharma.assetstore.unity3d.com/"
+      }
+    }
+  ],
+  "publisher_dharma_login_page": [
+    {
+      "base_url": {
+        "int": "https://dharma-dev.assetstore.unity3d.com/",
+        "staging": "https://dharma-qa.assetstore.unity3d.com/",
+        "prod": "https://dharma.assetstore.unity3d.com/"
+      }
+    }
+  ],
+  "publisher_draft_package_page": [
+    {
+      "base_url": {
+        "int": "https://publisher-dev.assetstore.unity3d.com/",
+        "staging": "https://publisher-qa.assetstore.unity3d.com/",
+        "prod": "https://publisher.assetstore.unity3d.com/"
+      }
+    }
+  ],
+  "publisher_home_page": [
+    {
+      "base_url": {
+        "int": "https://publisher-dev.assetstore.unity3d.com/",
+        "staging": "https://publisher-qa.assetstore.unity3d.com/",
+        "prod": "https://publisher.assetstore.unity3d.com/"
+      }
+    }
+  ],
+  "publisher_imgageUpload_page": [
+    {
+      "base_url": {
+        "int": "https://publisher-dev.assetstore.unity3d.com/",
+        "staging": "https://publisher-qa.assetstore.unity3d.com/",
+        "prod": "https://publisher.assetstore.unity3d.com/"
+      }
+    }
+  ],
+  "publisher_login_page": [
+    {
+      "base_url": {
+        "int": "https://publisher-dev.assetstore.unity3d.com/",
+        "staging": "https://publisher-qa.assetstore.unity3d.com/",
+        "prod": "https://publisher.assetstore.unity3d.com/"
+      }
+    }
+  ],
+  "publisher_meta_page": [
+    {
+      "base_url": {
+        "int": "https://publisher-dev.assetstore.unity3d.com/",
+        "staging": "https://publisher-qa.assetstore.unity3d.com/",
+        "prod": "https://publisher.assetstore.unity3d.com/"
+      }
+    }
+  ],
+  "publisher_pacman_edit_page": [
+    {
+      "base_url": {
+        "int": "https://publisher-dev.assetstore.unity3d.com/",
+        "staging": "https://publisher-qa.assetstore.unity3d.com/",
+        "prod": "https://publisher.assetstore.unity3d.com/"
+      }
+    }
+  ]
+}

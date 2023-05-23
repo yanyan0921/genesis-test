@@ -1,0 +1,236 @@
+{
+  "testcase": {
+    "name": "post_job",
+    "owner": "guohua",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to post a job",
+      "steps": {
+        "step": [
+            {
+            "description": "fill out the login form",
+            "index": "1",
+            "page": "connect.connect_home_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "btn_avatar",
+                "method": "script",
+                "value": "document.querySelector(\"#pageContent > div:nth-child(1) > div.header-wrap_GEr2c682 > div > div.user-actions_2nPAaNhU > div > div.right_ZNamn0lh > div.account-switcher_eSCn1fWL > unity-account-switcher\").shadowRoot.querySelector(\"div > a > user-avatar\").click()",
+                "sleep": "2"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "script",
+                "value": "document.querySelector(\"#pageContent > div:nth-child(1) > div.header-wrap_GEr2c682 > div > div.user-actions_2nPAaNhU > div > div.right_ZNamn0lh > div.account-switcher_eSCn1fWL > unity-account-switcher\").shadowRoot.querySelector(\"div > div > drop-down\").shadowRoot.querySelector(\"div > div:nth-child(2)\").click()",
+                "present": "false",
+                "sleep": "13"
+              }
+            ]
+          },
+          {
+            "description": "fill out the login form",
+            "index": "2",
+            "page": "connect.connect_login_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "hua.guo+11@unity3d.com",
+                "present": "false"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_login",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "click post job",
+            "index": "3",
+            "page": "connect.home_nav_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "icon_jobs",
+                "method": "script",
+                "value": "document.querySelector(\"#pageContent > div:nth-child(1) > div.header-wrap_GEr2c682 > div > div.main-menu-wrapper_2eWH5ERW > div > div.menu-left_flKNOvnq > div.first-menu_1sbJSQP5 > div.icon-wrapper_w3sd7Klr\").click()",
+                "sleep": "4"
+              },
+              {
+                "element": "icon_post_jobs",
+                "method": "script",
+                "value": "document.querySelector(\"#pageContent > div:nth-child(1) > div.header-wrap_GEr2c682 > div > div.main-menu-wrapper_2eWH5ERW > div > div.menu-left_flKNOvnq > div.first-menu_1sbJSQP5 > div.menu-wrap_3skhSRHM > div > div > a.item_1xCevqmY.GA_btn_header_postJob\").click()",
+                "sleep": "2"
+              }
+            ]
+          },
+            {
+            "description": "factor authentication",
+            "index": "4",
+            "page": "connect.post_article_factor_authentication",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_skip",
+                "method": "click",
+                "present": "false",
+                "sleep": "2"
+              }
+            ]
+          },
+           {
+            "description": "post a job detail1",
+            "index": "5",
+            "page": "connect.post_career",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_job",
+                "method": "click",
+                "sleep": "2"
+              }
+            ]
+          },
+           {
+            "description": "post a job detail1",
+            "index": "6",
+            "page": "connect.post_job",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "sel_comp_name",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "button_comp_name",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+            {
+            "description": "post a job",
+            "index": "7",
+            "page": "connect.post_job",
+            "need_redirect": "false",
+            "action": [
+               {
+                "element": "input_job_name",
+                "method": "send_keys",
+                "value": "软件测试工程师"
+              },
+              {
+                "element": "icon_job_class",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "select_job_class",
+                "method": "click"
+              },
+              {
+                "element": "input_spot",
+                "method": "send_keys",
+                "value": "shanghai",
+                 "sleep": "2"
+              },
+              {
+                "element": "click_spot",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                 "sleep": "2"
+              },
+               {
+                "element": "input_skill",
+                "method": "send_keys",
+                "value": "java",
+                  "sleep": "2"
+              },
+              {
+                "element": "input_skill",
+                "method": "send_keys",
+                "value": "Keys.ENTER",
+                 "sleep": "3"
+              },
+               {
+                "element": "icon_experience_class",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView(true)",
+                 "present": "false",
+                 "sleep": "3"
+              },
+              {
+                "element": "icon_experience_class",
+                "method": "click",
+                 "sleep": "2"
+              },
+               {
+                "element": "select_experience_class",
+                "method": "click",
+                  "sleep": "2"
+              },
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "1965078495@qq.com",
+                  "sleep": "2"
+              },
+               {
+                "element": "input_question1",
+                "method": "send_keys",
+                "value": "Briefly introduce yourself",
+                  "sleep": "2"
+              },
+              {
+                "element": "div_job_content",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView(true)",
+                 "present": "false",
+                 "sleep": "3"
+              },
+              {
+                "element": "div_job_content",
+                "method": "click",
+                  "sleep": "2"
+              },
+              {
+                "element": "input_job_content",
+                "method": "send_keys",
+                "value": "1.编写测试计划：仔细阅读项目规格说明、设计文档、使用说明书等，充分掌握软件的使用性能、特点、使用流程等；2.编写测试用例：设计使用数据及预期结果；3.搭建测试环境，保证测试环境的独立和维护测试环境的更新；4.执行测试；5。根据测试记过进行bug验证"
+              },
+               {
+                "element": "btn_post",
+                "method": "click",
+                  "sleep": "3"
+               }
+            ]
+          },
+            {
+            "description": "Agree to skip validation",
+            "index": "8",
+            "page": "connect.post_game_verify",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "agree_post",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

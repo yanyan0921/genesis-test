@@ -1,0 +1,149 @@
+{
+  "testcase": {
+    "name": "test_udp_releasegame",
+    "owner": "dongxiaowan",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to create game on udp portal",
+      "steps": {
+        "step": [
+          {
+            "description": "distribute to login page",
+            "index": "1",
+            "page": "udp.udp_homepage",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "icon_login",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "redirect to sign in",
+            "index": "2",
+            "page": "udp.udp_signin_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "icon_signin",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+
+          },
+          {
+            "description": "fill out the login form",
+            "index": "3",
+            "page": "udp.udp_login_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "dongxiaowan+01@unity3d.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "select an existing game on portal",
+            "index": "4",
+            "page": "udp.udp_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "btn_existgamename",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "edit the game again",
+            "index": "5",
+            "page": "udp.udp_gameinfoexisting_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_editinfo",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "save the game as draft",
+            "index": "6",
+            "page": "udp.udp_gameinfo_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_gamesave",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "save the game draft",
+            "index": "7",
+            "page": "udp.udp_gamesaveOk_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_saveOK",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "release the game draft into new revision",
+            "index": "8",
+            "page": "udp.udp_gameinfo_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "btn_release",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "input the release notes and create release",
+            "index": "9",
+            "page": "udp.udp_ReleasetoUDP_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "input_releasenote",
+                "method": "send_keys",
+                "value": "release a new revision"
+              },
+              {
+                "element": "btn_createrelease",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

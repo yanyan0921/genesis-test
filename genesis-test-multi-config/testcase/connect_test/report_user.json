@@ -1,0 +1,106 @@
+{
+  "testcase": {
+    "name": "test_connect_login",
+    "owner": "guohua",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to report a user",
+      "steps": {
+        "step": [
+     {
+            "description": "fill out the login form",
+            "index": "1",
+            "page": "connect.id_page",
+            "need_redirect": "true",
+            "action": [
+               {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "hua.guo+11@unity3d.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "select  connect",
+            "index": "2",
+            "page": "connect.account_setting_page",
+            "need_redirect": "true",
+            "action": [
+               {
+                "element": "icon_switcher",
+                "method": "click"
+              },
+              {
+                "element": "select_connect",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "click report button",
+            "index": "3",
+            "page": "connect.home_operation",
+             "switch_tab": "1",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "div_user",
+                "method": "script",
+                "value": "arguments[0].scrollIntoView(true)",
+                  "present": "false",
+                 "sleep": "2"
+              },
+               {
+                "element": "icon_report_adt",
+                 "method": "script",
+                 "value": "document.querySelector(\"#feed-top > div > div.feed-bottom_2XBk8OkD > div.left-container_3Y3AANwf > div.feed-container > div > div.feed_3QKemxYN.new_project > div > div > div.user_2HLWgeWD > div.menus_oXrgOqPo > div > div > div\").click()",
+                 "sleep": "2"
+              },
+              {
+                "element": "btn_report",
+                "method": "script",
+                 "value":"document.querySelector(\"#feed-top > div > div.feed-bottom_2XBk8OkD > div.left-container_3Y3AANwf > div.feed-container > div > div.feed_3QKemxYN.new_project > div > div > div.user_2HLWgeWD > div.menus_oXrgOqPo > div > div.dropdown-menus_3LPqxIgV > div > a\").click()",
+                "present": "false",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "choose report message",
+            "index": "4",
+            "page": "connect.home_operation_reportContent",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "radio_other",
+                "method": "click"
+              },
+              {
+                "element": "input_other",
+                "method": "send_keys",
+                "value": "涉嫌违法1111111"
+              },
+              {
+                "element": "btn_submit",
+                "method": "click"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

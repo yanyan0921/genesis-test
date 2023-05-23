@@ -1,0 +1,78 @@
+{
+  "testcase": {
+    "name": "publisher_delete_draft_package",
+    "owner": "tanlinhui",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to test delete draft package",
+      "steps": {
+        "step": [
+          {
+            "description": "prepare sign in on home page",
+            "index": "1",
+            "page": "publisherPortalV2.publisher_login_page",
+            "need_redirect": "true",
+            "action": [
+              {
+                "element": "input_email",
+                "method": "send_keys",
+                "value": "linhui.tan+01@unity3d.com"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Test1234"
+              },
+              {
+                "element": "btn_sign_in",
+                "method": "click",
+                "sleep": "7"
+              }
+            ]
+          },
+          {
+            "description": "go to published package page ",
+            "index": "2",
+           "page": "publisherPortalV2.publisher_home_page",
+             "need_redirect": "true",
+            "action": [
+              {
+                "element": "sort_size",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "label_package",
+                "present": "false",
+                "method": "click",
+                "sleep": "10"
+              }
+            ]
+          },
+          {
+            "description": "delete draft",
+            "index": "3",
+            "page": "publisherPortalV2.publisher_draft_package_page",
+            "need_redirect": "false",
+            "action": [
+              {
+                "element": "delete_draft",
+                "present": "false",
+                "method": "click",
+                "sleep": "8"
+              },
+              {
+                "element": "delete_draft_ok_btn",
+                "method": "click",
+                "present": "false",
+                "sleep": "4"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
