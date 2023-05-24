@@ -45,6 +45,7 @@ class BasePage:
             EC.invisibility_of_element_located(locator))
 
     def navigate(self, url):
+        # 导航到对应的url
         self.logger.info("navigate to: " + url)
         self.driver.get(url)
 

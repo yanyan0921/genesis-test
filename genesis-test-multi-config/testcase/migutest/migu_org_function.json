@@ -1,0 +1,95 @@
+{
+  "testcase": {
+    "name": "migu-login",
+    "owner": "yanke",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to test org function",
+      "steps": {
+        "step": [
+         {
+            "description": "Select org_admin login method",
+            "index": "1",
+            "page": "idPortal.migu_login_page",
+            "need_redirect": "flase",
+            "action":
+            [
+
+              {
+                "element": "input_username",
+                "method": "send_keys",
+                "value": "mengran_1",
+                "present": "false"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Unity@123",
+                "present": "false"
+              },
+              {
+                "element": "login_btn",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "test_account_manage",
+            "index": "2",
+            "page": "migu.accont_manage_page",
+            "need_redirect": "flase",
+            "action": [
+              {
+                "sleep": "1",
+                "element": "account_manage_menu",
+                "method": "click"
+
+              },
+              {
+                "sleep": "1",
+                "element": "new_account_link_button",
+                "method": "click"
+              },
+              {
+                "element": "dev_account_input",
+                "method": "click"
+              },
+              {
+                 "sleep": "1",
+                "element": "dev_account_input",
+                "method": "send_keys",
+                "value": "mengran"
+              },
+              {
+                "element": "dev_account",
+                "method": "click"
+              },
+              {
+                "element": "link_button",
+                "method": "click"
+              },
+              {
+                "element": "account_search",
+                "method": "send_keys",
+                "value": "men"
+
+              },
+              {
+                "element": "cancel_link_button",
+                "method": "click"
+              },
+              {
+                "element": "confirm_cancel_button",
+                "method": "click"
+              }
+            ]
+
+          }
+        ]
+
+      }
+    }
+  }
+}

@@ -128,6 +128,7 @@ class Analyser(Thread):
                             logger.info("Step " + step["index"] + ": " + step["description"])
                             failure_reasons[test_id] = "STEP " + step["index"] + ": " + step[
                                 "description"] + " | "
+                            # 导入对应模块
                             if "resource" in step.keys():
                                 try:
                                     self.rest = rest.Rest(self.vars, step["resource"], step["action"], step["index"],
@@ -149,9 +150,10 @@ class Analyser(Thread):
                                         page.navigate(url)
 
                                     if "switch_tab" in step.keys():
-                                        self.switch_window(driver, (int)(step["switch_tab"]))
+                                        self.switch_window(driver, int(step["switch_tab"]))
 
                                     try:
+
                                         getattr(page, "init_page")()
                                     except selenium.common.exceptions.TimeoutException as e:
                                         result[test_id] = False
@@ -166,8 +168,8 @@ class Analyser(Thread):
                                         if method_name == "switch_default_content":
                                             driver.switch_to.default_content()
                                             break
-                                        elif method_name =="switch_to_active_element":
-                                            driver.switch_to.active_element
+                                        elif method_name == "switch_to_active_element":
+                                            driver.switch_to.active_element()
                                             continue
                                         elif method_name == "action_chain":
                                             chain.Chain(driver, self.vars, page, action.get("chain"))
@@ -192,7 +194,7 @@ class Analyser(Thread):
                                             logger.error("Unable to locate element " + element_name)
                                             result[test_id] = False
                                             failure_reasons[test_id] = failure_reasons[
-                                                                           test_id] + " ELEMENT: " + element_name + " | "
+                                                                           test_id] + " ELEMENT: " + element_name + "|"
                                             failure_reasons[test_id] = failure_reasons[
                                                                            test_id] + failure_reason_element_not_found + "  "
                                             abort = True
@@ -223,9 +225,10 @@ class Analyser(Thread):
                                                     "execute verify " + method_name + " to element:[" + element_name + "]")
                                                 text_value = element.text
                                                 if value.startswith("${") and text_value != '':
-                                                    if re.search("[+\-*/]",value):
-                                                        vlist= re.split(r"(\+|-|\*|/)",value)
-                                                        msg_text = str(eval(self.vars.get(vlist[0][2:-1])+vlist[1]+vlist[2]))
+                                                    if re.search("[+\-*/]", value):
+                                                        vlist = re.split(r"(\+|-|\*|/)", value)
+                                                        msg_text = str(
+                                                            eval(self.vars.get(vlist[0][2:-1]) + vlist[1] + vlist[2]))
                                                     else:
                                                         msg_text = self.vars.get(value[2:-1])
 
@@ -277,7 +280,7 @@ class Analyser(Thread):
 
                     if abort is True:
                         result[test_id] = False
-                        if (retry_count) > 0:
+                        if retry_count > 0:
                             self.test_case_list[test_id]["testcase"]["retry_count"] = retry_count - 1
                             self.queue.put(test_id)
                     else:
@@ -286,7 +289,7 @@ class Analyser(Thread):
                 except (AttributeError, selenium.common.exceptions) as e:
                     logger.error(e)
                     result[test_id] = False
-                    if (retry_count) > 0:
+                    if retry_count > 0:
                         self.test_case_list[test_id]["testcase"]["retry_count"] = retry_count - 1
                         self.queue.put(test_id)
 

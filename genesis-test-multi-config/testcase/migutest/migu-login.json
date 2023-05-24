@@ -10,9 +10,9 @@
       "steps": {
         "step": [
           {
-            "description": "Select the email login method",
+            "description": "Select org_admin login method",
             "index": "1",
-            "page": "idPortal.urdp_id_page",
+            "page": "idPortal.migu_login_page",
             "need_redirect": "true",
             "action":
             [
@@ -35,17 +35,26 @@
               }
             ]
           },
-          {
-            "description": "Enter the cloud desktop",
+          {"description": "select Platform_admin_login",
             "index": "2",
-            "page": "idPortal.cloud_desktop_page",
-            "need_redirect": "true",
-            "action":
-            [
+            "page": "idPortal.migu_login_page",
+            "need_redirect": "flase",
+            "action": [
               {
-                "element": "DailyCheckIn_btn",
-                "method": "click",
+                "element": "input_username",
+                "method": "send_keys",
+                "value": "admin_mengran",
                 "present": "false"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Unity@123",
+                "present": "false"
+              },
+              {
+                "element": "login_btn",
+                "method": "click"
               }
             ]
           }

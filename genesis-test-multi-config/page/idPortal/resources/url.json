@@ -8,6 +8,13 @@
       }
     }
   ],
+  "login_page" : [
+    {
+      "base_url": {
+        "int": "https://cloud-platform.migu.cn/"
+      }
+    }
+  ],
   "account_page": [
     {
       "base_url": {

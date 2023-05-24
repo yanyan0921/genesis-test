@@ -3,11 +3,11 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 
 class Page(BasePage):
-    base_url = "https://cloud-platform.migu.cn/#/login?next=/home"
-    decline_btn_locator = (By.XPATH, '//*[@id="content-wrapper"]/div/div/div/div/ul/li[2]/a')
+    base_url = "https://cloud-platform.migu.cn/"
+    decline_btn_locator = (By.XPATH, '//*[@id="app"]/div/div[2]/div/form/div[3]/div/div/div[1]/div/input')
     login_btn_locator = (By.XPATH, '//*[@id="app"]/div/div[2]/div/form/button')
-    input_username_locator = (By.XPATH, '//*[@id="username"]')
-    input_password_locator = (By.XPATH, '//*[@id="password"]')
+    input_username_locator = (By.XPATH, '//*[@id="app"]/div/div[2]/div/form/div[1]/div/div/input')
+    input_password_locator = (By.XPATH, '//*[@id="app"]/div/div[2]/div/form/div[2]/div/div[1]/input')
 
     def __init__(self, driver, wait):
         super().__int__(driver, wait)

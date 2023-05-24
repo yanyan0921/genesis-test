@@ -1,0 +1,207 @@
+{
+  "testcase": {
+    "name": "migu_org_respool",
+    "owner": "yanke",
+    "priority": "BVT",
+    "smoke": "false",
+    "type": "auto",
+    "scenario": {
+      "name": "I would like to test create_del res_pool",
+      "steps": {
+        "step": [
+          {
+            "description": "Select org_admin login method",
+            "index": "1",
+            "page": "idPortal.migu_login_page",
+            "need_redirect": "flase",
+            "action":
+            [
+
+              {
+                "element": "input_username",
+                "method": "send_keys",
+                "value": "mengran_1",
+                "present": "false"
+              },
+              {
+                "element": "input_password",
+                "method": "send_keys",
+                "value": "Unity@123",
+                "present": "false"
+              },
+              {
+                "element": "login_btn",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "create_pool",
+            "index": "2",
+            "page": "migu.Pool_manage_page",
+            "need_redirect": "flase",
+            "action": [
+              {
+                "sleep": "1",
+                "element": "pool_manage_menu",
+                "method": "click"
+              },
+               {
+                "sleep": "1",
+                "element": "create_pool_button",
+                "method": "click"
+              },
+              {
+                "sleep": "1",
+                "element": "pool_name_input",
+                "method": "send_keys",
+                "value": "AutoTest-111"
+              },
+              {
+
+                "sleep": "1",
+                "element": "pool_type_input",
+                "method": "send_keys",
+                "value": "弹性"
+              },
+              {
+                "sleep": "1",
+                "element": "pool_type",
+                "method": "click"
+              },
+              {
+                 "sleep": "1",
+                "element": "pool_configuration_input",
+                "method": "send_keys",
+                "value": "PUB_3060_弹性"
+              },
+              {
+                "element": "pool_configuration",
+                "method": "click"
+              },
+              {
+                "element": "pool_configuration_number",
+                "method": "clear"
+              },
+              {
+                "element": "pool_configuration_number",
+                "method": "send_keys",
+                "value": "1"
+              },
+              {
+                "element": "pool_description",
+                "method": "send_keys",
+                "value": "test pool; automation testing"
+              },
+              {
+                 "element": "create_button",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "search_pool",
+            "index": "3",
+            "page": "migu.Pool_manage_page",
+            "need_redirect": "flase",
+            "action":[
+              {
+                "element": "search_input",
+                "method": "send_keys",
+                "value": "AutoTest-111",
+                "present": "false"
+              },
+              {
+                "element": "pool_name_div",
+                "method": "text"
+              }
+            ]
+          },
+          {
+            "description": "edit_pool_info",
+            "index": "4",
+            "page": "migu.Pool_manage_page",
+            "need_redirect": "flase",
+            "action":[
+
+              {
+                "element": "edit_info_button",
+                "method": "click",
+                "sleep": "2"
+              },
+              {
+                "element": "pool_name_input",
+                "method": "clear",
+                "sleep": "2"
+              },
+              {
+                "element": "pool_name_input",
+                "method": "send_keys",
+                "value": "Update_111"
+              },
+              {
+                "element": "save_update_button",
+                "method": "click"
+              }
+            ]
+          },
+          {
+            "description": "search_pool",
+            "index": "5",
+            "page": "migu.Pool_manage_page",
+            "need_redirect": "flase",
+            "action":[
+              {
+                "element": "search_input",
+                "method": "send_keys",
+                "value": "Update_111",
+                "present": "false"
+              },
+              {
+                "element": "pool_name_div",
+                "method": "text"
+              }
+            ]
+          },
+          {
+             "description": "del_searched_pool",
+            "index": "6",
+            "page": "migu.Pool_manage_page",
+            "need_redirect": "flase",
+            "action":[
+              {
+                "element": "del_button",
+                "method": "click",
+                "sleep": "3"
+              },
+              {
+                "element": "confirm_del_button",
+                "method": "click",
+                "sleep": "3"
+              }
+            ]
+          },
+          {
+            "description": "search_deleted_pool",
+            "index": "7",
+            "page": "migu.Pool_manage_page",
+            "need_redirect": "flase",
+            "action":[
+              {
+                "element": "search_input",
+                "method": "send_keys",
+                "value": "Update_111",
+                "present": "false"
+              },
+              {
+                "element": "no_data_div",
+                "method": "text"
+
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
